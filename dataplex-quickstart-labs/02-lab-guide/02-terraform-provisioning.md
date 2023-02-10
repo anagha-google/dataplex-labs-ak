@@ -52,7 +52,14 @@ BQ_CONNECTOR_JAR_GCS_URI="gs://spark-lib/bigquery/spark-bigquery-with-dependenci
 
 <hr>
 
-## 3. Run the Terraform plan
+## 3. Run the Terraform init
+```
+cd ~/dataplex-quickstart-labs/00-resources/terraform
+
+terraform init
+```
+
+## 4. Run the Terraform plan
 ```
 cd ~/dataplex-quickstart-labs/00-resources/terraform
 
@@ -72,7 +79,7 @@ terraform plan \
 
 <hr>
 
-## 4. Provision the environment
+## 5. Provision the environment
 ```
 cd ~/dataplex-quickstart-labs/00-resources/terraform
 
@@ -91,7 +98,7 @@ terraform apply \
 
 <hr>
 
-## 5. Validate the environment setup
+## 6. Validate the environment setup
 
 TODO: Link to validation page.
 
