@@ -4,7 +4,38 @@ The previous lab module covered what gets provisioned automatically. In this mod
 
 <hr>
 
-## 1. Declare variables
+## 1. Getting set up for the lab
+
+### 1.1. Clone the git repo
+
+Run in Cloud Shell-
+```
+cd ~
+git clone https://github.com/anagha-google/dataplex-labs-ak.git
+```
+
+### 1.2. Set up working directory
+
+Run in Cloud Shell-
+```
+cp -r dataplex-labs-ak/dataplex-quickstart-labs ~/
+```
+
+### 1.3. Datasets setup
+
+Run the shell script below that untars a few datasets.
+```
+# Permissions
+chmod +x ~/dataplex-quickstart-labs/00-resources/scripts/bash/dataset_untar.sh
+
+# Untar & remove archives
+./dataplex-quickstart-labs/00-resources/scripts/bash/dataset_untar.sh
+
+```
+
+<hr>
+
+## 2. Declare variables
  
 Paste this in Cloud Shell
 ```
@@ -21,7 +52,7 @@ BQ_CONNECTOR_JAR_GCS_URI="gs://spark-lib/bigquery/spark-bigquery-with-dependenci
 
 <hr>
 
-## 2. Run the Terraform plan
+## 3. Run the Terraform plan
 ```
 cd ~/dataplex-oda/00-resources/terraform
 
@@ -41,7 +72,7 @@ terraform plan \
 
 <hr>
 
-## 3. Provision the environment
+## 4. Provision the environment
 ```
 cd ~/dataplex-oda/00-resources/terraform
 
@@ -60,23 +91,9 @@ terraform apply \
 
 <hr>
 
-## 4. Validate the environment setup
+## 5. Validate the environment setup
 
-The Cloud Composer and Dataproc Metastore creation run simultaneously and take about 30 minutes. You can validate the rest of the setup, in the interim.
-
-### 4.1. Network
-
-### 4.2. Storage
-
-### 4.3. Datasets
-
-### 4.4. Notebooks
-
-### 4.5. Scripts
-
-### 4.6. Dataproc Metastore
-
-### 4.7. Cloud Composer
+TODO: Link to validation page.
 
 <hr>
 
