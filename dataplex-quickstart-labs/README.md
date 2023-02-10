@@ -20,11 +20,10 @@ cp -r dataplex-labs-ak/dataplex-quickstart-labs ~/
 cd dataplex-quickstart-labs/
 ```
 
-3. Unzip some datasets
+### 3. Datasets setup
 
-Run in Cloud Shell-
+Run the shell script below that untars a few datasets.
 ```
-cd 00-resources/datasets/banking
 
 
 ```
