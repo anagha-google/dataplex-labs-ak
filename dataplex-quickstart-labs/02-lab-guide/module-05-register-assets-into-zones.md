@@ -314,7 +314,7 @@ gcloud dataplex assets create code-assets \
 --lake=$LAKE_NM \
 --zone=$MISC_RAW_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
---resource-name=projects/$PROJECT_ID/buckets/oda-raw-code-$PROJECT_NBR \
+--resource-name=projects/$PROJECT_ID/buckets/raw-code-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
 --display-name 'Code Assets'
@@ -350,14 +350,12 @@ gcloud dataplex assets create consumption-assets \
 --resource-name=projects/$PROJECT_ID/buckets/product-data-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
---display-name 'Prouct Assets'
+--display-name 'Product Assets'
 ```
 
 #### 2.5.3. Review the assets registered in the Dataplex UI
 
 Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-PRODUCT-ZONE -> Assets & familiarize yourself with the various tabs and entries.
-
-
 
 <hr>
 
