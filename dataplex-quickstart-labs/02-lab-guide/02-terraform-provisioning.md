@@ -63,8 +63,6 @@ terraform init
 ```
 cd ~/dataplex-quickstart-labs/00-resources/terraform
 
-terraform init
-
 terraform plan \
   -var="project_id=${PROJECT_ID}" \
   -var="project_number=${PROJECT_NBR}" \
