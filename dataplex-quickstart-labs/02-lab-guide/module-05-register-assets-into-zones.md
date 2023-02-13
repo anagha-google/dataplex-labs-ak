@@ -132,11 +132,10 @@ Review the various tabs of the asset registered.
 ![ASST-2](../01-images/04-02b.png)   
 <br><br>
 
-![ASST-3](../01-images/04-02c.png)   
+![ASST-3](../01-images/04-12c.png)   
 <br><br>
 
-![ASST-4](../01-images/04-02d.png)   
-<br><br>
+
 
 
 ### 1.7. In the Dataplex Assets UI, review the "entities" tab
