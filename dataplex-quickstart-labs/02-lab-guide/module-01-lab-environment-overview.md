@@ -39,7 +39,9 @@ gsutil ls
 
 The author's output-
 ```
-THIS IS INFORMATIONAL; The author's project number is 705495340985, that appears as suffix. 
+THIS IS INFORMATIONAL 
+(the author's project number is 705495340985, and therefore appears as suffix, your listing will reflect your project number)
+
 gs://curated-data-705495340985/
 gs://lab-spark-bucket-705495340985/
 gs://product-data-705495340985/
