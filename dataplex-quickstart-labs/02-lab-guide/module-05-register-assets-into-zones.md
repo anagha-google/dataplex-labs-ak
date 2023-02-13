@@ -215,7 +215,7 @@ gcloud dataplex assets create misc-datasets \
 --lake=$LAKE_NM \
 --zone=$DATA_CURATED_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
---resource-name=projects/$PROJECT_ID/buckets/oda-curated-data-$PROJECT_NBR \
+--resource-name=projects/$PROJECT_ID/buckets/curated-data-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
 --display-name 'Miscellaneous Datasets'
@@ -269,7 +269,7 @@ gcloud dataplex assets create notebooks \
 --lake=$LAKE_NM \
 --zone=$MISC_RAW_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
---resource-name=projects/$PROJECT_ID/buckets/oda-raw-notebook-$PROJECT_NBR \
+--resource-name=projects/$PROJECT_ID/buckets/raw-notebook-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
 --display-name 'Analytics Notebooks'
@@ -345,17 +345,17 @@ To register the notebook assets, we will merely register the buckets and the not
 gcloud dataplex assets create consumption-assets \
 --location=$LOCATION \
 --lake=$LAKE_NM \
---zone=$DATA_CONSUMPTION_ZONE_NM \
+--zone=$DATA_PRODUCT_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
---resource-name=projects/$PROJECT_ID/buckets/oda-consumption-data-$PROJECT_NBR \
+--resource-name=projects/$PROJECT_ID/buckets/product-data-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
---display-name 'Consumption Assets'
+--display-name 'Prouct Assets'
 ```
 
 #### 2.5.3. Review the assets registered in the Dataplex UI
 
-Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-CONSUMPTION-ZONE -> Assets & familiarize yourself with the various tabs and entries.
+Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-PRODUCT-ZONE -> Assets & familiarize yourself with the various tabs and entries.
 
 
 
