@@ -83,6 +83,8 @@ terraform plan \
 ```
 cd ~/dataplex-quickstart-labs/00-resources/terraform
 
+rm -rf dataplex-quickstart-lab.output
+
 terraform apply \
   -var="project_id=${PROJECT_ID}" \
   -var="project_number=${PROJECT_NBR}" \
@@ -93,7 +95,7 @@ terraform apply \
   -var="gcp_zone=${YOUR_GCP_ZONE}" \
   -var="gcp_multi_region=${YOUR_GCP_MULTI_REGION}" \
   -var="bq_connector_jar_gcs_uri=${BQ_CONNECTOR_JAR_GCS_URI}" \
-  --auto-approve
+  --auto-approve >> dataplex-quickstart-lab.output
 ```
 
 <hr>
