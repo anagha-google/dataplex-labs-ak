@@ -1,6 +1,6 @@
 # M3: Organize your enterprise assets into Lakes and Zones
 
-In this lab module, we will first go over concepts and then into the lab, trying out the concepts.
+In this lab module, we will first go over concepts and then into the lab, and try out the concepts.
 
 ## 1. Concepts
 
@@ -69,7 +69,7 @@ METASTORE_NM="lab-dpms-$PROJECT_NBR"
 LAKE_NM="oda-lake"
 DATA_RAW_ZONE_NM="oda-raw-zone"
 DATA_CURATED_ZONE_NM="oda-curated-zone"
-DATA_CONSUMPTION_ZONE_NM="oda-consumption-zone"
+DATA_PRODUCT_ZONE_NM="oda-product-zone"
 MISC_RAW_ZONE_NM="oda-misc-zone"
 ```
 
@@ -155,7 +155,7 @@ gcloud dataplex zones create ${DATA_CURATED_ZONE_NM} \
 
 Consumption:
 ```
-gcloud dataplex zones create ${DATA_CONSUMPTION_ZONE_NM} \
+gcloud dataplex zones create ${DATA_PRODUCT_ZONE_NM} \
 --lake=$LAKE_NM \
 --resource-location-type=MULTI_REGION \
 --location=$LOCATION \
@@ -171,7 +171,7 @@ gcloud dataplex zones create ${DATA_CONSUMPTION_ZONE_NM} \
 We will create a raw zone for the non-data assets-
 ```
 gcloud dataplex zones create ${MISC_RAW_ZONE_NM} --location=$LOCATION --lake=$LAKE_NM \
---resource-location-type=SINGLE_REGION --type=RAW --discovery-enabled --discovery-schedule="0 * * * *"
+--resource-location-type=SINGLE_REGION --type=RAW 
 ```
 
 #### 2.5.3. Pictorial of zones created
