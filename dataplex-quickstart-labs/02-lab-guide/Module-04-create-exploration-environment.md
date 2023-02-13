@@ -1,5 +1,5 @@
 
-# Creating a Dataplex Exploration Environment - for Spark SQL and Jupyter notebook based metadata and data exploration
+# M4: Create a Dataplex Exploration Environment - for Spark SQL and Jupyter notebook based metadata and data exploration
 
 ## 1. About Data Exploration Workbench
 
