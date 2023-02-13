@@ -26,7 +26,7 @@ UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 Copy the PySpark scripts from local to the code bucket (in case you modified anything) -
 ```
 cd ~/dataplex-oda/00-resources/scripts/pyspark/
-gsutil cp chicago-crimes-analytics/* gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/
+gsutil cp chicago-crimes-analytics/* gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/
 
 ```
 
@@ -37,7 +37,7 @@ gsutil cp chicago-crimes-analytics/* gs://oda-raw-code-${PROJECT_NBR}/pyspark/ch
 ```
 PIPELINE_ID=$RANDOM
 
-gcloud dataproc batches submit pyspark gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/curate_crimes.py \
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/curate_crimes.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch chicago-crimes-curate-$PIPELINE_ID \
@@ -55,13 +55,13 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-year-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Year'
-reportDirGcsURI="gs://oda-consumption-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://oda-product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT cast(case_year as int) case_year,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_year;'
 reportPartitionCount=1
-reportTableFQN="oda_consumption_zone.crimes_by_year_spark"
+reportTableFQN="oda_product_zone.crimes_by_year_spark"
 reportTableDDL="CREATE TABLE IF NOT EXISTS ${reportTableFQN}(case_year int, crime_count long) STORED AS PARQUET LOCATION \"$reportDirGcsURI\""
 
-gcloud dataproc batches submit pyspark gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch $dataprocServerlessSparkBatchID \
@@ -79,13 +79,13 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-month-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Month'
-reportDirGcsURI="gs://oda-consumption-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://oda-product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT case_month,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_month;'
 reportPartitionCount=1
-reportTableFQN="oda_consumption_zone.crimes_by_month_spark"
+reportTableFQN="oda_product_zone.crimes_by_month_spark"
 reportTableDDL="CREATE TABLE IF NOT EXISTS ${reportTableFQN}(case_month string, crime_count long) STORED AS PARQUET LOCATION \"$reportDirGcsURI\""
 
-gcloud dataproc batches submit pyspark gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch $dataprocServerlessSparkBatchID \
@@ -103,13 +103,13 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-day-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Day'
-reportDirGcsURI="gs://oda-consumption-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT case_day_of_week,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_day_of_week;'
 reportPartitionCount=1
-reportTableFQN="oda_consumption_zone.crimes_by_day_spark"
+reportTableFQN="oda_product_zone.crimes_by_day_spark"
 reportTableDDL="CREATE TABLE IF NOT EXISTS ${reportTableFQN}(case_day_of_week string, crime_count long) STORED AS PARQUET LOCATION \"$reportDirGcsURI\""
 
-gcloud dataproc batches submit pyspark gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch $dataprocServerlessSparkBatchID \
@@ -127,14 +127,14 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-hour-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Hour'
-reportDirGcsURI="gs://oda-consumption-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT CAST(case_hour_of_day AS int) case_hour_of_day,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_hour_of_day;'
 reportPartitionCount=1
-reportTableFQN="oda_consumption_zone.crimes_by_hour_spark"
+reportTableFQN="oda_product_zone.crimes_by_hour_spark"
 reportTableDDL="CREATE TABLE IF NOT EXISTS ${reportTableFQN}(case_hour_of_day int, crime_count long) STORED AS PARQUET LOCATION \"$reportDirGcsURI\""
 
 
-gcloud dataproc batches submit pyspark gs://oda-raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch $dataprocServerlessSparkBatchID \
