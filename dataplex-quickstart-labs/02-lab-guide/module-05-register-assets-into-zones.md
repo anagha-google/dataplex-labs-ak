@@ -114,7 +114,7 @@ gcloud dataplex assets create $CRIMES_ASSET \
 --lake=$LAKE_NM \
 --zone=$DATA_RAW_ZONE_NM \
 --resource-type=BIGQUERY_DATASET \
---resource-name=projects/$PROJECT_ID/datasets/$CRIMES_DS \
+--resource-name=projects/$PROJECT_ID/datasets/$CRIMES_STAGING_DS \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
 --display-name 'Chicago Crimes'
