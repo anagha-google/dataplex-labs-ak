@@ -142,10 +142,10 @@ Review the various tabs of the asset registered.
 
 The physical BigQuery table is called an entity in this case, and is listed.
 
-![ASST-5](../01-images/04-03.png)   
+![ASST-5](../01-images/04-13.png)   
 <br><br>
 
-![ASST-6](../01-images/04-03b.png)   
+![ASST-6](../01-images/04-13b.png)   
 <br><br>
 
 ## 2. Lab B: Register assets in Google Cloud Storage
