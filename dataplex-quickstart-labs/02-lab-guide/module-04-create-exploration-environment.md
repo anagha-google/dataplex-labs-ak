@@ -134,7 +134,7 @@ Note the libraries added to the enviorment template for bootstrapping.
 
 
 <hr>
-This concludes the lab module. In the next module, we will learn how to use the Spark SQL workbench.
+This concludes the lab module. Proceed to the next module.
 <hr>
 
 
