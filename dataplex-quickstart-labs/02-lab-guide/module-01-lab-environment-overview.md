@@ -8,6 +8,10 @@ Please read the narrative of the lab in the landing page for the quickstart lab 
 
 <hr>
 
+## APIs enabled
+
+<hr>
+
 ## Services provisioned
 
 <hr>
@@ -265,11 +269,22 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ --> Automatically created buck
 
 ## What's in BigQuery?
 
+Nothing is provisioned at the onset of the lab.
+
 <hr>
 
 
 ## What's in Cloud Composer?
 
+1. A Cloud Composer environment is created
+2. Two DAGs are placed in the cloud composer DAG directory
+
+Here is the author's listing-
+```
+- THIS IS INFORMATIONAL -
+
+
+```
 
 <hr>
 
