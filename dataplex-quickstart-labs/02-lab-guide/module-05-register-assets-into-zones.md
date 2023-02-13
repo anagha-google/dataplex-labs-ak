@@ -1,5 +1,5 @@
 
-# Register Assets into your Dataplex Lake Zones
+# M5: Register Assets into your Dataplex Lake Zones
 
 In the previous module, we created a Dataplex Lake with a Dataproc Metastore Service, and Dataplex Zones with discovery enabled. <br>
 In this module, we will register assets into the Dataplex Zones created. 
