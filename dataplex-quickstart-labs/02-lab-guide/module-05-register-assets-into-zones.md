@@ -99,7 +99,7 @@ SELECT * FROM `oda_crimes_staging_ds.crimes_staging` LIMIT 1000
 ```
 
 Author's output:
-![LOAD](../01-images/04-01.png)   
+![LOAD](../01-images/04-11.png)   
 <br><br>
 
 
