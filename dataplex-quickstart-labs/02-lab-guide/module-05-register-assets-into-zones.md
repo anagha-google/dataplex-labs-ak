@@ -29,7 +29,7 @@ DATA_PRODUCT_ZONE_NM="oda-product-zone"
 MISC_RAW_ZONE_NM="oda-misc-zone"
 
 CRIMES_ASSET="chicago-crimes"
-CRIMES_DS="oda_crimes_ds"
+CRIMES_STAGING_DS="oda_crimes_staging_ds"
 
 ```
 
@@ -61,7 +61,27 @@ Note that these datasets were automatically created and each of them map to a Da
 ```
 bq --location=$LOCATION_MULTI mk \
     --dataset \
-    $PROJECT_ID:$CRIMES_DS
+    $PROJECT_ID:$CRIMES_STAGING_DS
+```
+
+Lets list BQ datasets again-
+```
+bq ls --format=pretty
+```
+
+You should see the new dataset created-
+
+Author's results-
+```
++-----------------------+
+|       datasetId       |
++-----------------------+
+| oda_crimes_staging_ds | <-- We just created this
+| oda_curated_zone      | <-- Auto-created by Dataplex when we created zones
+| oda_misc_zone         | <-- Auto-created by Dataplex when we created zones
+| oda_product_zone      | <-- Auto-created by Dataplex when we created zones
+| oda_raw_zone          | <-- Auto-created by Dataplex when we created zones
++-----------------------+
 ```
 
 ### 1.4. Load some data into the newly created "crimes" BigQuery dataset from a BigQuery public dataset
@@ -70,12 +90,12 @@ Paste this command in Cloud Shell to create a table-
 ```
 bq --location=$LOCATION_MULTI query \
 --use_legacy_sql=false \
-"CREATE OR REPLACE TABLE $CRIMES_DS.crimes_raw AS SELECT * FROM bigquery-public-data.chicago_crime.crime"
+"CREATE OR REPLACE TABLE $CRIMES_STAGING_DS.crimes_staging AS SELECT * FROM bigquery-public-data.chicago_crime.crime"
 ```
 
 Reload the BQ UI, you should see the table created. Query the table-
 ```
-SELECT * FROM `oda_crimes_ds.crimes_raw` LIMIT 1000
+SELECT * FROM `oda_crimes_staging_ds.crimes_staging` LIMIT 1000
 ```
 
 Author's output:
