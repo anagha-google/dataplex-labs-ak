@@ -125,13 +125,13 @@ This takes about 2 minutes.
 
 <hr>
 
-### 2.5. Create zones 
+### 2.5. Create zones with the lake
 
-#### 2.5.1. for the structured data assets
+#### 2.5.1. Create zones for the structured data assets
 
-We will create a zone each for raw, curated and consumption, for the structured data assets-
+We will create a zone each for raw, curated and data product, for the structured data assets, with discovery enabled.
 
-Raw:
+##### Raw Zone
 ```
 gcloud dataplex zones create ${DATA_RAW_ZONE_NM} \
 --lake=$LAKE_NM \
@@ -142,7 +142,7 @@ gcloud dataplex zones create ${DATA_RAW_ZONE_NM} \
 --discovery-schedule="0 * * * *"
 ```
 
-Curated:
+##### Curated Zone
 ```
 gcloud dataplex zones create ${DATA_CURATED_ZONE_NM} \
 --lake=$LAKE_NM \
@@ -153,7 +153,7 @@ gcloud dataplex zones create ${DATA_CURATED_ZONE_NM} \
 --discovery-schedule="0 * * * *"
 ```
 
-Consumption:
+##### Product Zone
 ```
 gcloud dataplex zones create ${DATA_PRODUCT_ZONE_NM} \
 --lake=$LAKE_NM \
@@ -168,7 +168,7 @@ gcloud dataplex zones create ${DATA_PRODUCT_ZONE_NM} \
 
 #### 2.5.2. Create a zone for the non-data assets 
 
-We will create a raw zone for the non-data assets-
+We will create a raw zone for the non-data assets, without discovery, as they are mostly code, and therefore unstructured.
 ```
 gcloud dataplex zones create ${MISC_RAW_ZONE_NM} --location=$LOCATION --lake=$LAKE_NM \
 --resource-location-type=SINGLE_REGION --type=RAW 
