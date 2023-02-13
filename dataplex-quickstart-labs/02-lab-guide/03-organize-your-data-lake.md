@@ -1,4 +1,4 @@
-# Organize your enterprise assets into Lakes and Zones
+# M3: Organize your enterprise assets into Lakes and Zones
 
 In this lab module, we will first go over concepts and then into the lab, trying out the concepts.
 
