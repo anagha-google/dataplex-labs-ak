@@ -41,7 +41,7 @@ CREATE OR REPLACE TABLE
 SELECT
   *
 FROM
-  oda_crimes_ds.crimes_raw;
+  oda_crimes_staging_ds.crimes_staging;
 ```
 
 <hr>
@@ -76,7 +76,7 @@ The SQL for this is below, lets run it in the BigQuery UI:
 
 ```
 CREATE OR REPLACE TABLE
-  oda_consumption_zone.chicago_crimes_by_year AS
+  oda_product_zone.chicago_crimes_by_year AS
 SELECT
   case_year,
   COUNT(*) AS crime_count
@@ -96,7 +96,7 @@ The SQL for this is below, lets run it in the BigQuery UI:
 
 ```
 CREATE OR REPLACE TABLE
-  oda_consumption_zone.chicago_crimes_by_month AS
+  oda_product_zone.chicago_crimes_by_month AS
 SELECT
   case_month AS month,
   COUNT(*) AS crime_count
@@ -116,7 +116,7 @@ The SQL for this is below, lets run it in the BigQuery UI:
 
 ```
 CREATE OR REPLACE TABLE
-  oda_consumption_zone.chicago_crimes_by_day AS
+  oda_product_zone.chicago_crimes_by_day AS
 SELECT
   case_day_of_week_name AS day,
   COUNT(*) AS crime_count
@@ -136,7 +136,7 @@ The SQL for this is below, lets run it in the BigQuery UI:
 
 ```
 CREATE OR REPLACE TABLE
-  oda_consumption_zone.chicago_crimes_by_hour AS
+  oda_product_zone.chicago_crimes_by_hour AS
 SELECT
   case_hour AS hour_of_day,
   COUNT(*) AS crime_count
