@@ -246,6 +246,20 @@ THIS IS INFORMATIONAL
 
 ```
 
+### The rest of the buckets
+```
+- THIS IS INFORMATIONAL -
+
+
+gs://lab-spark-bucket-705495340985/ --> For use by Dataproc Serverless Spark
+
+gs://raw-model-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
+gs://raw-model-metrics-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
+gs://raw-model-mleap-bundle-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
+
+gs://us-central1-oda-70549534098-275215ea-bucket/ --> Automatically created bucket by Cloud Composer service
+```
+
 <hr>
 
 
