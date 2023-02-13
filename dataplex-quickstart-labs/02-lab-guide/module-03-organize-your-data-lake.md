@@ -99,12 +99,12 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA
 
 <hr>
 
-### 2.3. Enable Data Catalog Sync in the Dataproc Metastore Service
+### 2.3. Enable Data Catalog Sync in the Dataproc Metastore Service if its not already enabled
 
-We created a Dataproc Metastore Service with GRPC endpoint via Terraform. We will enable the Data Catalog sync so that databases and tables metadata are automatically hydrated in Data Catalog. The update takes about 10 minutes or less.
+We created a Dataproc Metastore Service with GRPC endpoint via Terraform. We will enable the Data Catalog sync so that databases and tables metadata are automatically hydrated in Data Catalog. The update takes about 15 minutes or less.
 
 
-Paste this in cloud shell-
+Paste this in cloud shell only if the Catalog sync is not enabled-
 ```
 gcloud beta metastore services update ${METASTORE_NM} --data-catalog-sync --location=$LOCATION 
 ```
