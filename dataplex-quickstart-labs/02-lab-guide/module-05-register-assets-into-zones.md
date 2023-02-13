@@ -270,8 +270,6 @@ gcloud dataplex assets create notebooks \
 --zone=$MISC_RAW_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
 --resource-name=projects/$PROJECT_ID/buckets/raw-notebook-$PROJECT_NBR \
---discovery-enabled \
---discovery-schedule="0 * * * *" \
 --display-name 'Analytics Notebooks'
 ```
 
@@ -315,8 +313,6 @@ gcloud dataplex assets create code-assets \
 --zone=$MISC_RAW_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
 --resource-name=projects/$PROJECT_ID/buckets/raw-code-$PROJECT_NBR \
---discovery-enabled \
---discovery-schedule="0 * * * *" \
 --display-name 'Code Assets'
 ```
 
