@@ -71,7 +71,7 @@ METASTORE_NM="lab-dpms-$PROJECT_NBR"
 LAKE_NM="oda-lake"
 DATA_RAW_ZONE_NM="oda-raw-zone"
 DATA_CURATED_ZONE_NM="oda-curated-zone"
-DATA_CONSUMPTION_ZONE_NM="oda-consumption-zone"
+DATA_PRODUCT_ZONE_NM="oda-product-zone"
 MISC_RAW_ZONE_NM="oda-misc-zone"
 
 CRIMES_ASSET="chicago-crimes"
