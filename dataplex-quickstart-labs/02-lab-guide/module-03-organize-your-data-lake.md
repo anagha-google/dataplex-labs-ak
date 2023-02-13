@@ -2,6 +2,14 @@
 
 In this lab module, we will first go over concepts and then into the lab, and try out the concepts.
 
+### Prerequisites
+Completion of prior modules
+
+### Approximate duration
+20 minutes or less
+
+<hr>
+
 ## 1. Concepts
 
 ### 1.1. Data Mesh
@@ -93,7 +101,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA
 
 ### 2.3. Enable Data Catalog Sync in the Dataproc Metastore Service
 
-We created a Dataproc Metastore Service with GRPC endpoint via Terraform. We will enable the Data Catalog sync so that databases and tables metadata are automatically hydrated in Data Catalog.
+We created a Dataproc Metastore Service with GRPC endpoint via Terraform. We will enable the Data Catalog sync so that databases and tables metadata are automatically hydrated in Data Catalog. The update takes about 10 minutes or less.
 
 
 Paste this in cloud shell-
