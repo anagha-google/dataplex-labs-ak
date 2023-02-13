@@ -55,8 +55,11 @@ gs://us-central1-oda-70549534098-275215ea-bucket/
 ```
 
 ### Raw Datasets
+
+List the contents of the raw data bucket in Cloud Shell as shown below-
+
 ```
-gsutil ls gs://raw-data-$PROJECT_NBR/
+gsutil ls -r gs://raw-data-$PROJECT_NBR/
 ```
 
 This is what it should look like-
@@ -136,6 +139,9 @@ THIS IS INFORMATIONAL
 ```
 
 ### Curated Datasets
+
+List the contents of the curated data bucket in Cloud Shell as shown below-
+
 ```
 gsutil ls gs://curated-data-$PROJECT_NBR/
 ```
@@ -163,18 +169,82 @@ THIS IS INFORMATIONAL
 ```
 
 ### Notebooks
+
+List the contents of the notebook bucket in Cloud Shell as shown below-
+
 ```
+gsutil ls gs://raw-notebook-$PROJECT_NBR/
+```
+
+This is what it should look like-
+```
+THIS IS INFORMATIONAL
+
+
+-CHICAGO CRIMES ANALYSIS STARTER NOTEBOOK-
+------------------------------------------
+
+├── chicago-crimes-analysis
+│   └── chicago-crimes-analytics.ipynb
+├── icecream-sales-forecasting
+│   └── icecream-sales-forecasting.ipynb
+
+-RETAIL TRANSACTIONS STARTER NOTEBOOK-
+--------------------------------------
+
+├── retail-transactions-anomaly-detection
+│   └── retail-transactions-anomaly-detection.ipynb
+
+-TELCO CUSTOMER CHURN PREDICTION STARTER NOTEBOOK-
+--------------------------------------------------
+
+└── telco-customer-churn-prediction
+    ├── batch_scoring.ipynb
+    ├── hyperparameter_tuning.ipynb
+    ├── model_training.ipynb
+    └── preprocessing.ipynb
+
 
 ```
 
 ### Scripts
-```
+
+List the contents of the code bucket in Cloud Shell as shown below-
 
 ```
+gsutil ls gs://raw-notebook-$PROJECT_NBR/
+```
+
+This is what it should look like-
+```
+THIS IS INFORMATIONAL
 
 
+-AIRFLOW DAG STARTER SCRIPTS-
+------------------------------------------
+
+├── airflow
+│   └── chicago-crimes-analytics
+│       ├── bq_lineage_pipeline.py
+│       └── spark_custom_lineage_pipeline.py
+
+-PYSPARK STARTER SCRIPTS-
+--------------------------------------
+
+├── pyspark
+│   └── chicago-crimes-analytics
+│       ├── crimes_report.py
+│       └── curate_crimes.py
+
+-SPARK SQL STARTER SCRIPTS-
+--------------------------------------------------
+
+└── spark-sql
+    └── retail-transactions-anomaly-detection
+        └── retail-transactions-anomaly-detection.sql
 
 
+```
 
 <hr>
 
