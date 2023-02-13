@@ -28,28 +28,29 @@ zone                        = "${var.gcp_zone}"
 umsa                        = "lab-sa"
 umsa_fqn                    = "${local.umsa}@${local.project_id}.iam.gserviceaccount.com"
 
-dpms_nm                     = "lab-dpms-${local.project_nbr}"
-dew_spark_bucket            = "lab-spark-bucket-${local.project_nbr}"
-dew_spark_bucket_fqn        = "gs://dew-lab-spark-${local.project_nbr}"
-dew_vpc_nm                  = "lab-vpc-${local.project_nbr}"
-dew_subnet_nm               = "lab-snet"
-dew_subnet_cidr             = "10.0.0.0/16"
+lab_dpms_nm                 = "lab-dpms-${local.project_nbr}"
+lab_spark_bucket            = "lab-spark-bucket-${local.project_nbr}"
+lab_spark_bucket_fqn        = "gs://dew-lab-spark-${local.project_nbr}"
+lab_vpc_nm                  = "lab-vpc-${local.project_nbr}"
+lab_subnet_nm               = "lab-snet"
+lab_subnet_cidr             = "10.0.0.0/16"
 
-dew_data_bucket_raw         = "oda-raw-data-${local.project_nbr}"
-dew_code_bucket             = "oda-raw-code-${local.project_nbr}"
-dew_notebook_bucket         = "oda-raw-notebook-${local.project_nbr}"
-dew_model_bucket            = "oda-raw-model-${local.project_nbr}"
-dew_bundle_bucket           = "oda-raw-model-mleap-bundle-${local.project_nbr}"
-dew_metrics_bucket          = "oda-raw-model-metrics-${local.project_nbr}"
-dew_scheduled_output_bucket = "oda-scheduled-runs-output-${local.project_nbr}"
+lab_data_bucket_raw         = "raw-data-${local.project_nbr}"
+lab_code_bucket             = "raw-code-${local.project_nbr}"
+lab_notebook_bucket         = "raw-notebook-${local.project_nbr}"
+lab_model_bucket            = "raw-model-${local.project_nbr}"
+lab_bundle_bucket           = "raw-model-mleap-bundle-${local.project_nbr}"
+lab_metrics_bucket          = "raw-model-metrics-${local.project_nbr}"
+lab_scheduled_output_bucket = "scheduled-runs-output-${local.project_nbr}"
 
-dew_data_bucket_curated     = "oda-curated-data-${local.project_nbr}"
-dew_data_bucket_consumption = "oda-consumption-data-${local.project_nbr}"
+lab_data_bucket_curated     = "curated-data-${local.project_nbr}"
+lab_data_bucket_product = "product-data-${local.project_nbr}"
 
 CC_GMSA_FQN                 = "service-${local.project_nbr}@cloudcomposer-accounts.iam.gserviceaccount.com"
 GCE_GMSA_FQN                = "${local.project_nbr}-compute@developer.gserviceaccount.com"
 CLOUD_COMPOSER2_IMG_VERSION = "${var.cloud_composer_image_version}"
 bq_connector_jar_gcs_uri    = "${var.bq_connector_jar_gcs_uri}"
+
 }
 
 /******************************************
@@ -334,15 +335,15 @@ resource "time_sleep" "sleep_after_identities_permissions" {
 module "vpc_creation" {
   source                                 = "terraform-google-modules/network/google"
   project_id                             = local.project_id
-  network_name                           = local.dew_vpc_nm
+  network_name                           = local.lab_vpc_nm
   routing_mode                           = "REGIONAL"
 
   subnets = [
     {
-      subnet_name           = "${local.dew_subnet_nm}"
-      subnet_ip             = "${local.dew_subnet_cidr}"
+      subnet_name           = "${local.lab_subnet_nm}"
+      subnet_ip             = "${local.lab_subnet_cidr}"
       subnet_region         = "${local.location}"
-      subnet_range          = local.dew_subnet_cidr
+      subnet_range          = local.lab_subnet_cidr
       subnet_private_access = true
     }
   ]
@@ -359,9 +360,9 @@ module "vpc_creation" {
 resource "google_compute_firewall" "allow_intra_snet_ingress_to_any" {
   project   = local.project_id 
   name      = "allow-intra-snet-ingress-to-any"
-  network   = local.dew_vpc_nm
+  network   = local.lab_vpc_nm
   direction = "INGRESS"
-  source_ranges = [local.dew_subnet_cidr]
+  source_ranges = [local.lab_subnet_cidr]
   allow {
     protocol = "all"
   }
@@ -387,9 +388,9 @@ resource "time_sleep" "sleep_after_network_and_firewall_creation" {
 9. Create Storage bucket 
  *****************************************/
 
-resource "google_storage_bucket" "dew_spark_bucket_creation" {
+resource "google_storage_bucket" "lab_spark_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_spark_bucket
+  name                              = local.lab_spark_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -398,9 +399,9 @@ resource "google_storage_bucket" "dew_spark_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_data_bucket_raw_creation" {
+resource "google_storage_bucket" "lab_data_bucket_raw_creation" {
   project                           = local.project_id 
-  name                              = local.dew_data_bucket_raw
+  name                              = local.lab_data_bucket_raw
   location                          = local.location_multi
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -409,9 +410,9 @@ resource "google_storage_bucket" "dew_data_bucket_raw_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_code_bucket_creation" {
+resource "google_storage_bucket" "lab_code_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_code_bucket
+  name                              = local.lab_code_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -420,9 +421,9 @@ resource "google_storage_bucket" "dew_code_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_notebook_bucket_creation" {
+resource "google_storage_bucket" "lab_notebook_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_notebook_bucket
+  name                              = local.lab_notebook_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -431,9 +432,9 @@ resource "google_storage_bucket" "dew_notebook_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_model_bucket_creation" {
+resource "google_storage_bucket" "lab_model_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_model_bucket
+  name                              = local.lab_model_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -442,9 +443,9 @@ resource "google_storage_bucket" "dew_model_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_metrics_bucket_creation" {
+resource "google_storage_bucket" "lab_metrics_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_metrics_bucket
+  name                              = local.lab_metrics_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -453,9 +454,9 @@ resource "google_storage_bucket" "dew_metrics_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_bundle_bucket_creation" {
+resource "google_storage_bucket" "lab_bundle_bucket_creation" {
   project                           = local.project_id 
-  name                              = local.dew_bundle_bucket
+  name                              = local.lab_bundle_bucket
   location                          = local.location
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -464,9 +465,9 @@ resource "google_storage_bucket" "dew_bundle_bucket_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_data_bucket_curated_creation" {
+resource "google_storage_bucket" "lab_data_bucket_curated_creation" {
   project                           = local.project_id 
-  name                              = local.dew_data_bucket_curated
+  name                              = local.lab_data_bucket_curated
   location                          = local.location_multi
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -475,9 +476,9 @@ resource "google_storage_bucket" "dew_data_bucket_curated_creation" {
   ]
 }
 
-resource "google_storage_bucket" "dew_data_bucket_consumption_creation" {
+resource "google_storage_bucket" "lab_data_bucket_product_creation" {
   project                           = local.project_id 
-  name                              = local.dew_data_bucket_consumption
+  name                              = local.lab_data_bucket_product
   location                          = local.location_multi
   uniform_bucket_level_access       = true
   force_destroy                     = true
@@ -495,15 +496,15 @@ dependencies having not completed
 resource "time_sleep" "sleep_after_bucket_creation" {
   create_duration = "60s"
   depends_on = [
-    google_storage_bucket.dew_data_bucket_raw_creation,
-    google_storage_bucket.dew_code_bucket_creation,
-    google_storage_bucket.dew_notebook_bucket_creation,
-    google_storage_bucket.dew_spark_bucket_creation,
-    google_storage_bucket.dew_model_bucket_creation,
-    google_storage_bucket.dew_metrics_bucket_creation,
-    google_storage_bucket.dew_bundle_bucket_creation,
-    google_storage_bucket.dew_data_bucket_curated_creation,
-    google_storage_bucket.dew_data_bucket_consumption_creation
+    google_storage_bucket.lab_data_bucket_raw_creation,
+    google_storage_bucket.lab_code_bucket_creation,
+    google_storage_bucket.lab_notebook_bucket_creation,
+    google_storage_bucket.lab_spark_bucket_creation,
+    google_storage_bucket.lab_model_bucket_creation,
+    google_storage_bucket.lab_metrics_bucket_creation,
+    google_storage_bucket.lab_bundle_bucket_creation,
+    google_storage_bucket.lab_data_bucket_curated_creation,
+    google_storage_bucket.lab_data_bucket_product_creation
 
   ]
 }
@@ -529,7 +530,7 @@ resource "google_storage_bucket_object" "upload_to_gcs_notebooks" {
   for_each = var.notebooks_to_upload
   name     = each.value
   source   = "${path.module}/${each.key}"
-  bucket   = "${local.dew_notebook_bucket}"
+  bucket   = "${local.lab_notebook_bucket}"
   depends_on = [
     time_sleep.sleep_after_bucket_creation
   ]
@@ -539,10 +540,26 @@ resource "google_storage_bucket_object" "upload_to_gcs_notebooks" {
 variable "csv_datasets_to_upload" {
   type = map(string)
   default = {
-    
-    "../datasets/icecream-sales-forecasting/icecream_sales.csv" = "icecream-sales-forecasting/icecream_sales.csv",
-    "../datasets/telco-customer-churn-prediction/customer_churn_score_data.csv" = "telco-customer-churn-prediction/customer_churn_score_data.csv",
-    "../datasets/telco-customer-churn-prediction/customer_churn_train_data.csv" = "telco-customer-churn-prediction/customer_churn_train_data.csv"
+    "../datasets/cell-tower-anomaly-detection/reference_data/ctad_service_threshold_ref.csv"="cell-tower-anomaly-detection/reference_data/ctad_service_threshold_ref.csv",
+    "../datasets/cell-tower-anomaly-detection/transactions_data/ctad_transactions.csv"="cell-tower-anomaly-detection/transactions_data/ctad_transactions.csv",
+    "../datasets/icecream-sales-forecasting/isf_icecream_sales_transactions.csv"="icecream-sales-forecasting/isf_icecream_sales_transactions.csv",
+    "../datasets/telco-customer-churn-prediction/machine_learning_scoring/tccp_customer_churn_score_candidates.csv"="telco-customer-churn-prediction/machine_learning_scoring/tccp_customer_churn_score_candidates.csv",
+    "../datasets/telco-customer-churn-prediction/machine_learning_training/tccp_customer_churn_train_candidates.csv"="telco-customer-churn-prediction/machine_learning_training/tccp_customer_churn_train_candidates.csv",
+    "../datasets/chicago-crimes/reference_data/crimes_chicago_iucr_ref.csv"="chicago-crimes/reference_data/crimes_chicago_iucr_ref.csv",
+    "../datasets/banking/credit_card_reference_data_raw/card_read_type/card_read_type.csv"="banking/credit_card_reference_data_raw/card_read_type/card_read_type.csv",
+    "../datasets/banking/credit_card_reference_data_raw/card_type_facts/card_type_facts.csv"="banking/credit_card_reference_data_raw/card_type_facts/card_type_facts.csv",
+    "../datasets/banking/credit_card_reference_data_raw/currency/currency.csv"="banking/credit_card_reference_data_raw/currency/currency.csv",
+    "../datasets/banking/credit_card_reference_data_raw/events_type/events_type.csv"="banking/credit_card_reference_data_raw/events_type/events_type.csv",
+    "../datasets/banking/credit_card_reference_data_raw/origination_code/origination_code.csv"="banking/credit_card_reference_data_raw/origination_code/origination_code.csv",
+    "../datasets/banking/credit_card_reference_data_raw/payment_methods/payment_methods.csv"="banking/credit_card_reference_data_raw/payment_methods/payment_methods.csv",
+    "../datasets/banking/credit_card_reference_data_raw/signature/signature.csv"="banking/credit_card_reference_data_raw/signature/signature.csv",
+    "../datasets/banking/credit_card_reference_data_raw/swiped_code/swiped_code.csv"="banking/credit_card_reference_data_raw/swiped_code/swiped_code.csv",
+    "../datasets/banking/credit_card_reference_data_raw/trans_type/trans_type.csv"="banking/credit_card_reference_data_raw/trans_type/trans_type.csv",
+    "../datasets/banking/credit_card_transactions_raw/credit_card_authorizations/date=2022-05-01/credit_card_auth_transactions.csv"="banking/credit_card_transactions_raw/credit_card_authorizations/date=2022-05-01/credit_card_auth_transactions.csv",
+    "../datasets/banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv"="banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv",
+    "../datasets/banking/customers_raw/customers/date=2022-05-01/customers.csv"="banking/customers_raw/customers/date=2022-05-01/customers.csv",
+    "../datasets/banking/merchants_raw/mcc_codes/date=2022-05-01/mcc_codes.csv"="banking/merchants_raw/mcc_codes/date=2022-05-01/mcc_codes.csv",
+    "../datasets/banking/merchants_raw/merchants/date=2022-05-01/merchants.csv"="banking/merchants_raw/merchants/date=2022-05-01/merchants.csv"
   }
 }
 
@@ -550,7 +567,7 @@ resource "google_storage_bucket_object" "upload_to_gcs_datasets_raw" {
   for_each = var.csv_datasets_to_upload
   name     = each.value
   source   = "${path.module}/${each.key}"
-  bucket   = "${local.dew_data_bucket_raw}"
+  bucket   = "${local.lab_data_bucket_raw}"
   depends_on = [
     time_sleep.sleep_after_bucket_creation
   ]
@@ -560,7 +577,12 @@ resource "google_storage_bucket_object" "upload_to_gcs_datasets_raw" {
 variable "parquet_datasets_to_upload" {
   type = map(string)
   default = {
-    "../datasets/retail-transactions-anomaly-detection/sales.parquet" = "retail-transactions-anomaly-detection/sales.parquet"  
+    "../datasets/cell-tower-anomaly-detection/master_data/ctad_part-00000-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet"="cell-tower-anomaly-detection/master_data/ctad_part-00000-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet",
+    "../datasets/cell-tower-anomaly-detection/master_data/ctad_part-00001-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet"="cell-tower-anomaly-detection/master_data/ctad_part-00001-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet",
+    "../datasets/cell-tower-anomaly-detection/master_data/ctad_part-00002-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet"="cell-tower-anomaly-detection/master_data/ctad_part-00002-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet",
+    "../datasets/cell-tower-anomaly-detection/master_data/ctad_part-00003-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet"="cell-tower-anomaly-detection/master_data/ctad_part-00003-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet"
+    "../datasets/retail-transactions-anomaly-detection/rtad_sales.parquet"="retail-transactions-anomaly-detection/rtad_sales.parquet"
+
   }
 }
 
@@ -568,7 +590,7 @@ resource "google_storage_bucket_object" "upload_to_gcs_datasets_curated" {
   for_each = var.parquet_datasets_to_upload
   name     = each.value
   source   = "${path.module}/${each.key}"
-  bucket   = "${local.dew_data_bucket_curated}"
+  bucket   = "${local.lab_data_bucket_curated}"
   depends_on = [
     time_sleep.sleep_after_bucket_creation
   ]
@@ -579,11 +601,12 @@ variable "code_to_upload" {
   type = map(string)
   default = {
     "../scripts/spark-sql/retail-transactions-anomaly-detection/retail-transactions-anomaly-detection.sql" = "spark-sql/retail-transactions-anomaly-detection/retail-transactions-anomaly-detection.sql"
+    
     "../scripts/pyspark/chicago-crimes-analytics/curate_crimes.py" = "pyspark/chicago-crimes-analytics/curate_crimes.py"
-    "../scripts/pyspark/chicago-crimes-analytics/crimes_by_year.py" = "pyspark/chicago-crimes-analytics/crimes_by_year.py"
-    "../scripts/pyspark/chicago-crimes-analytics/crimes_by_year_and_type.py" = "pyspark/chicago-crimes-analytics/crimes_by_year_and_type.py"
+    "../scripts/pyspark/chicago-crimes-analytics/crimes_report.py" = "pyspark/chicago-crimes-analytics/crimes_report.py"
+
     "../scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py" = "airflow/chicago-crimes-analytics/bq_lineage_pipeline.py"
-    "../scripts/airflow/chicago-crimes-analytics/spark_lineage_pipeline.py" = "airflow/chicago-crimes-analytics/spark_lineage_pipeline.py"
+    "../scripts/airflow/chicago-crimes-analytics/spark_custom_lineage_pipeline.py" = "airflow/chicago-crimes-analytics/spark_custom_lineage_pipeline.py"
   }
 }
 
@@ -591,7 +614,7 @@ resource "google_storage_bucket_object" "upload_to_gcs_code_raw" {
   for_each = var.code_to_upload
   name     = each.value
   source   = "${path.module}/${each.key}"
-  bucket   = "${local.dew_code_bucket}"
+  bucket   = "${local.lab_code_bucket}"
   depends_on = [
     time_sleep.sleep_after_bucket_creation
   ]
@@ -616,13 +639,14 @@ resource "time_sleep" "sleep_after_network_and_storage_steps" {
   ]
 }
 
+
 /******************************************
 11. Dataproc Metastore with gRPC endpoint
 ******************************************/
 
 resource "google_dataproc_metastore_service" "datalake_metastore" {
   provider      = google-beta
-  service_id    = local.dpms_nm
+  service_id    = local.lab_dpms_nm
   location      = local.location
   tier          = "DEVELOPER"
 
@@ -666,14 +690,14 @@ resource "google_composer_environment" "create_cloud_composer_env" {
         AIRFLOW_VAR_PROJECT_NBR     = "${local.project_nbr}"
         AIRFLOW_VAR_REGION          = "${local.location}"
         AIRFLOW_VAR_REGION_MULTI    = "${local.location_multi}"
-        AIRFLOW_VAR_SUBNET          = "${local.dew_subnet_nm}"
+        AIRFLOW_VAR_SUBNET          = "${local.lab_subnet_nm}"
         AIRFLOW_VAR_UMSA            = "${local.umsa}"
       }
     }
 
     node_config {
-      network    = local.dew_vpc_nm
-      subnetwork = local.dew_subnet_nm
+      network    = local.lab_vpc_nm
+      subnetwork = local.lab_subnet_nm
       service_account = local.umsa_fqn
     }
   }
@@ -713,8 +737,8 @@ output "CLOUD_COMPOSER_DAG_BUCKET" {
 variable "airflow_dags_to_upload" {
   type = map(string)
   default = {
-    "../scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py" = "chicago-crimes-analytics/bq_lineage_pipeline.py",
-    "../scripts/airflow/chicago-crimes-analytics/spark_lineage_pipeline.py" = "chicago-crimes-analytics/spark_lineage_pipeline.py"
+    "../scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py" = "dags/chicago-crimes-analytics/bq_lineage_pipeline.py",
+    "../scripts/airflow/chicago-crimes-analytics/spark_custom_lineage_pipeline.py" = "dags/chicago-crimes-analytics/spark_custom_lineage_pipeline.py"
   }
 }
 
@@ -727,6 +751,10 @@ resource "google_storage_bucket_object" "upload_dags_to_airflow_dag_bucket" {
     time_sleep.sleep_after_composer_creation
   ]
 }
+
+
+
+
 
 /******************************************
 DONE
