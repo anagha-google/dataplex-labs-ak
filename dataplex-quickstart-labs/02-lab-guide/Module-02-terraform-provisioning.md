@@ -96,6 +96,13 @@ terraform apply \
   --auto-approve >> dataplex-quickstart-lab.output
 ```
 
+You can tail the log file to view the provisioning process logs-
+```
+tail -f ~/dataplex-quickstart-labs/00-resources/terraform/dataplex-quickstart-lab.output
+```
+
+Total time taken: ~45 minutes.
+
 <hr>
 
 ## 6. Validate the environment setup
