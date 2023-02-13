@@ -478,7 +478,7 @@ You should see a GUID.
 #### 8.4.1. Delete a lineage event 
 
 a) List the candidate for deletion-
-```
+
 ```
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes/$MY_CUSTOM_PROCESS_ID/runs/$MY_CUSTOM_PROCESS_RUN_ID/lineageEvents/
 ```
