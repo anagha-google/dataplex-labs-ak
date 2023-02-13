@@ -1,4 +1,4 @@
-# Provisioning the lab environment
+# M2: Provisioning the lab environment
 
 The previous lab module covered what gets provisioned automatically. In this module, we will provision the **foundational** lab environment with Terraform. For the rest, we will use CLI and UI for the intended learning experience. 
 
