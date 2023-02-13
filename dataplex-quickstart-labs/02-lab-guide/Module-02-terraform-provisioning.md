@@ -2,6 +2,14 @@
 
 The previous lab module covered what gets provisioned automatically. In this module, we will provision the **foundational** lab environment with Terraform. For the rest, we will use CLI and UI for the intended learning experience. 
 
+### Prerequisites
+1. A GCP project
+2. Ability to update organizational policies
+
+### Duration
+Approximately 45 minutes
+
+
 <hr>
 
 ## 1. Getting set up for the lab
