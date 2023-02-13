@@ -62,7 +62,7 @@ This is what it should look like-
 THIS IS INFORMATIONAL
 
 -BANKING DATA SAMPLE-
-
+---------------------
 ├── banking
 │   ├── credit_card_reference_data_raw
 │   │   ├── card_read_type
@@ -104,6 +104,7 @@ THIS IS INFORMATIONAL
 
 
 -CELL TOWER DATA SAMPLE-
+------------------------
 ├── cell-tower-anomaly-detection
 │   ├── reference_data
 │   │   └── ctad_service_threshold_ref.csv
@@ -112,15 +113,18 @@ THIS IS INFORMATIONAL
 
 
 -CRIMES DATA SAMPLE-
+--------------------
 ├── chicago-crimes
 │   └── reference_data
 │       └── crimes_chicago_iucr_ref.csv
 
 -ICECREAM SALES DATA SAMPLE-
+----------------------------
 ├── icecream-sales-forecasting
 │   └── isf_icecream_sales_transactions.csv
 
 -TELCO CUSTOMER CHURN DATA SAMPLE-
+----------------------------------
 └── telco-customer-churn-prediction
     ├── machine_learning_scoring
     │   └── tccp_customer_churn_score_candidates.csv
@@ -140,6 +144,7 @@ THIS IS INFORMATIONAL
 
 
 -CELL TOWER DATA SAMPLE-
+------------------------
 ├── cell-tower-anomaly-detection
 │   ├── master_data
 │   │   ├── ctad_part-00000-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet
@@ -148,6 +153,7 @@ THIS IS INFORMATIONAL
 │   │   └── ctad_part-00003-fc7d6e20-dbda-4143-91b5-d9414310dfd1-c000.snappy.parquet
 
 -RETAIL TRANSACTIONS DATA SAMPLE-
+---------------------------------
 ├── retail-transactions-anomaly-detection
 │   └── rtad_sales.parquet
 
