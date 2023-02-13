@@ -176,7 +176,7 @@ gcloud dataplex assets create misc-datasets \
 --lake=$LAKE_NM \
 --zone=$DATA_RAW_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
---resource-name=projects/$PROJECT_ID/buckets/oda-raw-data-$PROJECT_NBR \
+--resource-name=projects/$PROJECT_ID/buckets/raw-data-$PROJECT_NBR \
 --discovery-enabled \
 --discovery-schedule="0 * * * *" \
 --display-name 'Miscellaneous Datasets'
