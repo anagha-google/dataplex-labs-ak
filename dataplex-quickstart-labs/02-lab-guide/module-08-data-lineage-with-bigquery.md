@@ -13,8 +13,8 @@ Successful completion of prior lab modules
 
 ### Learning Units
 
-1. Concepts
-2. Lab
+[1. Concepts](module-08-data-lineage-with-bigquery.md#concepts-data-lineage-information-model)
+[2. Lab](module-08-data-lineage-with-bigquery.md#lab-automated-lineage-capture-for-bigquery-jobs)
 
 <hr>
 
