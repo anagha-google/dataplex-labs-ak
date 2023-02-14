@@ -115,7 +115,7 @@ Total time taken: ~45 minutes.
 
 ## 6. Validate the environment setup
 
-TODO: Link to validation page.
+Refer to lab module to validate provisioning.
 
 <hr>
 
