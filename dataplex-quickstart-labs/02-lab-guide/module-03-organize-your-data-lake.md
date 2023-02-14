@@ -197,7 +197,7 @@ gcloud dataplex zones create ${MISC_RAW_ZONE_NM} --location=$LOCATION --lake=$LA
 #### 2.5.3. Pictorial of zones created
 
 
-![LAKE](../01-images/03-12.png)   
+![LAKE](../01-images/03-22.png)   
 <br><br>
 
 <hr>
