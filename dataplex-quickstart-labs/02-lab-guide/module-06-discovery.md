@@ -205,6 +205,46 @@ Click on "Entities". You should see multiple fileset listings.
 
 ## 2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
 
+### 2.1. Datasets and Tables in BigQuery
+
+
+### 2.2. Query a Raw Zone (BigQuery external) table in BigQuery UI
+
+Switch to the BigQuery UI and to the dataset called oda_raw_zone. This dataset was automatically created by Dataplex when we created a zone. Notice the two tables listed there. Run a query on the Icecream Sales Forecasting table and review the results.
+
+```
+SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
+```
+
+![DISC-5](../01-images/05-05.png)   
+<br><br>
+
+<hr>
+
+### 2.3. Query a Raw Sensitive Zone (BigQuery external) table in BigQuery UI
+
+```
+
+```
+
+![DISC-5](../01-images/05-05.png)   
+<br><br>
+
+<hr
+    
+### 2.4. Query a Curated Zone (BigQuery external) table in BigQuery UI
+
+```
+
+```
+
+![DISC-5](../01-images/05-06.png)   
+<br><br>
+
+<hr>
+<hr>
+
+
 ## 3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore Service
 
 ### 3.1. Explore databases in Dataproc Metatsore
@@ -301,44 +341,6 @@ SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2;
 <br><br>
 
 <hr>
-<hr>
-
-============
-
-### 2.4. Query the same (external table) entity in the BigQuery UI
-Switch to the BigQuery UI and to the dataset called oda_raw_zone. This dataset was automatically created by Dataplex when we created a zone. Notice the two tables listed there. Run a query on the Icecream Sales Forecasting table and review the results.
-
-```
-SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
-```
-
-![DISC-5](../01-images/05-05.png)   
-<br><br>
-
-<hr>
-
-
-
-
-<hr>
-
-### 3. Discovery of data assets in the Raw Zone: oda-raw-sensitive zone
-
-<hr>
-
-### 4. Discovery of data assets in the Curated Zone: oda-curated-zone
-
-Review the asset, entities, schema, external table in BigQuery for assets in the Dataplex oda-curated-zone. This zone has external tables in Parquet, that are automatically registered as entities, again with external table definitions in BigQuery as well as in Dataproc Metastore Service.
-
-<hr>
-
-### 5. Discovery of non-data assets in the RAW Zone: oda-misc-zone
-
-Review the asset, entities, in the Dataplex oda-misc-zone. Notice that Dataplex does not do schema inference, create external tables etc and categorizes the assets as of "fileset" type.
-<br>
-
-![DISC-8](../01-images/05-08.png)   
-<br><br>
 
 <hr>
 This concludes the lab module. Proceed to the next module, where we will create a Dataplex "Environment" lanuch up a Jupyter notebook and explore metadata.
