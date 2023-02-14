@@ -1,4 +1,4 @@
-# M8-2: Create an overview in Dataplex Catalog for a Catalog Entry
+# M7-3: Create an overview in Dataplex Catalog for a Catalog Entry
 
 In this lab module, we will learn how to create an overview for the Chicago Crimes custom Dataplex Catalog entry from the prior module.
 
@@ -13,8 +13,6 @@ Successful completion of prior modules
 <hr>
 
 ## 1. Lab
-
-
 
 ### 1.1. Add an overview of the dataset to the custom Catalog entry
 
