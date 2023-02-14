@@ -77,15 +77,40 @@ curl -X POST \
 
 Navigate to Dataplex in the Cloud Console and to "Search" on the left navigation menu.
 
-![CE](../01-images/CE-01.png)   
+![CE](../01-images/M07-Entry-04.png)   
 <br><br>
 
-![CE](../01-images/CE-02.png)   
+![CE](../01-images/M07-Entry-05.png)   
 <br><br>
 
-
-![CE](../01-images/CE-04.png)   
+![CE](../01-images/M07-Entry-06.png)   
 <br><br>
+
+## 4. Add a Data Steward for the custom Catalog entry
+
+
+
+## 5. Add an overview of the dataset to the custom Catalog entry
+
+
+## 6. Add an image or two for the custom Catalog entry
+
+
+## 7. Create a Tag Template
+
+
+## 8. Associate the Tag Template to the custom Catalog entry
+
+
+
+## 9. Learn the tag serach syntax
+
+
+
+
+
+
+
 
 <hr>
 This concludes the lab module. You can proceed to the next module.
