@@ -26,6 +26,16 @@ curl -X POST \
 
 ```
 
+![CE](../01-images/M07-Entry-01.png)   
+<br><br>
+
+
+![CE](../01-images/M07-Entry-01.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-01.png)   
+<br><br>
+
 <hr>
 
 ## 2. Create custom entry
