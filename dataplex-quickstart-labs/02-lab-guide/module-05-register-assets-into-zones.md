@@ -244,11 +244,12 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-RAW-SENSITIVE-ZONE -> Asset
 #### 2.2.1. Assets to be registered
 
 The following are the curated data assets to be registered into the Dataplex Curated Zone called oda-curated-zone. The data assets are located at -<br>
-GCS Path: gs://oda-curated-data-PROJECT_NBR
+GCS Path: gs://curated-data-PROJECT_NBR
 
 | Domain Use Case | Format | GCS directory | 
 | -- | :--- | :--- | 
-| Retail Transactions Anomaly Detection | Parquet | retail-transactions-anomaly-detection | 
+| Retail Transactions Anomaly Detection | Parquet | retail-transactions-anomaly-detection/ | 
+| Cell Tower Anomaly Detection | Parquet|| cell-tower-anomaly-detection/master_data |
 
 
 #### 2.2.2. Register the assets
