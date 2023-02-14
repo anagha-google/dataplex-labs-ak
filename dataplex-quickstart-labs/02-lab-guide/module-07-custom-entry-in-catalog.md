@@ -86,30 +86,63 @@ Navigate to Dataplex in the Cloud Console and to "Search" on the left navigation
 ![CE](../01-images/M07-Entry-06.png)   
 <br><br>
 
+<hr>
+
 ## 4. Add a Data Steward for the custom Catalog entry
 
+Where we left off in the Catalog Entry listing, click on the steward icon on the extreme right and assign yourself as the steward, as shown below.
+
+![CE](../01-images/M07-Entry-07.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-08.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-09.png)   
+<br><br>
+
+<hr>
+
+## 5. Create a Tag Template
+Follow the steps below to create a Tag Template-
+
+![CE](../01-images/M07-Entry-10.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-11.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-12.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-13.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-14.png)   
+<br><br>
+
+<hr>
+
+## 6. Associate the Tag Template to the custom Catalog entry
 
 
-## 5. Add an overview of the dataset to the custom Catalog entry
+<hr>
+
+## 7. Add an overview of the dataset to the custom Catalog entry
 
 
-## 6. Add an image or two for the custom Catalog entry
+<hr>
 
-
-## 7. Create a Tag Template
-
-
-## 8. Associate the Tag Template to the custom Catalog entry
-
-
-
-## 9. Learn the tag serach syntax
+## 8. Add an image or two for the custom Catalog entry
 
 
 
+<hr>
+
+## 9. Learn the tag search syntax
 
 
-
+<hr>
 
 
 <hr>
