@@ -31,7 +31,41 @@ Completion of prior modules
 
 ### 1.1. Discovery of data assets in the Raw Zone: oda-raw-zone
 
+#### 1.1.1. UI view
+
 Navigate to the Dataplex Zones UI for ODA-RAW-ZONE, and you will see "Miscellaneous Datasets" asset. Notice that it has an "Action required" flag.
+
+![DISC-1](../01-images/05-01.png)   
+<br><br>
+
+<hr>
+
+#### 1.1.2. Review entities automatically created
+
+Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
+
+![DISC-2](../01-images/05-12.png)   
+<br><br>
+
+<hr>
+
+#### 1.1.3. Review a GCS based entity's details 
+
+Click on "icecream_sales_forecasting"; And then "Details". Review the details.
+
+![DISC-3](../01-images/05-03.png)   
+<br><br>
+
+Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
+
+![DISC-4](../01-images/05-04.png)   
+<br><br>
+
+<hr>
+
+### 1.2. Discovery of data assets in the Raw Zone: oda-raw-sensitive-zone
+
+Navigate to the Dataplex Zones UI for ODA-RAW-SENSITIVE-ZONE, and you will see "Miscellaneous Datasets" asset. Notice that it has an "Action required" flag.
 
 ![DISC-1](../01-images/05-01.png)   
 <br><br>
