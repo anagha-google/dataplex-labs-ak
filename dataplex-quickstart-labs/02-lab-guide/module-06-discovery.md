@@ -10,6 +10,8 @@ When a Dataplex Zone's discovery option is enabled, and assets are added to the 
 
 This lab module covers the above for assets registered in the prior module.
 
+Discovery can be scheduled and set to be incremental, can be launched via API on-demand and in full scan mode.
+
 ### Learning units
 
 1. [Lab - Review discovered Cloud Storage based entities in Dataplex](module-06-discovery.md#1-lab---review-discovered-cloud-storage-based-entities-in-dataplex)
