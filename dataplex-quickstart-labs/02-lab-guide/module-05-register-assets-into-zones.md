@@ -283,7 +283,7 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-CURATED-ZONE -> Assets & fa
 #### 2.3.1. Assets to be registered
 
 The following are the notebook assets to be registered into the Dataplex Raw Zone called oda-misc-zone. The notebook assets are located at -<br>
-GCS Path: gs://oda-raw-notebook-PROJECT_NBR
+GCS Path: gs://raw-notebook-PROJECT_NBR
 
 | Domain Use Case | Format | GCS directory | 
 | -- | :--- | :--- | 
@@ -295,14 +295,14 @@ GCS Path: gs://oda-raw-notebook-PROJECT_NBR
 
 To see the listing in Cloud Shell, paste the below command-
 ```
-gsutil ls gs://oda-raw-notebook-$PROJECT_NBR
+gsutil ls gs://raw-notebook-$PROJECT_NBR
 ```
 The author's output is:<br>
 
-gs://oda-raw-notebook-36819656457/chicago-crimes-analysis/<br>
-gs://oda-raw-notebook-36819656457/icecream-sales-forecasting/<br>
-gs://oda-raw-notebook-36819656457/retail-transactions-anomaly-detection/<br>
-gs://oda-raw-notebook-36819656457/telco-customer-churn-prediction/
+gs://raw-notebook-36819656457/chicago-crimes-analysis/<br>
+gs://raw-notebook-36819656457/icecream-sales-forecasting/<br>
+gs://raw-notebook-36819656457/retail-transactions-anomaly-detection/<br>
+gs://raw-notebook-36819656457/telco-customer-churn-prediction/
 
 
 #### 2.3.2. Register the assets
@@ -334,18 +334,15 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-MISC-ZONE -> Assets & famil
 #### 2.4.1. Assets to be registered
 
 The following are the code assets to be registered into the Dataplex Raw Zone called oda-misc-zone. The code assets are located at -<br>
-GCS Path: gs://oda-raw-code-PROJECT_NBR<br>
+GCS Path: gs://raw-code-PROJECT_NBR<br>
 
 To see the listing in Cloud Shell, paste the below command-
 ```
-gsutil ls -r gs://oda-raw-code-$PROJECT_NBR
+gsutil ls -r gs://raw-code-$PROJECT_NBR
 ```
 The author's output is:<br>
 <br>
-gsutil ls -r gs://oda-raw-code-$PROJECT_NBR<br>
-gs://oda-raw-code-36819656457/retail-transactions-anomaly-detection/:<br>
-gs://oda-raw-code-36819656457/retail-transactions-anomaly-detection/<br>
-gs://oda-raw-code-36819656457/retail-transactions-anomaly-detection/retail-transactions-anomaly-detection.sql<br>
+gs://raw-code-36819656457/retail-transactions-anomaly-detection/retail-transactions-anomaly-detection.sql<br>
 
 
 #### 2.4.2. Register the assets
@@ -376,7 +373,7 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-MISC-ZONE -> Assets & famil
 #### 2.5.1. Assets to be registered
 
 There are not objects to be registered into the Dataplex Raw Zone called oda-consumption-zone. The asset is the GCS bucket located at -<br>
-GCS Path: gs://oda-consumption-data-PROJECT_NBR<br>
+GCS Path: gs://product-data-PROJECT_NBR<br>
 
 
 #### 2.5.2. Register the bucket as an asset
@@ -397,7 +394,7 @@ gcloud dataplex assets create consumption-assets \
 
 #### 2.5.3. Review the assets registered in the Dataplex UI
 
-Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-PRODUCT-ZONE -> Assets & familiarize yourself with the various tabs and entries.
+Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-PRODUCT-ZONE -> Assets & familiarize yourself with the various tabs and entries. At the onset of this lab, the product zone dos not have any assets.
 
 <hr>
 
