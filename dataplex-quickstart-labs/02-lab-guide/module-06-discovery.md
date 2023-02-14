@@ -10,7 +10,33 @@ When a Dataplex Zone's discovery option is enabled, and assets are added to the 
 
 This lab module covers the above for assets registered in the prior module.
 
-## 1. Lab - Launch Dataplex Explore and explore databases, (external) tables created automatically in Dataproc Metastore Service (Hive Mteastore)
+### Learning units
+
+1. Lab - Review discovered Cloud Storage based entities in Dataplex
+2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
+3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore
+
+### Prerequisites
+
+Completion of prior modules
+
+### Duration
+
+~ 30 minutes
+
+<hr>
+
+
+## 1. Lab - Review discovered Cloud Storage based entities in Dataplex
+
+
+## 2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
+
+## 3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore
+
+
+
+## 1. Lab - Launch Dataplex Explore and explore databases, (external) tables created automatically in Dataproc Metastore Service (Hive Metastore)
 
 ### 1.1. Explore databases in Dataproc Metatsore
 
