@@ -65,32 +65,52 @@ Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
 
 ### 1.2. Discovery of data assets in the Raw Zone: oda-raw-sensitive-zone
 
-Navigate to the Dataplex Zones UI for ODA-RAW-SENSITIVE-ZONE, and you will see "Miscellaneous Datasets" asset. Notice that it has an "Action required" flag.
+#### 1.2.1. UI view
 
-![DISC-1](../01-images/05-01.png)   
+Navigate to the Dataplex Zones UI for ODA-RAW-SENSITIVE-ZONE, and you will see "Banking Datasets" asset. 
+
+![DISC-1](../01-images/M06-banking-Dataplex-01.png)   
 <br><br>
 
 <hr>
 
-### 1.2. Review entities automatically createdd
+#### 1.2.2. Review entities automatically createdd
 
 Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
 
-![DISC-2](../01-images/05-12.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-02.png)   
 <br><br>
 
 <hr>
 
-### 1.3. Review a GCS based entity's details 
+#### 1.2.3. Review a GCS based entity's details 
 
-Click on "icecream_sales_forecasting"; And then "Details". Review the details.
+Click on the entity "banking_customers_raw_customers; And then "Details". Review the details.
 
-![DISC-3](../01-images/05-03.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-03.png)   
 <br><br>
+
+#### 1.2.4. Review a GCS based entity's schema inference
 
 Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
 
 ![DISC-4](../01-images/05-04.png)   
+<br><br>
+
+
+#### 1.2.5. Review a GCS based entity's partition inference 
+
+Click on "PARTITION DETAILS". Review the partition inferred.
+
+![DISC-4](../01-images/05-05.png)   
+<br><br>
+
+Click on "VIEW PARTITION FILES"
+
+#### 1.2.6. Review the files in GCS & observe how it all ties together
+
+
+![DISC-4](../01-images/05-06.png)   
 <br><br>
 
 <hr>
