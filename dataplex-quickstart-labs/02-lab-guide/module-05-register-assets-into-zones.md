@@ -161,12 +161,14 @@ In this lab sub-module, we will simply add the storage buckets created via Terra
 The following are the raw data assets to be registered into the Dataplex Raw Zone called oda-raw-zone. The data assets are located at -<br>
 GCS Path: gs://raw-data-PROJECT_NBR
 
-| Domain Use Case | Format | GCS directory | 
-| -- | :--- | :--- | 
-| Chicago Crimes Analytics - Reference Data | CSV | chicago-crimes | 
-| Icecream Sales Forecasting | CSV | icecream-sales-forecasting | 
-| Telco Customer Churn Prediction | CSV | telco-customer-churn-prediction/machine_learning_training<br>telco-customer-churn-prediction/machine_learning_scoring | 
-| Cell Tower Anomaly Detection  | CSV | cell_tower_anomaly_detection/reference_data<br>cell_tower_anomaly_detection/transactions_data | 
+| Domain Use Case | Type | Format | GCS directory | 
+| -- | :--- |:--- | :--- | 
+| Chicago Crimes Analytics | Reference Data | CSV | chicago-crimes | 
+| Icecream Sales Forecasting | Transactional Data | CSV | icecream-sales-forecasting | 
+| Telco Customer Churn Prediction | Training Data | CSV | telco-customer-churn-prediction/machine_learning_training |
+| Telco Customer Churn Prediction | Scoring Data | CSV | telco-customer-churn-prediction/machine_learning_scoring | 
+| Cell Tower Anomaly Detection | Reference Data | CSV | cell_tower_anomaly_detection/reference_data | 
+| Cell Tower Anomaly Detection | Transactional Data | CSV | cell_tower_anomaly_detection/transactions_data | 
 
 
 #### 2.1a.2. Register the assets
