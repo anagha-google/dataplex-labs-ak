@@ -14,7 +14,7 @@ This lab module covers the above for assets registered in the prior module.
 
 
 
-
+<hr>
 
 ## 2. Lab - discovery of data assets in the Raw Zone: oda-raw-zone
 
@@ -24,12 +24,16 @@ Navigate to the Dataplex Zones UI for ODA-RAW-ZONE, and you will see "Miscellane
 ![DISC-1](../01-images/05-01.png)   
 <br><br>
 
+<hr>
+
 ### 2.2. Review entities automatically createdd
 
 Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
 
 ![DISC-2](../01-images/05-12.png)   
 <br><br>
+
+<hr>
 
 ### 2.3. Review a GCS based entity's details 
 Click on "icecream_sales_forecasting"; And then "Details". Review the details.
@@ -42,6 +46,8 @@ Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
 ![DISC-4](../01-images/05-04.png)   
 <br><br>
 
+<hr>
+
 ### 2.4. Query the same (external table) entity in the BigQuery UI
 Switch to the BigQuery UI and to the dataset called oda_raw_zone. This dataset was automatically created by Dataplex when we created a zone. Notice the two tables listed there. Run a query on the Icecream Sales Forecasting table and review the results.
 
@@ -51,6 +57,8 @@ SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
 
 ![DISC-5](../01-images/05-05.png)   
 <br><br>
+
+<hr>
 
 ### 2.5. Query the same (external table) entity in the Dataplex Explore notebook
 
