@@ -17,7 +17,7 @@ This lab module covers the above for assets registered in the prior module.
 ![DISC-00-1](../01-images/06-00-exp-01.png)   
 <br><br>
 
-2. Click on the SQL editor "+" sign and type the below in it
+2. Leaving all things default, click on the SQL editor "+" sign and type the below in it
 
 ```
 show databases;
