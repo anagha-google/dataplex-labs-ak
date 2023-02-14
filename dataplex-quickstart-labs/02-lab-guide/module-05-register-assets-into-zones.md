@@ -166,8 +166,7 @@ GCS Path: gs://raw-data-PROJECT_NBR
 | Chicago Crimes Analytics - Reference Data | CSV | chicago-crimes | 
 | Icecream Sales Forecasting | CSV | icecream-sales-forecasting | 
 | Telco Customer Churn Prediction | CSV | telco-customer-churn-prediction/machine_learning_training<br>telco-customer-churn-prediction/machine_learning_scoring | 
-| Cell Tower Anomaly Detection  | CSV | 	
-cell_tower_anomaly_detection/reference_data<br>cell_tower_anomaly_detection/transactions_data | 
+| Cell Tower Anomaly Detection  | CSV | cell_tower_anomaly_detection/reference_data<br>cell_tower_anomaly_detection/transactions_data | 
 
 
 #### 2.1a.2. Register the assets
