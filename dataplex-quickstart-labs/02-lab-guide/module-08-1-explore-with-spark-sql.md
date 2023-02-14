@@ -9,7 +9,7 @@ In this lab module, we will query the raw asset Chicago Crimes using Spark SQL o
 
 ### 0. Prerequisites
 
-If you run queries that use the BigQuery API, you willl need to grant the principal the following role-<br>
+If you run queries that use the BigQuery API, you will need to grant the principal the following role-<br>
 roles/serviceusage.serviceUsageConsumer
 
 Lets go ahead and grant the User Managed Service Account the role, from Cloud Shell-
@@ -27,27 +27,36 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA
 ### 1. Navigate to the Spark SQL Workbench 
 Navigate to the Dataplex UI -> Explore as showin below, in the Cloud Console-
 
-![DEW-1](../01-images/07-01.png)   
+![DEW-1](../01-images/module-08-1-00.png)   
 <br><br>
 <hr>
 
-### 2. Query the GCS external table Chicago Crimes
+### 2. Query the GCS external table Chicago Crimes Reference Data that has IUCR codes
 
 Run the query below, which queries crimes in the table created in lab sub-module 4 in the raw zone.
 
 ```
-select * from oda_raw_zone.chicago_crimes
+select * from oda_raw_zone.chicago_crimes_reference_data limit 100
 ```
 
 Author's output-
-![DEW-1](../01-images/07-02.png)   
+![DEW-1](../01-images/module-08-1-01.png)   
 <br><br>
+<hr>
 
-Then run an aggregation query-
+### 3. Explore the table - count rows
+
+Run an aggregation query-
 ```
-select year as crime_year, count(*) as crimes_count from oda_raw_zone.chicago_crimes group by year order by year desc
+select count(*) from oda_raw_zone.chicago_crimes_reference_data 
 ```
-We will save this query in section 4.
+
+### 3. Explore the table - count distinct IUCR codes
+
+Run an aggregation query-
+```
+select count(distinct iucr) from oda_raw_zone.chicago_crimes_reference_data 
+```
 
 <hr>
 
@@ -57,10 +66,12 @@ We will save this query in section 4.
 
 In Cloud Shell, paste the below. Grab the GCS URI fo the bucket directory chicago-crimes. We will persist the SQL into the same.
 
+chicago-crimes-distinct-iucr-count.sql
+
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-echo gs://oda-raw-code-$PROJECT_NBR/chicago-crimes
+echo gs://raw-code-$PROJECT_NBR/chicago-crimes
 ```
 
 Follow the steps as shown below-<br>
