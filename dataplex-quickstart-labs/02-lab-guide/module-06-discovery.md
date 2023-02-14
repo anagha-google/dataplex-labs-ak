@@ -23,6 +23,8 @@ This lab module covers the above for assets registered in the prior module.
 show databases;
 ```
 
+<br><br>
+
 3. Let it run. Proceed to unit 2 below.
 
 ![DISC-00-2](../01-images/06-00-exp-02.png)   
