@@ -202,7 +202,7 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-RAW-ZONE -> Assets & famili
 
 #### 2.1b.1. Assets to be registered
 
-The following are the raw data assets to be registered into the Dataplex Raw Zone called oda-raw-zone. The data assets are located at -<br>
+The following are the raw data assets to be registered into the Dataplex Raw Zone called oda-raw-sensitive-zone. The data assets are located at -<br>
 GCS Path: gs://raw-data-sensitive-PROJECT_NBR
 
 | Domain Use Case | Format | GCS directory | 
