@@ -1,5 +1,5 @@
 
-# M8: Dataplex Lineage - native support for BigQuery Managed Tables
+# M10: Dataplex Lineage - native support for BigQuery Managed Tables
 
 Data lineage is a Dataplex feature that lets you track how data moves through your systems: where it comes from, where it is passed to, and what transformations are applied to it. BigQuery lineage is captured automatically and this lab module covers the same.
 
