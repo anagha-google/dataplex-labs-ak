@@ -1,4 +1,4 @@
-# Custom Lineage
+# M9-4: Custom Lineage with Custom Catalog Entry
 
 In this lab module, we will use the Dataplex Lineage API and make a custom lineage entry for the custom entry we created for Chicago Crimes Dataset that is part of the custom entry group we created called "Government Datasets", for a custom process we will create called "Load Public Dataset" to the bigquery public dataset table called "crime" from which we sourced data in module 3.
 
