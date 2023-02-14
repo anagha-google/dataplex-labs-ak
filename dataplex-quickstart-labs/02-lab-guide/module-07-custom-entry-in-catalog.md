@@ -30,10 +30,10 @@ curl -X POST \
 <br><br>
 
 
-![CE](../01-images/M07-Entry-01.png)   
+![CE](../01-images/M07-Entry-02.png)   
 <br><br>
 
-![CE](../01-images/M07-Entry-01.png)   
+![CE](../01-images/M07-Entry-03.png)   
 <br><br>
 
 <hr>
