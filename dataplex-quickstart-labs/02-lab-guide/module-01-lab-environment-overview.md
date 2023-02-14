@@ -34,9 +34,9 @@ YOUR_GCP_ZONE="us-central1-a"
 YOUR_GCP_MULTI_REGION="US"
 ```
 
-### Listing of Cloud Storage Buckets
+### Cloud Storage Buckets created
 
-Run the command below for bucket listing in Cloud Shell-
+After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 ```
 gsutil ls
 ```
@@ -61,7 +61,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/
 
 ### Raw Datasets
 
-List the contents of the raw data bucket in Cloud Shell as shown below-
+After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls -r gs://raw-data-$PROJECT_NBR/
@@ -103,7 +103,7 @@ THIS IS INFORMATIONAL
 
 ### Raw Sensitive Datasets
 
-List the contents of the raw data bucket in Cloud Shell as shown below-
+After running the next module, you should see the listing below-
 
 ```
 gsutil ls -r gs://raw-data-sensitive-$PROJECT_NBR/
@@ -129,7 +129,7 @@ THIS IS INFORMATIONAL
 
 ### Curated Datasets
 
-List the contents of the curated data bucket in Cloud Shell as shown below-
+After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls gs://curated-data-$PROJECT_NBR/
@@ -159,7 +159,7 @@ THIS IS INFORMATIONAL
 
 ### Notebooks
 
-List the contents of the notebook bucket in Cloud Shell as shown below-
+After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls gs://raw-notebook-$PROJECT_NBR/
@@ -198,7 +198,8 @@ THIS IS INFORMATIONAL
 
 ### Scripts
 
-List the contents of the code bucket in Cloud Shell as shown below-
+
+After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls gs://raw-notebook-$PROJECT_NBR/
