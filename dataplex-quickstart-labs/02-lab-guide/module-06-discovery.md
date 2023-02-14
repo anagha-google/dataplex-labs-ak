@@ -205,7 +205,15 @@ Click on "Entities". You should see multiple fileset listings.
 
 ## 2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
 
-### 2.1. Datasets and Tables in BigQuery
+### 2.1. Datasets and Tables in BigQuery UI
+
+![DISC-1](../01-images/M06-banking-Dataplex-16.png)    
+<br><br>
+
+Expand the datasets
+
+![DISC-1](../01-images/M06-banking-Dataplex-17.png)    
+<br><br>
 
 
 ### 2.2. Query a Raw Zone (BigQuery external) table in BigQuery UI
@@ -213,10 +221,10 @@ Click on "Entities". You should see multiple fileset listings.
 Switch to the BigQuery UI and to the dataset called oda_raw_zone. This dataset was automatically created by Dataplex when we created a zone. Notice the two tables listed there. Run a query on the Icecream Sales Forecasting table and review the results.
 
 ```
-SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
+SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2
 ```
 
-![DISC-5](../01-images/05-05.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-18.png)    
 <br><br>
 
 <hr>
@@ -224,21 +232,21 @@ SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
 ### 2.3. Query a Raw Sensitive Zone (BigQuery external) table in BigQuery UI
 
 ```
-
+SELECT * FROM oda_raw_sensitive_zone.banking_customers_raw_customers WHERE DATE='2022-05-01' LIMIT 2
 ```
 
-![DISC-5](../01-images/05-05.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-19.png)    
 <br><br>
 
-<hr
+<hr>
     
 ### 2.4. Query a Curated Zone (BigQuery external) table in BigQuery UI
 
 ```
-
+SELECT * FROM `dataplex-quickstart-labs.oda_curated_zone.retail_transactions_anomaly_detection` LIMIT 2
 ```
 
-![DISC-5](../01-images/05-06.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-20.png)    
 <br><br>
 
 <hr>
