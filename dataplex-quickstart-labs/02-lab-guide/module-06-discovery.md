@@ -12,9 +12,9 @@ This lab module covers the above for assets registered in the prior module.
 
 ### Learning units
 
-1. Lab - Review discovered Cloud Storage based entities in Dataplex
-2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
-3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore
+1. [Lab - Review discovered Cloud Storage based entities in Dataplex](module-06-discovery.md#1-lab---review-discovered-cloud-storage-based-entities-in-dataplex)
+2. [Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery](module-06-discovery.md#2-lab---review-external-tables-created-for-cloud-storage-based-entities-by-dataplex-in-bigquery)
+3. [Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore Service](module-06-discovery.md#3-lab---review-external-tables-created-for-cloud-storage-based-entities-by-dataplex-in-dataproc-metastore-service)
 
 ### Prerequisites
 
@@ -29,16 +29,46 @@ Completion of prior modules
 
 ## 1. Lab - Review discovered Cloud Storage based entities in Dataplex
 
+### 1.1. Discovery of data assets in the Raw Zone: oda-raw-zone
+
+Navigate to the Dataplex Zones UI for ODA-RAW-ZONE, and you will see "Miscellaneous Datasets" asset. Notice that it has an "Action required" flag.
+
+![DISC-1](../01-images/05-01.png)   
+<br><br>
+
+<hr>
+
+### 1.2. Review entities automatically createdd
+
+Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
+
+![DISC-2](../01-images/05-12.png)   
+<br><br>
+
+<hr>
+
+### 1.3. Review a GCS based entity's details 
+
+Click on "icecream_sales_forecasting"; And then "Details". Review the details.
+
+![DISC-3](../01-images/05-03.png)   
+<br><br>
+
+Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
+
+![DISC-4](../01-images/05-04.png)   
+<br><br>
+
+<hr>
+
+
+
 
 ## 2. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in BigQuery
 
-## 3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore
+## 3. Lab - Review external tables created for Cloud Storage based entities by Dataplex, in Dataproc Metastore Service
 
-
-
-## 1. Lab - Launch Dataplex Explore and explore databases, (external) tables created automatically in Dataproc Metastore Service (Hive Metastore)
-
-### 1.1. Explore databases in Dataproc Metatsore
+### 3.1. Explore databases in Dataproc Metatsore
 
 1. Click on Dataplex Explore icon on the left navigation bar
  
@@ -65,9 +95,9 @@ show databases;
 
 <hr>
 
-### 1.2. Explore tables in Dataproc Metatsore in the raw zone
+### 3.2. Explore tables in Dataproc Metatsore in the raw zone
 
-#### 1.2.1. List tables in Dataplex Explore Spark SQL editor
+#### 3.2.1. List tables in Dataplex Explore Spark SQL editor
 
 ```
 SHOW tables in oda_raw_zone;
@@ -76,7 +106,7 @@ SHOW tables in oda_raw_zone;
 ![DISC-00-3](../01-images/06-00-exp-04.png)   
 <br><br>
 
-#### 1.2.2. Query an external table in Dataplex Explore Spark SQL editor
+#### 3.2.2. Query an external table in Dataplex Explore Spark SQL editor
 
 ```
 SELECT * FROM 	
@@ -89,9 +119,9 @@ LIMIT 2
 
 <hr>
 
-### 1.3. Explore tables in Dataproc Metatsore in the raw sensitive zone
+### 3.3. Explore tables in Dataproc Metatsore in the raw sensitive zone
 
-#### 1.3.1. List tables in Dataplex Explore Spark SQL editor
+#### 3.3.1. List tables in Dataplex Explore Spark SQL editor
 
 ```
 SHOW tables in 	oda_raw_sensitive_zone;
@@ -100,7 +130,7 @@ SHOW tables in 	oda_raw_sensitive_zone;
 ![DISC-00-5](../01-images/06-00-exp-06.png)   
 <br><br>
 
-#### 1.3.2. Query a table in Dataplex Explore Spark SQL editor
+#### 3.3.2. Query a table in Dataplex Explore Spark SQL editor
 
 ```
 SELECT * FROM oda_raw_sensitive_zone.banking_customers_raw_customers LIMIT 2;
@@ -111,9 +141,9 @@ SELECT * FROM oda_raw_sensitive_zone.banking_customers_raw_customers LIMIT 2;
 
 <hr>
 
-### 1.4. Explore tables in Dataproc Metatsore in the curated zone
+### 3.4. Explore tables in Dataproc Metatsore in the curated zone
 
-#### 1.4.1. List tables in Dataplex Explore Spark SQL editor
+#### 3.4.1. List tables in Dataplex Explore Spark SQL editor
 
 ```
 SHOW tables in 	oda_curated_zone;
@@ -122,7 +152,7 @@ SHOW tables in 	oda_curated_zone;
 ![DISC-00-8](../01-images/06-00-exp-08.png)   
 <br><br>
 
-#### 1.4.2. Query a table in Dataplex Explore Spark SQL editor
+#### 3.4.2. Query a table in Dataplex Explore Spark SQL editor
 
 ```
 SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2;
@@ -134,38 +164,7 @@ SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2;
 <hr>
 <hr>
 
-## 2. Lab - discovery of data assets in the Raw Zone: oda-raw-zone
-
-### 2.1. Review asset - Miscelleaneous Dataset in raw zone
-Navigate to the Dataplex Zones UI for ODA-RAW-ZONE, and you will see "Miscellaneous Datasets" asset. Notice that it has an "Action required" flag.
-
-![DISC-1](../01-images/05-01.png)   
-<br><br>
-
-<hr>
-
-### 2.2. Review entities automatically createdd
-
-Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
-
-![DISC-2](../01-images/05-12.png)   
-<br><br>
-
-<hr>
-
-### 2.3. Review a GCS based entity's details 
-
-Click on "icecream_sales_forecasting"; And then "Details". Review the details.
-
-![DISC-3](../01-images/05-03.png)   
-<br><br>
-
-Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
-
-![DISC-4](../01-images/05-04.png)   
-<br><br>
-
-<hr>
+============
 
 ### 2.4. Query the same (external table) entity in the BigQuery UI
 Switch to the BigQuery UI and to the dataset called oda_raw_zone. This dataset was automatically created by Dataplex when we created a zone. Notice the two tables listed there. Run a query on the Icecream Sales Forecasting table and review the results.
@@ -179,9 +178,6 @@ SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
 
 <hr>
 
-### 2.5. Query the same (external table) entity in the Dataplex Explore notebook
-
-# TODO
 
 
 
