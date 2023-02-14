@@ -156,7 +156,16 @@ BigQuery lineage is captured by default, without the need for any orhcetsration 
 Here is the author's lineage graph from clicking on the curated crimes table.
 
 
-![LIN-4](../01-images/09-06.png)   
+![LIN-4](../01-images/09-16a.png)   
+<br><br>
+
+![LIN-4](../01-images/09-16b.png)   
+<br><br>
+
+![LIN-4](../01-images/09-16c.png)   
+<br><br>
+
+![LIN-4](../01-images/09-16d.png)   
 <br><br>
 
 <hr>
