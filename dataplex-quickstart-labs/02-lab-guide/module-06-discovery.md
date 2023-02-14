@@ -1,4 +1,4 @@
-# Automated discovery, schema inference and external table creation
+# M6: Automated discovery, schema inference and external table creation
 
 When a Dataplex Zone's discovery option is enabled, and assets are added to the Dataplex Zone of a Dataplex Lake that has a Dataproc Metastore Service (DPMS) attached with Data Catalog Sync enabled, the following happen automatically-
 1. Assets will be discovered
