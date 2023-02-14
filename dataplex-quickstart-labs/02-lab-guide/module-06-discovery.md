@@ -21,7 +21,7 @@ This lab module covers the above for assets registered in the prior module.
 
 1.2. Click on "Entities". You should see "icecream_sales_forecasting" and "telco_customer_churn_prediction" as two GCS based tables. The names are based off of the directory names in GCS.
 
-![DISC-2](../01-images/05-02.png)   
+![DISC-2](../01-images/05-12.png)   
 <br><br>
 
 1.3. Click on "icecream_sales_forecasting"; And then "Details". Review the details.
@@ -43,59 +43,20 @@ SELECT * FROM `oda_raw_zone.icecream_sales_forecasting` LIMIT 1000
 ![DISC-5](../01-images/05-05.png)   
 <br><br>
 
-1.6. Switch to the Dataplex UI ODA-RAW-ZONE->Miscellaneous Datasets->Actions
-
-Observe the "Action" from the schema inference job.
-
-![DISC-6](../01-images/05-06.png)   
-<br><br>
-
-
-![DISC-7](../01-images/05-07.png)   
-<br><br>
-
-The data in question is for the Telco Customer Churn Prediction usecase. Both the files in the underlying GCS buckets have different set of columns. Paste the below in Cloud Shell.
-
-```
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-
-gsutil ls gs://oda-raw-data-$PROJECT_NBR/telco-customer-churn-prediction
-```
-
-Author's output - <br>
-gs://oda-raw-data-36819656457/telco-customer-churn-prediction/customer_churn_score_data.csv<br>
-gs://oda-raw-data-36819656457/telco-customer-churn-prediction/customer_churn_train_data.csv<br>
-
-
-Lets look at the schema of customer_churn_train_data.csv:
-```
-gsutil cat gs://oda-raw-data-$PROJECT_NBR/telco-customer-churn-prediction/customer_churn_train_data.csv | head -1
-```
-
-Author's output:<br>
-customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Churn<br>
-
-
-Lets look at the schema of customer_churn_score_data.csv:
-```
-gsutil cat gs://oda-raw-data-$PROJECT_NBR/telco-customer-churn-prediction/customer_churn_score_data.csv | head -1
-```
-
-Author's output:<br>
-customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges<br>
-
-Notice that the train data has the column "Churn".<br>
 
 <hr>
 
+### 2. Discovery of data assets in the Raw Zone: oda-raw-sensitive zone
 
-### 2. Discovery of data assets in the Curated Zone: oda-curated-zone
+<hr>
 
-Review the asset, entities, schema, external table in BigQuery for assets in the Dataplex oda-curated-zone.
+### 3. Discovery of data assets in the Curated Zone: oda-curated-zone
 
+Review the asset, entities, schema, external table in BigQuery for assets in the Dataplex oda-curated-zone. This zone has external tables in Parquet, that are automatically registered as entities, again with external table definitions in BigQuery as well as in Dataproc Metastore Service.
 
-### 3. Discovery of non-data assets in the RAW Zone: oda-misc-zone
+<hr>
+
+### 4. Discovery of non-data assets in the RAW Zone: oda-misc-zone
 
 Review the asset, entities, in the Dataplex oda-misc-zone. Notice that Dataplex does not do schema inference, create external tables etc and categorizes the assets as of "fileset" type.
 <br>
