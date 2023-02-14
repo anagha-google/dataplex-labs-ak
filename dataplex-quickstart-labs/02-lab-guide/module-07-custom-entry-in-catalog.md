@@ -33,8 +33,7 @@ curl -X POST \
 ![CE](../01-images/M07-Entry-02.png)   
 <br><br>
 
-![CE](../01-images/M07-Entry-03.png)   
-<br><br>
+
 
 <hr>
 
@@ -69,11 +68,14 @@ curl -X POST \
     
 ```
 
+![CE](../01-images/M07-Entry-03.png)   
+<br><br>
+
 <hr>
 
 ## 3. Catalog Search UI walkthrough 
 
-Navigate to Dataplex in the Cloud Console and to "Search" on the left navigatio menu.
+Navigate to Dataplex in the Cloud Console and to "Search" on the left navigation menu.
 
 ![CE](../01-images/CE-01.png)   
 <br><br>
@@ -81,8 +83,6 @@ Navigate to Dataplex in the Cloud Console and to "Search" on the left navigatio 
 ![CE](../01-images/CE-02.png)   
 <br><br>
 
-![CE](../01-images/CE-03.png)   
-<br><br>
 
 ![CE](../01-images/CE-04.png)   
 <br><br>
