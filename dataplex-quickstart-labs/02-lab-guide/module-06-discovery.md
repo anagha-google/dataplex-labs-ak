@@ -12,7 +12,21 @@ This lab module covers the above for assets registered in the prior module.
 
 ## 1. Lab - Launch Dataplex Explore notebook
 
+1. Click on Dataplex Explore icon on the left navigation bar
+ 
+![DISC-00-1](../01-images/06-00-exp-01.png)   
+<br><br>
 
+2. Click on the SQL editor "+" sign and type the below in it
+
+```
+show databases;
+```
+
+3. Let it run. Proceed to unit 2 below.
+
+![DISC-00-2](../01-images/06-00-exp-02.png)   
+<br><br>
 
 <hr>
 
