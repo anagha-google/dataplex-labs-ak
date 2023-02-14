@@ -78,6 +78,7 @@ select count(distinct iucr) from oda_raw_zone.chicago_crimes_reference_data
 ```
 
 Author's output-
+
 ![DEW-1](../01-images/module-08-1-03.png)   
 <br><br>
 
