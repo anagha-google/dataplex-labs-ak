@@ -2,13 +2,13 @@
 
 In the next module, we will provision a few Google Cloud services and upload artifacts to Cloud Storage buckets using Terraform. This module gives you an overview of what is automatically created and available when you start the actual Dataplex Lab series from Module 3.
 
-## Prerequisites
+## 1. Prerequisites
 
 Please read the narrative of the lab in the landing page for the quickstart lab series to understand what to expect, what we will work on in the lab modules.
 
 <hr>
 
-## APIs enabled
+## 2. APIs enabled
 
 compute.googleapis.com<br>
 dataproc.googleapis.com<br>
@@ -37,7 +37,7 @@ datalineage.googleapis.com
 
 <hr>
 
-## Services provisioned
+## 3. Services provisioned
 
 VPC<br>
 Subnet<br>
@@ -47,7 +47,7 @@ BigQuery<br>
 Dataproc Metastore Service<br>
 Cloud Composer
 
-## Security setup
+## 4. Security setup
 
 1. A user managed service account with requisite permissions
 2. Permissions for you to impersonate the user managed service account
@@ -56,11 +56,11 @@ Cloud Composer
 
 <hr>
 
-## What's in Cloud Storage?
+## 5. Cloud Storage
 
 A number of buckets will be automatically created by the Terraform, and content copied into them. The following is a listing.
 
-### Declare variables
+### 5.1. Declare variables
 
 Paste the below in Cloud Shell scoped to the project you will use for the Dataplex Quickstart Lab. Modify these variables as needed-
 ```
@@ -74,7 +74,7 @@ YOUR_GCP_ZONE="us-central1-a"
 YOUR_GCP_MULTI_REGION="US"
 ```
 
-### Cloud Storage Buckets created
+### 5.2. Cloud Storage Buckets created
 
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 ```
@@ -99,7 +99,7 @@ gs://raw-notebook-705495340985/
 gs://us-central1-oda-70549534098-275215ea-bucket/
 ```
 
-### Raw Datasets
+### 5.3. Raw Datasets
 
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
@@ -141,7 +141,7 @@ THIS IS INFORMATIONAL
 
 ```
 
-### Raw Sensitive Datasets
+### 5.4. Raw Sensitive Datasets
 
 After running the next module, you should see the listing below-
 
@@ -167,7 +167,7 @@ THIS IS INFORMATIONAL
 
 ```
 
-### Curated Datasets
+### 5.5. Curated Datasets
 
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
@@ -197,7 +197,7 @@ THIS IS INFORMATIONAL
 
 ```
 
-### Notebooks
+### 5.6. Notebooks
 
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
@@ -236,7 +236,7 @@ THIS IS INFORMATIONAL
 
 ```
 
-### Scripts
+### 5.7. Scripts
 
 
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
@@ -276,7 +276,7 @@ THIS IS INFORMATIONAL
 
 ```
 
-### The rest of the buckets
+### 5.8. The rest of the buckets
 ```
 - THIS IS INFORMATIONAL -
 
@@ -293,14 +293,14 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ --> Automatically created buck
 <hr>
 
 
-## What's in BigQuery?
+## 6. BigQuery
 
 Nothing is provisioned at the onset of the lab.
 
 <hr>
 
 
-## What's in Cloud Composer?
+## 7. Cloud Composer
 
 1. A Cloud Composer environment is created
 2. Two DAGs are placed in the cloud composer DAG directory
@@ -321,7 +321,7 @@ And here are the DAGs in the Airflow UI-
 
 <hr>
 
-## What's in the Dataproc Metastore?
+## 8. Dataproc Metastore Service
 
 Its empty at the onset and does not have any precreated databases.
 
