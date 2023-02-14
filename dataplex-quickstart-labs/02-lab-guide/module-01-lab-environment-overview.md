@@ -244,8 +244,8 @@ THIS IS INFORMATIONAL
 gs://lab-spark-bucket-705495340985/ --> For use by Dataproc Serverless Spark
 
 gs://raw-model-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
-gs://raw-model-metrics-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
-gs://raw-model-mleap-bundle-705495340985/ --> For use in the Teco Customer Churn Prediction exercise with Dataplex Explore notebooks
+gs://raw-model-metrics-705495340985/ --> For use in the Telco Customer Churn Prediction exercise with Dataplex Explore notebooks
+gs://raw-model-mleap-bundle-705495340985/ --> For use in the Telco Customer Churn Prediction exercise with Dataplex Explore notebooks
 
 gs://us-central1-oda-70549534098-275215ea-bucket/ --> Automatically created bucket by Cloud Composer service
 ```
@@ -269,13 +269,21 @@ Here is the author's listing-
 ```
 - THIS IS INFORMATIONAL -
 
-
+└── chicago-crimes-analytics
+    ├── bq_lineage_pipeline.py
+    └── spark_custom_lineage_pipeline.py
 ```
+
+And here are the DAGs in the Airflow UI-
+
+![AF](../01-images/01-01.png)   
+<br><br>
 
 <hr>
 
 ## What's in the Dataproc Metastore?
 
+Its empty at the onset and does not have any precreated databases.
 
 
 <hr>
