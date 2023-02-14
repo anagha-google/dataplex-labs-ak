@@ -76,6 +76,7 @@ LOCATION_MULTI="US"
 METASTORE_NM="lab-dpms-$PROJECT_NBR"
 LAKE_NM="oda-lake"
 DATA_RAW_ZONE_NM="oda-raw-zone"
+DATA_RAW_SENSITIVE_ZONE_NM="oda-raw-sensitive-zone"
 DATA_CURATED_ZONE_NM="oda-curated-zone"
 DATA_PRODUCT_ZONE_NM="oda-product-zone"
 MISC_RAW_ZONE_NM="oda-misc-zone"
@@ -142,6 +143,17 @@ We will create a zone each for raw, curated and data product, for the structured
 ##### Raw Zone
 ```
 gcloud dataplex zones create ${DATA_RAW_ZONE_NM} \
+--lake=$LAKE_NM \
+--resource-location-type=MULTI_REGION \
+--location=$LOCATION \
+--type=RAW \
+--discovery-enabled \
+--discovery-schedule="0 * * * *"
+```
+
+##### Raw Sensitive Zone
+```
+gcloud dataplex zones create ${DATA_RAW_SENSITIVE_ZONE_NM} \
 --lake=$LAKE_NM \
 --resource-location-type=MULTI_REGION \
 --location=$LOCATION \
