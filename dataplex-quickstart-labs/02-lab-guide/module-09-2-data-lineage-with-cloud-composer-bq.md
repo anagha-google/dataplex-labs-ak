@@ -1,4 +1,4 @@
-# Automated Data Lineage with Cloud Composer - BigQuery operators
+# M9-2: Automated Data Lineage with Cloud Composer - BigQuery operators
 
 This lab module covers data lineage with Cloud Composer, from a BigQuery context with a minimum viable data engineering pipeline. It takes 15 minutes or less to complete depending on your familiarity with Airflow, Cloud Composer and BigQuery.
 <br>
