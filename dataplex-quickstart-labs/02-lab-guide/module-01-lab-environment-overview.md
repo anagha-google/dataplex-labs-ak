@@ -10,30 +10,30 @@ Please read the narrative of the lab in the landing page for the quickstart lab 
 
 ## APIs enabled
 
-    compute.googleapis.com<br>
-    dataproc.googleapis.com<br>
-    bigqueryconnection.googleapis.com<br>
-    bigquerydatapolicy.googleapis.com<br>
-    storage-component.googleapis.com<br>
-    bigquerystorage.googleapis.com<br>
-    datacatalog.googleapis.com<br>
-    dataplex.googleapis.com<br>
-    bigquery.googleapis.com ,
-    cloudresourcemanager.googleapis.com<br>
-    cloudidentity.googleapis.com<br>
-    storage.googleapis.com<br>
-    composer.googleapis.com<br>
-    metastore.googleapis.com<br>
-    orgpolicy.googleapis.com<br>
-    dlp.googleapis.com<br>
-    logging.googleapis.com<br>
-    monitoring.googleapis.com<br>
-    dataplex.googleapis.com<br>
-    datacatalog.googleapis.com<br>
-    cloudresourcemanager.googleapis.com<br>
-    datapipelines.googleapis.com<br>
-    cloudscheduler.googleapis.com<br>
-    datalineage.googleapis.com
+compute.googleapis.com<br>
+dataproc.googleapis.com<br>
+bigqueryconnection.googleapis.com<br>
+bigquerydatapolicy.googleapis.com<br>
+storage-component.googleapis.com<br>
+bigquerystorage.googleapis.com<br>
+datacatalog.googleapis.com<br>
+dataplex.googleapis.com<br>
+bigquery.googleapis.com ,
+cloudresourcemanager.googleapis.com<br>
+cloudidentity.googleapis.com<br>
+storage.googleapis.com<br>
+composer.googleapis.com<br>
+metastore.googleapis.com<br>
+orgpolicy.googleapis.com<br>
+dlp.googleapis.com<br>
+logging.googleapis.com<br>
+monitoring.googleapis.com<br>
+dataplex.googleapis.com<br>
+datacatalog.googleapis.com<br>
+cloudresourcemanager.googleapis.com<br>
+datapipelines.googleapis.com<br>
+cloudscheduler.googleapis.com<br>
+datalineage.googleapis.com
 
 <hr>
 
