@@ -143,6 +143,17 @@ Associate the tag to the custom entry as shown below, and populate. Follow the s
 ![CE](../01-images/M07-Entry-18.png)   
 <br><br>
 
+![CE](../01-images/M07-Entry-19.png)   
+<br><br>
+
+
+![CE](../01-images/M07-Entry-20.png)   
+<br><br>
+
+
+![CE](../01-images/M07-Entry-21.png)   
+<br><br>
+
 <hr>
 
 ## 7. Add an overview of the dataset to the custom Catalog entry
