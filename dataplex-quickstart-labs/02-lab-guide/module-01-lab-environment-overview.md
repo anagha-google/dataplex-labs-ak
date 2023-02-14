@@ -51,6 +51,7 @@ gs://lab-spark-bucket-705495340985/
 gs://product-data-705495340985/
 gs://raw-code-705495340985/
 gs://raw-data-705495340985/
+gs://raw-data-sensitive-705495340985/
 gs://raw-model-705495340985/
 gs://raw-model-metrics-705495340985/
 gs://raw-model-mleap-bundle-705495340985/
@@ -69,48 +70,6 @@ gsutil ls -r gs://raw-data-$PROJECT_NBR/
 This is what it should look like-
 ```
 THIS IS INFORMATIONAL
-
--BANKING DATA SAMPLE-
----------------------
-├── banking
-│   ├── credit_card_reference_data_raw
-│   │   ├── card_read_type
-│   │   │   └── card_read_type.csv
-│   │   ├── card_type_facts
-│   │   │   └── card_type_facts.csv
-│   │   ├── currency
-│   │   │   └── currency.csv
-│   │   ├── events_type
-│   │   │   └── events_type.csv
-│   │   ├── origination_code
-│   │   │   └── origination_code.csv
-│   │   ├── payment_methods
-│   │   │   └── payment_methods.csv
-│   │   ├── signature
-│   │   │   └── signature.csv
-│   │   ├── swiped_code
-│   │   │   └── swiped_code.csv
-│   │   └── trans_type
-│   │       └── trans_type.csv
-│   ├── credit_card_transactions_raw
-│   │   └── credit_card_authorizations
-│   │       └── date=2022-05-01
-│   │           └── credit_card_auth_transactions.csv
-│   ├── customers_raw
-│   │   ├── credit_card_customers
-│   │   │   └── date=2022-05-01
-│   │   │       └── credit_card_customers.csv
-│   │   └── customers
-│   │       └── date=2022-05-01
-│   │           └── customers.csv
-│   └── merchants_raw
-│       ├── mcc_codes
-│       │   └── date=2022-05-01
-│       │       └── mcc_codes.csv
-│       └── merchants
-│           └── date=2022-05-01
-│               └── merchants.csv
-
 
 -CELL TOWER DATA SAMPLE-
 ------------------------
@@ -139,6 +98,32 @@ THIS IS INFORMATIONAL
     │   └── tccp_customer_churn_score_candidates.csv
     └── machine_learning_training
         └── tccp_customer_churn_train_candidates.csv
+
+```
+
+### Raw Sensitive Datasets
+
+List the contents of the raw data bucket in Cloud Shell as shown below-
+
+```
+gsutil ls -r gs://raw-data-sensitive-$PROJECT_NBR/
+```
+
+This is what it should look like-
+```
+THIS IS INFORMATIONAL
+
+-BANKING DATA SAMPLE-
+---------------------
+├── banking
+│   ├── customers_raw
+│   │   ├── credit_card_customers
+│   │   │   └── date=2022-05-01
+│   │   │       └── credit_card_customers.csv
+│   │   └── customers
+│   │       └── date=2022-05-01
+│   │           └── customers.csv
+
 
 ```
 
