@@ -18,7 +18,7 @@ storage-component.googleapis.com<br>
 bigquerystorage.googleapis.com<br>
 datacatalog.googleapis.com<br>
 dataplex.googleapis.com<br>
-bigquery.googleapis.com ,
+bigquery.googleapis.com<br>
 cloudresourcemanager.googleapis.com<br>
 cloudidentity.googleapis.com<br>
 storage.googleapis.com<br>
@@ -49,9 +49,9 @@ Cloud Composer
 
 ## Security setup
 
-- A user managed service account with requisite permissions
-- Permissions for you to impersonate the user managed service account
-- Requisite permissions for Google Managed Service Accounts as required by the GCP services
+1. A user managed service account with requisite permissions
+2. Permissions for you to impersonate the user managed service account
+3. Requisite permissions for Google Managed Service Accounts as required by the GCP services
 
 
 <hr>
