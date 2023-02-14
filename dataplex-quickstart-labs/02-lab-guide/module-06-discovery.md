@@ -10,7 +10,9 @@ When a Dataplex Zone's discovery option is enabled, and assets are added to the 
 
 This lab module covers the above for assets registered in the prior module.
 
-## 1. Lab - Launch Dataplex Explore notebook
+## 1. Lab - Launch Dataplex Explore and explore databases, (external) tables created automatically in Dataproc Metastore Service (Hive Mteastore)
+
+### 1.1. Explore databases in Dataproc Metatsore
 
 1. Click on Dataplex Explore icon on the left navigation bar
  
@@ -25,11 +27,85 @@ show databases;
 
 <br><br>
 
-3. Let it run. Proceed to unit 2 below.
+3. Let it run. 
 
 ![DISC-00-2](../01-images/06-00-exp-02.png)   
 <br><br>
 
+4. Results
+
+![DISC-00-3](../01-images/06-00-exp-03.png)   
+<br><br>
+
+<hr>
+
+### 1.2. Explore tables in Dataproc Metatsore in the raw zone
+
+#### 1.2.1. List tables in Dataplex Explore Spark SQL editor
+
+```
+SHOW tables in oda_raw_zone;
+```
+
+![DISC-00-3](../01-images/06-00-exp-04.png)   
+<br><br>
+
+#### 1.2.2. Query an external table in Dataplex Explore Spark SQL editor
+
+```
+SELECT * FROM 	
+oda_raw_zone.chicago_crimes_reference_data
+LIMIT 2
+```
+
+![DISC-00-4](../01-images/06-00-exp-05.png)   
+<br><br>
+
+<hr>
+
+### 1.3. Explore tables in Dataproc Metatsore in the raw sensitive zone
+
+#### 1.3.1. List tables in Dataplex Explore Spark SQL editor
+
+```
+SHOW tables in 	oda_raw_sensitive_zone;
+```
+
+![DISC-00-5](../01-images/06-00-exp-06.png)   
+<br><br>
+
+#### 1.3.2. Query a table in Dataplex Explore Spark SQL editor
+
+```
+SELECT * FROM oda_raw_sensitive_zone.banking_customers_raw_customers LIMIT 2;
+```
+
+![DISC-00-7](../01-images/06-00-exp-07.png)   
+<br><br>
+
+<hr>
+
+### 1.4. Explore tables in Dataproc Metatsore in the curated zone
+
+#### 1.4.1. List tables in Dataplex Explore Spark SQL editor
+
+```
+SHOW tables in 	oda_curated_zone;
+```
+
+![DISC-00-8](../01-images/06-00-exp-08.png)   
+<br><br>
+
+#### 1.4.2. Query a table in Dataplex Explore Spark SQL editor
+
+```
+SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2;
+```
+
+![DISC-00-9](../01-images/06-00-exp-09.png)   
+<br><br>
+
+<hr>
 <hr>
 
 ## 2. Lab - discovery of data assets in the Raw Zone: oda-raw-zone
@@ -52,6 +128,7 @@ Click on "Entities". You should see multiple GCS based tables. Their names are b
 <hr>
 
 ### 2.3. Review a GCS based entity's details 
+
 Click on "icecream_sales_forecasting"; And then "Details". Review the details.
 
 ![DISC-3](../01-images/05-03.png)   
