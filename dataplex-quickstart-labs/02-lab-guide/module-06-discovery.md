@@ -94,7 +94,7 @@ Click on the entity "banking_customers_raw_customers; And then "Details". Review
 
 Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
 
-![DISC-4](../01-images/05-04.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-04.png)    
 <br><br>
 
 
@@ -102,7 +102,7 @@ Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
 
 Click on "PARTITION DETAILS". Review the partition inferred.
 
-![DISC-4](../01-images/05-05.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-05.png)   
 <br><br>
 
 Click on "VIEW PARTITION FILES"
@@ -110,8 +110,101 @@ Click on "VIEW PARTITION FILES"
 #### 1.2.6. Review the files in GCS & observe how it all ties together
 
 
-![DISC-4](../01-images/05-06.png)   
+![DISC-1](../01-images/M06-banking-Dataplex-06.png)   
 <br><br>
+
+<hr>
+
+### 1.3. Discovery of data assets in the Raw Zone: oda-curated-zone
+
+#### 1.3.1. UI view
+
+Navigate to the Dataplex Zones UI for ODA-CURATED-ZONE, and you will see "Miscellaneous Datasets" asset. 
+
+![DISC-1](../01-images/M06-banking-Dataplex-07.png)   
+<br><br>
+
+<hr>
+
+#### 1.3.2. Review entities automatically createdd
+
+Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
+
+![DISC-1](../01-images/M06-banking-Dataplex-08.png)   
+<br><br>
+
+<hr>
+
+#### 1.3.3. Review a GCS based entity's details 
+
+Click on the entity "retail_transactions_anomaly_detection; And then "Details". Review the details.
+
+![DISC-1](../01-images/M06-banking-Dataplex-09.png)   
+<br><br>
+
+#### 1.3.4. Review a GCS based entity's schema inference
+
+Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
+
+![DISC-1](../01-images/M06-banking-Dataplex-10.png)    
+<br><br>
+
+
+#### 1.3.5. Review a GCS based entity's partition inference 
+
+Click on "PARTITION DETAILS". This table is not partitioned.
+
+![DISC-1](../01-images/M06-banking-Dataplex-11.png)   
+<br><br>
+<br>
+
+<hr>
+
+### 1.4. Discovery of data assets in the Raw Zone: oda-misc-zone
+
+#### 1.4.1. UI view
+
+Navigate to the Dataplex Zones UI for ODA-CURATED-ZONE, and you will see "Miscellaneous Datasets" asset. 
+
+![DISC-1](../01-images/M06-banking-Dataplex-07.png)   
+<br><br>
+
+<hr>
+
+#### 1.4.2. Review entities automatically createdd
+
+Click on "Entities". You should see multiple GCS based tables. Their names are based off of the directory names in GCS.
+
+![DISC-1](../01-images/M06-banking-Dataplex-08.png)   
+<br><br>
+
+<hr>
+
+#### 1.4.3. Review a GCS based entity's details 
+
+Click on the entity "retail_transactions_anomaly_detection; And then "Details". Review the details.
+
+![DISC-1](../01-images/M06-banking-Dataplex-09.png)   
+<br><br>
+
+#### 1.4.4. Review a GCS based entity's schema inference
+
+Click on "SCHEMA AND COLUMN TAGS". Review the schema inferred.
+
+![DISC-1](../01-images/M06-banking-Dataplex-10.png)    
+<br><br>
+
+
+#### 1.4.5. Review a GCS based entity's partition inference 
+
+Click on "PARTITION DETAILS". This table is not partitioned.
+
+![DISC-1](../01-images/M06-banking-Dataplex-11.png)   
+<br><br>
+<br>
+
+<hr>
+
 
 <hr>
 
