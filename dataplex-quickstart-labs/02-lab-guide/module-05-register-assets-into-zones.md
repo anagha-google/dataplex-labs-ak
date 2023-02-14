@@ -24,6 +24,7 @@ LOCATION="us-central1"
 METASTORE_NM="lab-dpms-$PROJECT_NBR"
 LAKE_NM="oda-lake"
 DATA_RAW_ZONE_NM="oda-raw-zone"
+DATA_RAW_SENSITIVE_ZONE_NM="oda-raw-sensitive-zone"
 DATA_CURATED_ZONE_NM="oda-curated-zone"
 DATA_PRODUCT_ZONE_NM="oda-product-zone"
 MISC_RAW_ZONE_NM="oda-misc-zone"
@@ -153,20 +154,23 @@ The physical BigQuery table is called an entity in this case, and is listed.
 In this lab sub-module, we will simply add the storage buckets created via Terraform with datasets in them, into the raw zone, and curated zone, depending on format.
 
 
-### 2.1. Register data assets into Raw Zone: oda-raw-zone
+### 2.1a. Register data assets into Raw Zone: oda-raw-zone
 
-#### 2.1.1. Assets to be registered
+#### 2.1a.1. Assets to be registered
 
 The following are the raw data assets to be registered into the Dataplex Raw Zone called oda-raw-zone. The data assets are located at -<br>
-GCS Path: gs://oda-raw-data-PROJECT_NBR
+GCS Path: gs://raw-data-PROJECT_NBR
 
 | Domain Use Case | Format | GCS directory | 
 | -- | :--- | :--- | 
+| Chicago Crimes Analytics - Reference Data | CSV | chicago-crimes | 
 | Icecream Sales Forecasting | CSV | icecream-sales-forecasting | 
-| Telco Customer Churn Prediction | CSV | telco-customer-churn-prediction | 
+| Telco Customer Churn Prediction | CSV | telco-customer-churn-prediction/machine_learning_training<br>telco-customer-churn-prediction/machine_learning_scoring | 
+| Cell Tower Anomaly Detection  | CSV | 	
+cell_tower_anomaly_detection/reference_data<br>cell_tower_anomaly_detection/transactions_data | 
 
 
-#### 2.1.2. Register the assets
+#### 2.1a.2. Register the assets
 
 To register the data assets, we will merely register the buckets and the data assets will automatically get discovered and entities registered. We will review entities created in the next lab module.
 
@@ -182,11 +186,51 @@ gcloud dataplex assets create misc-datasets \
 --display-name 'Miscellaneous Datasets'
 ```
 
-#### 2.1.3. Review the assets registered in the Dataplex UI
+#### 2.1a.3. Review the assets registered in the Dataplex UI
 
 Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-RAW-ZONE -> Assets & familiarize yourself with the various tabs and entries.
 
 ![ASST-RD-1](../01-images/04-04a.png)   
+<br><br>
+
+<hr>
+
+<br>
+
+### 2.1b. Register data assets into Raw Zone: oda-raw-sensitive-zone
+
+#### 2.1b.1. Assets to be registered
+
+The following are the raw data assets to be registered into the Dataplex Raw Zone called oda-raw-zone. The data assets are located at -<br>
+GCS Path: gs://raw-data-sensitive-PROJECT_NBR
+
+| Domain Use Case | Format | GCS directory | 
+| -- | :--- | :--- | 
+| Banking - Customer Master Data | CSV | banking/customers_raw/customers | 
+| Banking - Credit Card Customer Customer  | CSV | banking/customers_raw/credit_card_customers | 
+
+
+#### 2.1b.2. Register the assets
+
+To register the data assets, we will merely register the buckets and the data assets will automatically get discovered and entities registered. We will review entities created in the next lab module.
+
+```
+gcloud dataplex assets create banking-datasets \
+--location=$LOCATION \
+--lake=$LAKE_NM \
+--zone=$DATA_RAW_SENSITIVE_ZONE_NM \
+--resource-type=STORAGE_BUCKET \
+--resource-name=projects/$PROJECT_ID/buckets/raw-data-sensitive-$PROJECT_NBR \
+--discovery-enabled \
+--discovery-schedule="0 * * * *" \
+--display-name 'Banking Datasets'
+```
+
+#### 2.1b.3. Review the assets registered in the Dataplex UI
+
+Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-RAW-SENSITIVE-ZONE -> Assets & familiarize yourself with the various tabs and entries.
+
+![ASST-RD-1](../01-images/04-14a.png)   
 <br><br>
 
 <hr>
