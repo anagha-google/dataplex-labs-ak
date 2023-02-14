@@ -1,4 +1,4 @@
-# Create a custom entry in Dataplex - Data Catalog
+# M7: Create a custom entry in Dataplex - Data Catalog
 
 In this lab module, we will learn how to create entries in Cloud Catalog, manually, using the Metadata API. We will first create an entry group and then an entry belonging to the group.
 
