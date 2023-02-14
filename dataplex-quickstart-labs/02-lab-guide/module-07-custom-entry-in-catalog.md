@@ -121,10 +121,27 @@ Follow the steps below to create a Tag Template-
 ![CE](../01-images/M07-Entry-14.png)   
 <br><br>
 
+![CE](../01-images/M07-Entry-15-0.png)   
+<br><br>
+
 <hr>
 
 ## 6. Associate the Tag Template to the custom Catalog entry
 
+Associate the tag to the custom entry as shown below, and populate. Follow the steps in the screenshots in the exact order.
+
+![CE](../01-images/M07-Entry-15.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-16.png)   
+<br><br>
+
+
+![CE](../01-images/M07-Entry-17.png)   
+<br><br>
+
+![CE](../01-images/M07-Entry-18.png)   
+<br><br>
 
 <hr>
 
