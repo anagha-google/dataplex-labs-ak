@@ -59,18 +59,21 @@ User Configured Data Profiling
 
 ### 1.5. User Configured Dataplex Profiling - what's involved
 
+At the time of authoring this lab -
+
 | # | Step | 
 | -- | :--- |
 | 1 | A User Managed Service Account is needed with ```roles/dataplex.dataScanAdmin``` to run the profiling job|
 | 2 | A scan profile needs to be created against a table|
 | 3 | In the scan profile creation step, you can select a full scan or incremental|
-| 4 | In the scan profile creation step, you can configure profiing to run on schedue or on demand|
+| 4 | In the scan profile creation step, you can configure profiling to run on schedule or on demand|
 | 5 | Profiling results are visually displayed|
 | 6 | [Configure RBAC](https://cloud.google.com/dataplex/docs/use-data-profiling#datascan_permissions_and_roles) for running scan versus viewing results |
 
 ### 1.6. User Configured Dataplex Profiling - what's supported
 
-![supported](/lab8/resources/imgs/lab-profiling-01.png)
+![ADQ-3](../01-images/lab-profiling-01.png)   
+<br><br>
 
 ### 1.7. Roles for Data Profiling - what's available
 
@@ -227,7 +230,7 @@ Understand the schema-
 
 ### 3.3. Post discovery run, you should see an asset registered in Dataplex ODA-DQ-ZONE
 
-![ADQ-5](../01-images/module-10-1-05.png)   
+![ADQ-5](../01-images/module-10-1-06.png)   
 <br><br>
 
 <hr>
