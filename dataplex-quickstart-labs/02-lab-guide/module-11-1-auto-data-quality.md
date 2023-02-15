@@ -98,9 +98,19 @@ gcloud projects add-iam-policy-binding ${PROJECT_ID} \
     --role=roles/dataplex.dataScanAdmin
 ```
 
+![ADQ-7](../01-images/module-11-1-07.png)   
+<br><br>
 
+<hr>
 
+## 3. Create a Data Quality Scan
 
+### 3.1. Navigate to the Data Quality menu item
 
+![ADQ-7](../01-images/module-11-1-08.png)   
+<br><br>
 
+### 3.2. Click on create data quality scan
 
+![ADQ-7](../01-images/module-11-1-09.png)   
+<br><br>
