@@ -70,6 +70,11 @@ At the time of authoring this lab -
 | 5 | Profiling results are visually displayed|
 | 6 | [Configure RBAC](https://cloud.google.com/dataplex/docs/use-data-profiling#datascan_permissions_and_roles) for running scan versus viewing results |
 
+Note: <br>
+If you choose incremental scan, in the Timestamp column field, you need to provide a column of type DATE or TIMESTAMP from your BigQuery table that increases monotonically and can be used to identify new records. It can be a column on which the table is partitioned, given that the table doesn't require a partition filter.
+
+<hr>
+
 ### 1.6. User Configured Dataplex Profiling - what's supported
 
 ![ADQ-3](../01-images/lab-profiling-01.png)   
@@ -294,6 +299,8 @@ Follow the step as shown in the screenshot to run a profile scan-
 ![ADQ-5](../01-images/module-10-1-11.png)   
 <br><br>
 
+<hr>
+
 ## 7. Visualize the Profiling job results
 
 At the time of the authoring of this lab, the results were only available visually. From the Dataplex Profiling UI, visualize the scan results-
@@ -318,3 +325,23 @@ At the time of the authoring of this lab, the results were only available visual
 
 ![ADQ-5](../01-images/module-10-1-14.png)   
 <br><br>
+
+<hr>
+
+## 8. Statistics captured by column datatype
+
+Two data types are shown below to demonstrate the types of profile characteristics returned. The first is of string data type -
+
+![ADQ-5](../01-images/module-10-1-15.png)   
+<br><br>
+
+The one below is of integer data type-
+
+![ADQ-5](../01-images/module-10-1-16.png)   
+<br><br>
+
+
+<hr>
+This concludes the lab module. Proceed to the next lab module.
+
+<hr>
