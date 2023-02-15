@@ -1,13 +1,7 @@
 
-# M11-1: Auto Data Quality - COMPLETENESS checks
+# M11-1b: Auto Data Quality - VALIDITY checks
 
-Dataplex provides the following two options to validate data quality:
-
-**Auto data quality** (Public Preview) provides an automated experience for getting quality insights about your data. Auto data quality automates and simplifies quality definition with recommendations and UI-driven workflows. It standardizes on insights with built-in reports and drives actions through alerting and troubleshooting.
-
-**Dataplex data quality task** (Generally Available) offers a highly customizable experience to manage your own rule repository and customize execution and results, using Dataplex for managed / serverless execution. Dataplex data quality task uses an open source component, CloudDQ, that can also open up choices for customers who want to enhance the code to their needs.
-
-The focus of this lab module is Auto data quality.
+This lab builds on top of the prior module and introduces validity checks. We will check validity of SSN and EMAIL with out of the box rules.
 
 ### Prerequisites
 
@@ -15,19 +9,13 @@ Successful completion of prior modules
 
 ### Duration
 
-30 minutes
+10 minutes
 
-### Documentation 
-
-[Data Quality Overview](https://cloud.google.com/dataplex/docs/data-quality-overview)<br>
-[About Auto Data Quality](https://cloud.google.com/dataplex/docs/auto-data-quality-overview)<br>
-[Use Auto Data Quality](https://cloud.google.com/dataplex/docs/use-auto-data-quality)<br>
 
 
 ### Learning goals
 
-1. Understand options for data quality in Dataplex
-2. Practical knowledge of running Auto Data Quality
+Practical knowledge of running Auto Data Quality - validity checks
 
 <hr>
 <hr>
@@ -39,90 +27,24 @@ Successful completion of prior modules
 
 ## 1. Target data for Data Quality checks
 
-We will use the same table as in the Data Profiling lab module.
+Same as prior module. We will use the same table as in the Data Profiling lab module.
 
 ![ADQ-3](../01-images/module-10-1-04.png)   
 <br><br>
 
-Familiarize yourself with the table, from the BigQuery UI by running the SQL below-
-
-```
-SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
-
-```
 
 <hr>
 
-## 2. Create a Data Quality scan with completeness (null value) checks on important columns
-
-### 2.1. Navigate to Auto Data Quality in Dataplex UI
-
-![ADQ-3](../01-images/module-11-1-11.png)   
-<br><br>
-
-### 2.2. Click on Create Data Quality Scan
-
-![ADQ-3](../01-images/module-11-1-12.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-13.png)   
-<br><br>
-
-### 2.3. Define Data Quality Rules - COMPLETENESS checks
-
-Click on the scan and define rules. Lets start with recommendations from Data profiling results.
-
-![ADQ-3](../01-images/module-11-1-17.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-18.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-19.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-20.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-21.png)   
-<br><br>
 
 
-### 2.4. Run Data Quality Rules - COMPLETENESS checks
+## 2. Create a Data Quality scan with validity (null value) checks on SSN and Email columns
 
-Lets check all the fields for quality scan and click on "run now".
-
-![ADQ-3](../01-images/module-11-1-22.png)   
-<br><br>
-
-### 2.5. Job for Data Quality Rules - COMPLETENESS checks gets submitted
-
-![ADQ-3](../01-images/module-11-1-23.png)   
-<br><br>
-
-### 2.6. Click on the DQ - COMPLETENESS job that completed
-
-![ADQ-3](../01-images/module-11-1-24.png)   
-<br><br>
-
-### 2.7. Review the results for the DQ - COMPLETENESS job that completed
-
-![ADQ-3](../01-images/module-11-1-25.png)   
-<br><br>
-
-![ADQ-3](../01-images/module-11-1-26.png)   
-<br><br>
-
-<hr>
-
-## 3. Create a Data Quality scan with validity (null value) checks on SSN and Email columns
-
-### 3.1. Create a new scan called Customer Master DQ Scan - Validity on the same table
+### 2.1. Create a new scan called Customer Master DQ Scan - Validity on the same table
 
 ![ADQ-3](../01-images/module-11-1-27.png)   
 <br><br>
 
-### 3.2. Add the recommended (out of the box) regex based validity checks for SSN and Email
+### 2.2. Add the recommended (out of the box) regex based validity checks for SSN and Email
 
 ![ADQ-3](../01-images/module-11-1-28.png)   
 <br><br>
@@ -142,7 +64,7 @@ Lets check all the fields for quality scan and click on "run now".
 <br><br>
 
 
-### 3.3. Run Data Quality Rules - VALIDITY checks
+### 2.3. Run Data Quality Rules - VALIDITY checks
 
 
 ![ADQ-3](../01-images/module-11-1-33.png)   
@@ -160,7 +82,7 @@ Lets check all the fields for quality scan and click on "run now".
 ![ADQ-3](../01-images/module-11-1-36.png)   
 <br><br>
 
-### 3.4. Review Data Quality Rules - VALIDITY checks - results
+### 2.4. Review Data Quality Rules - VALIDITY checks - results
 
 ![ADQ-3](../01-images/module-11-1-37.png)   
 <br><br>
