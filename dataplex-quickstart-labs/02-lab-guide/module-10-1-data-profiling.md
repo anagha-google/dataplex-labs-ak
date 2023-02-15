@@ -66,7 +66,7 @@ At the time of authoring this lab -
 | 1 | A User Managed Service Account is needed with ```roles/dataplex.dataScanAdmin``` to run the profiling job|
 | 2 | A scan profile needs to be created against a table|
 | 3 | In the scan profile creation step, you can select a full scan or incremental|
-| 4 | In the scan profile creation step, you can configure profiing to run on schedue or on demand|
+| 4 | In the scan profile creation step, you can configure profiling to run on schedule or on demand|
 | 5 | Profiling results are visually displayed|
 | 6 | [Configure RBAC](https://cloud.google.com/dataplex/docs/use-data-profiling#datascan_permissions_and_roles) for running scan versus viewing results |
 
