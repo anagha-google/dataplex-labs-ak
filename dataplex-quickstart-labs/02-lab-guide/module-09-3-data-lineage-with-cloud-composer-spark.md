@@ -1,8 +1,21 @@
 # M9-3: Lineage for Apache Spark pipelines orchestrated by Apache Airflow on Cloud Composer
 
-In this lab module, we will repeat what we did with lineage of BigQuery based Airflow DAG, expect, we will use Apache Spark on Dataproc Serverless instead. Note that Dtaaproc Serverless is not a natively supported service with Dataplex automated lineage capture. So, we will have use custom lineage feature in Cloud Composer.
+In this lab module, we will repeat what we did with lineage of BigQuery based Airflow DAG, except, we will use Apache Spark on Dataproc Serverless instead. Note that Dataproc Serverless is not a natively supported service with Dataplex automated lineage capture. So, we will have use custom lineage feature in Cloud Composer.
 
-## What's involved in this lab
+### Prerequisites
+Successful completion of prior lab modules
+
+### Duration
+~15 minutes
+
+### Learning Units
+
+[1. Concepts](module-08-data-lineage-with-bigquery.md#concepts-data-lineage-information-model) <br>
+[2. Lab](module-08-data-lineage-with-bigquery.md#lab-automated-lineage-capture-for-bigquery-jobs)
+
+<hr>
+
+## Learning goals
 
 1. We will run pre-created PySpark scripts that curate Chicago crimes, and then generate Crime trend reports
 2. Next, we will run a DAG to orchestrate the above, without custom lineage
@@ -25,7 +38,7 @@ UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 ## 1.2. The PySpark code
 Copy the PySpark scripts from local to the code bucket (in case you modified anything) -
 ```
-cd ~/dataplex-oda/00-resources/scripts/pyspark/
+cd ~/dataplex-quickstart-labs/00-resources/scripts/pyspark/
 gsutil cp chicago-crimes-analytics/* gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/
 
 ```
@@ -45,7 +58,7 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
--- --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://oda-curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
+-- --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
 ```
 
 ## 1.3.2. Chicago Crimes by Year Report
@@ -55,7 +68,7 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-year-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Year'
-reportDirGcsURI="gs://oda-product-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT cast(case_year as int) case_year,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_year;'
 reportPartitionCount=1
 reportTableFQN="oda_product_zone.crimes_by_year_spark"
