@@ -238,6 +238,18 @@ Understand the schema-
 
 ## 4. Permissions to create a Data Profile Scan
 
+Lets grant our user managed service account admin role for Data profiling-
 
+```
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+UMSA_FQN="lab-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 
+gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA_FQN \
+--role="roles/dataplex.dataScanAdmin"
 
+```
+
+![ADQ-5](../01-images/module-11-1-07.png)   
+<br><br>
+
+<hr>
