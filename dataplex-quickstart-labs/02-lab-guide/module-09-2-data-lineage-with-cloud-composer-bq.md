@@ -8,6 +8,12 @@ This lab module covers data lineage with Cloud Composer, from a BigQuery context
 [Lineage Supported Systems](https://cloud.google.com/data-catalog/docs/concepts/about-data-lineage#lineage-supported-systems)<br>
 [Lineage with Cloud Composer](https://cloud.google.com/composer/docs/composer-2/lineage-integration#about_data_lineage_integration)
 
+### Prerequisites
+Successful completion of prior lab modules
+
+### Duration
+~15 minutes
+
 ### 1. What's involved in this lab module
 
 In the prior module, we reviewed lineage with executing plain BigQuery SQL. In this lab module, we will demonstrate lineage capture off of an Airflow DAG composed of BigQuery actions.
