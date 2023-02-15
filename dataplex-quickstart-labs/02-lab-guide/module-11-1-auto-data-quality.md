@@ -53,7 +53,7 @@ SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
 
 <hr>
 
-## 2. Create a Data Quality scan
+## 2. Create a Data Quality scan with completeness (null value) checks on important columns
 
 ### 2.1. Navigate to Auto Data Quality in Dataplex UI
 
@@ -95,11 +95,17 @@ Lets check all the fields for quality scan and click on "run now".
 ![ADQ-3](../01-images/module-11-1-22.png)   
 <br><br>
 
+### 2.5. Job for Data Quality Rules - COMPLETENESS checks gets submitted
+
 ![ADQ-3](../01-images/module-11-1-23.png)   
 <br><br>
 
+### 2.6. Click on the DQ - COMPLETENESS job that completed
+
 ![ADQ-3](../01-images/module-11-1-24.png)   
 <br><br>
+
+### 2.7. Review the results for the DQ - COMPLETENESS job that completed
 
 ![ADQ-3](../01-images/module-11-1-25.png)   
 <br><br>
@@ -107,7 +113,22 @@ Lets check all the fields for quality scan and click on "run now".
 ![ADQ-3](../01-images/module-11-1-26.png)   
 <br><br>
 
+<hr>
 
+## 3. Create a Data Quality scan with validity (null value) checks on SSN and Email columns
+
+### 3.1. Create a new scan called Customer Master DQ Scan - Validity on the same table
+
+![ADQ-3](../01-images/module-11-1-27.png)   
+<br><br>
+
+### 3.2. Add regex based validity checks for SSN and Email
+
+![ADQ-3](../01-images/module-11-1-28.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-29.png)   
+<br><br>
 
 
 
