@@ -54,7 +54,11 @@ The lineage-
 The first entry, of the graph above should be the custom Catalog entry we created in a prior module "Chicago Crimes Dataset", that is linked upstream to the crime table - first node in the diagram above via a custom process (Load Government Dataset).
 
 <hr>
+
+............................................................................
 # LAB
+............................................................................
+
 <hr>
 
 ## 1. Variables
