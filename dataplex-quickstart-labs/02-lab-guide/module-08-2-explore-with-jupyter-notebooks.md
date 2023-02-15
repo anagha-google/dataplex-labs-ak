@@ -32,129 +32,97 @@ We created an environment in a prior module for exploration. Review this feature
 ## Lab
 
 ### 1. Navigate to the Explore
-Navigate to the Dataplex UI -> Explore as showin below, in the Cloud Console-
+Navigate to the Dataplex UI -> Explore as show below, in the Cloud Console. The click on notebooks.
 
-![DEW-1](../01-images/module-08-1-00.png)   
+![DEW-1](../01-images/module-08-2-00.png)   
 <br><br>
 <hr>
 
-### 2. Query the GCS external table Chicago Crimes Reference Data that has IUCR codes
+### 2. Import a pre-created notebook
 
-Run the query below, which queries crimes in the table created in lab sub-module 4 in the raw zone.
-
-```
-select * from oda_raw_zone.chicago_crimes_reference_data limit 100
-```
-
-Author's output-
-![DEW-1](../01-images/module-08-1-01.png)   
-<br><br>
-
-Author's output-
-![DEW-1](../01-images/module-08-1-02.png)   
+Pre-created notesbooks are loaded to a notebook bucket from the Terraform provisioning. The next few screenshots provide a pictorial overview of importing a notebook. You also have the option of creating new notebooks.
 <br><br>
 
 
-<hr>
-
-### 3. Explore the table - count distinct IUCR codes
-
-Run an aggregation query-
-```
-select count(distinct iucr) from oda_raw_zone.chicago_crimes_reference_data 
-```
-
-Author's output-
-
-![DEW-1](../01-images/module-08-1-03.png)   
+![DEW-1](../01-images/module-08-2-01.png)   
 <br><br>
 
-<hr>
-
-<hr>
-
-### 4. Persist the SQL script
-
-We will persist the SQL with the name -
-```
-chicago-crimes-distinct-iucr-count.sql
-```
-
-
-Follow the steps as shown below-<br>
-
-![DEW-1](../01-images/module-08-1-04.png)   
+![DEW-1](../01-images/module-08-2-02.png)   
 <br><br>
 
-Notice where the script is persisted - in the content store in Dataplex.
+![DEW-1](../01-images/module-08-2-03.png)   
+<br><br>
 
-![DEW-1](../01-images/module-08-1-05.png)   
+
+![DEW-1](../01-images/module-08-2-04.png)   
+<br><br>
+
+
+![DEW-1](../01-images/module-08-2-05.png)   
+<br><br>
+
+
+![DEW-1](../01-images/module-08-2-06.png)   
+<br><br>
+
+
+![DEW-1](../01-images/module-08-2-07.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-2-08.png)   
 <br><br>
 
 <hr>
 
-### 5. Schedule the SQL script to run
 
-We will schedule a report to run and write results to a GCS bucket.
+### 3. Open the imported notebook
 
-#### 5.1. Schedule a Spark SQL script via UI
-
-Follow the steps detailed in screenshots below-
-
-![DEW-1](../01-images/module-08-1-06.png)   
-<br><br>
-
-![DEW-1](../01-images/module-08-1-07.png)   
-<br><br>
-
-
-#### 5.2. FYI - Schedule a Spark SQL script via gcloud
-
-You can schedule with a gcloud command.
-```
-THIS IS INFORMATIONAL - DO NOT RUN
-
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-VPC_NM="lab-vpc-$PROJECT_NBR"
-
-UMSA_FQN="lab-sa@${PROJECT_ID}.iam.gserviceaccount.com"
-LOCATION="us-central1"
-LAKE_NM="oda-lake"
-SQL_SCRIPT_CONTENT_STORE_URI="projects/$PROJECT_ID/locations/$LOCATION/lakes/$LAKE_NM/contentitems/chicago-crimes.sql"
-RAND_VAL=$RANDOM
-
-gcloud dataplex tasks create chicago-crimes-report-$RAND_VAL \
---project=$PROJECT_ID \
---location=$LOCATION \
---lake=$LAKE_NM \
---trigger-type=ON_DEMAND  \
---execution-service-account="$UMSA_FQN" \
---vpc-network-name="$VPC_NM"  \
---spark-sql-script="$SQL_SCRIPT_CONTENT_STORE_URI" \ 
---execution-args=^::^TASK_ARGS="--output_location,gs://raw-data-36819656457/chicago-crimes-report-$RAND_VAL,--output_format,csv"
-
-```
-
-### 6. Share SQL scripts with other users
-
-You can share scripts with other principals as shown below-
-
-![DEW-1](../01-images/module-08-1-08.png)   
-<br><br>
-
-![DEW-1](../01-images/module-08-1-09.png)   
-<br><br>
-<hr>
-
-### 7. Query a native table in the BigQuery 
-
-Try running a query against a BigQuery dataset and it will fail. This is because the data Exploration Workbench only supports assets in the lake.
-
-
-![DEW-1](../01-images/module-08-1-10.png)   
+![DEW-1](../01-images/module-08-2-09.png)   
 <br><br>
 
 <hr>
-This concludes the lab module. In the next module, we will learn to query metadata in the Dataproc Metastore (Apache Hive Metastore) with Spark SQL.
+
+
+### 4. Run the imported Jupyter notebook
+
+![DEW-1](../01-images/module-08-2-10.png)   
+<br><br>
+
+<hr>
+
+
+### 5. View the crime trends in the notebooks
+
+![DEW-1](../01-images/module-08-2-11.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-2-12.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-2-13.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-2-14.png)   
+<br><br>
+
+Optionally edit the code and perform any additional analysis
+
+<hr>
+
+### 6. Explore other capabilities
+
+You can -
+1. Export the notebook
+2. Share the notebook
+3. Download the notebook
+4. Delete the notebook
+
+![DEW-1](../01-images/module-08-2-14.png)   
+<br><br>
+
+Try out each of these features independently.
+
+
+<hr>
+This concludes the lab module. Proceed to the next module.
 <hr>
