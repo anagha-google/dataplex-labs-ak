@@ -358,7 +358,7 @@ start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, 
 
 ### 4.3. Validate the creation of tables in BigQuery
 
-![LIN-05](../01-images/10-05.png)   
+![LIN-5](../01-images/module-09-02-05.png)   
 <br><br>
 
 <hr>
