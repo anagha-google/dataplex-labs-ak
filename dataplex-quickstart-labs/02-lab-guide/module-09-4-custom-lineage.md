@@ -31,6 +31,23 @@ In this lab module, we will use the Dataplex Lineage API and make a custom linea
 
 <hr>
 
+## Lineage at onset of the lab
+
+Lets review the lineage at the onset of this lab, from the BigQuery UI in the Cloud Console.
+
+![CL](../01-images/module-09-4-00-a.png)   
+<br><br>
+
+![CL](../01-images/module-09-4-00-b.png)   
+<br><br>
+
+The lineage-
+
+![CL](../01-images/module-09-4-01.png)   
+<br><br>
+
+<hr>
+
 ## 1. Variables
 
 Paste the below in cloud shell-
