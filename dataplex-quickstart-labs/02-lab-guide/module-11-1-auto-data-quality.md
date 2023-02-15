@@ -70,6 +70,22 @@ SELECT * FROM oda_product_zone.customer_master LIMIT 20
 ![ADQ-5](../01-images/module-11-1-05.png)   
 <br><br>
 
+### 1.3. Add the table as managed entity
+
+In the BQ UI, run the SQL below-
+```
+CREATE OR REPLACE TABLE oda_product_zone.customer_master AS
+SELECT * FROM oda_raw_sensitive_zone.banking_customers_raw_customers WHERE date='2022-05-01'
+```
+
+Run a quick query to test if the table is created and also review the columns-
+```
+SELECT * FROM oda_product_zone.customer_master LIMIT 20
+```
+
+![ADQ-5](../01-images/module-11-1-05.png)   
+<br><br>
+
 <hr>
 
 ## 2. IAM permissions to run Data Quality checks
