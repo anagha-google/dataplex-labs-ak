@@ -5,8 +5,8 @@ In this lab module, we will use the Dataplex Lineage API and learn how to create
 <hr>
 
 ### Prerequisite
-1. [Lab module on creating custom entries in Dataplex Catalog](../module-07-1-custom-entry-in-catalog.md)<br>
-2. [Lab module on native support for lineage with BQ SQL](../module-09-1-data-lineage-with-bigquery.md)
+1. [Lab module on creating custom entries in Dataplex Catalog](module-07-1-custom-entry-in-catalog.md)<br>
+2. [Lab module on native support for lineage with BQ SQL](module-09-1-data-lineage-with-bigquery.md)
 
 ### Duration
 
