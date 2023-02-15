@@ -26,16 +26,16 @@ We will create the following DAG-
 | BQ SQL Step | What's involved | 
 | -- | :--- |  
 | Step 1 |  **Curate Chicago Crimes:**<br>Details: Augment raw Chicago Crimes with attributes that we will use for trending<br>Persist to: ODA Curated Zone | 
-| Step 2a |  **Trend Report 1: Crimes by Year:**<br>Details: Generate report on crimes by year from the curated crimes<br>Persist to: ODA Consumption Zone| 
-| Step 2b |  **Trend Report 2: Crimes by Month:**<br>Details: Generate report on crimes by month from the curated crimes<br>Persist to: ODA Consumption Zone| 
-| Step 2c |  **Trend Report 3: Crimes by Day:**<br>Details: Generate report on crimes by day of week from the curated crimes<br>Persist to: ODA Consumption Zone| 
-| Step 2d |  **Trend Report 4: Crimes by Hour:**<br>Details: Generate report on crimes by hour of day from the curated crimes<br>Persist to: ODA Consumption Zone| 
+| Step 2a |  **Trend Report 1: Crimes by Year:**<br>Details: Generate report on crimes by year from the curated crimes<br>Persist to: ODA Product Zone| 
+| Step 2b |  **Trend Report 2: Crimes by Month:**<br>Details: Generate report on crimes by month from the curated crimes<br>Persist to: ODA Product Zone| 
+| Step 2c |  **Trend Report 3: Crimes by Day:**<br>Details: Generate report on crimes by day of week from the curated crimes<br>Persist to: ODA Product Zone| 
+| Step 2d |  **Trend Report 4: Crimes by Hour:**<br>Details: Generate report on crimes by hour of day from the curated crimes<br>Persist to: ODA Product Zone| 
 
 ![LIN-5](../01-images/09-05.png)   
 <br><br>
 
 #### 2.2. Just FYI - Source table: oda_raw_zone.chicago_crimes
-This is purely informaional and repetative as it was already covered in the prior module.<br>
+This is purely informaional and repetative as it was already covered in a prior module.<br>
 
 Recap: The table, oda_raw_zone.crimes_raw was populated from the BigQuery public dataset using this SQL below which you do not need to run:
 
