@@ -59,6 +59,8 @@ User Configured Data Profiling
 
 ### 1.5. User Configured Dataplex Profiling - what's involved
 
+At the time of authoring this lab -
+
 | # | Step | 
 | -- | :--- |
 | 1 | A User Managed Service Account is needed with ```roles/dataplex.dataScanAdmin``` to run the profiling job|
