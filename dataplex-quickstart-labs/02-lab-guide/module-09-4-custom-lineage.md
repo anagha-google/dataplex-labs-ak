@@ -87,6 +87,7 @@ THIS IS INFORMATIONAL
 We will need in subsequent steps:
 ```
 CUSTOM_LINEAGE_PROCESS_ID=`cat lineage_processes_listing.json | grep -C 1 Public | grep name | cut -d'/' -f6 | tr -d \" | tr -d ,`
+echo $CUSTOM_LINEAGE_PROCESS_ID
 ```
 
 Author's process sample:
