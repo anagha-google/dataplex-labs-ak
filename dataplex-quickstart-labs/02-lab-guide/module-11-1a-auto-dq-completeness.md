@@ -7,7 +7,7 @@ Dataplex provides the following two options to validate data quality:
 
 **Dataplex data quality task** (Generally Available) offers a highly customizable experience to manage your own rule repository and customize execution and results, using Dataplex for managed / serverless execution. Dataplex data quality task uses an open source component, CloudDQ, that can also open up choices for customers who want to enhance the code to their needs.
 
-The focus of this lab module is Auto data quality.
+The focus of this lab module is Auto data quality - completeness checks.
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ Successful completion of prior modules
 ### Learning goals
 
 1. Understand options for data quality in Dataplex
-2. Practical knowledge of running Auto Data Quality
+2. Practical knowledge of running Auto Data Quality - completeness checks feature
 
 <hr>
 <hr>
