@@ -85,7 +85,7 @@ FROM
 
 <hr>
 
-#### 2.4. Pipeline Step 2a: Create Crimes Report by Year
+#### 3.4. Pipeline Step 2a: Create Crimes Report by Year
 
 The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
 **Do not run it, we will run from Airflow.**
@@ -104,7 +104,7 @@ GROUP BY
 
 <hr>
 
-#### 2.5. Pipeline Step 2b: Create Crimes Report by Month 
+#### 3.5. Pipeline Step 2b: Create Crimes Report by Month 
 
 The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
 **Do not run it, we will run from Airflow.**
@@ -123,7 +123,7 @@ GROUP BY
 
 <hr>
 
-#### 2.6. Pipeline Step 2c: Create Crimes Report by Day of Week
+#### 3.6. Pipeline Step 2c: Create Crimes Report by Day of Week
 
 The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
 **Do not run it, we will run from Airflow.**
@@ -142,7 +142,7 @@ GROUP BY
 
 <hr>
 
-#### 2.7. Pipeline Step 2d: Create Crimes Report by Hour of Day
+#### 3.7. Pipeline Step 2d: Create Crimes Report by Hour of Day
 
 The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
 **Do not run it, we will run from Airflow.**
@@ -162,9 +162,9 @@ GROUP BY
 <hr>
 
 
-## 3. Enable Data Lineage in Cloud Composer & review the DAG code
+## 4. Enable Data Lineage in Cloud Composer & review the DAG code
 
-### 3.1. Enable Data Lineage in Cloud Composer
+### 4.1. Enable Data Lineage in Cloud Composer
 The Terraform you ran in module 2 provisioned Cloud Composer. We will update it to enable lineage.<br>
 
 Paste the below in Cloud Shell-
@@ -182,7 +182,7 @@ Alternately from the UI, as follows:
 ![LIN-1](../01-images/10-01.png)   
 <br><br>
 
-### 3.2. Review the Airflow DAG Python script
+### 4.2. Review the Airflow DAG Python script
 
 [Full script](../00-resources/scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py)
 
@@ -338,19 +338,22 @@ start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, 
 
 <hr>
 
-## 4. Run the Airflow DAG
+## 5. Run the Airflow DAG
 
-### 4.1. Navigate to the Cloud Composer UI in the Cloud Console and launch the Airflow UI
+### 5.1. Navigate to the Cloud Composer UI in the Cloud Console and launch the Airflow UI
 
 ![LIN-02](../01-images/10-02.png)   
 <br><br>
 
-### 4.2. Run the DAG "Chicago_Crime_Trends_BQ_SQL"
+### 5.2. Run the DAG "Chicago_Crime_Trends_From_BQ_With_OOB_Lineage"
 
-![LIN-03](../01-images/10-03.png)   
+![LIN-5](../01-images/module-09-2-02.png)   
 <br><br>
 
-![LIN-04](../01-images/10-04.png)   
+![LIN-5](../01-images/module-09-2-03.png)   
+<br><br>
+
+![LIN-5](../01-images/module-09-2-04.png)   
 <br><br>
 
 ### 4.3. Validate the creation of tables in BigQuery
