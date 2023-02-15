@@ -15,7 +15,7 @@ Successful completion of prior modules
 
 ### Duration
 
-30 minutes
+15 minutes or less
 
 ### Documentation 
 
