@@ -365,32 +365,33 @@ start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, 
 
 ## 5. Review the lineage captured in Dataplex UI
 
-In the BigQuery UI, click on the table, oda_curated_zone.chicago_crimes_curated_cc2 and open the table, click on lineage and review the same as shown below. 
+In the BigQuery UI, click on the table, oda_curated_zone.crimes_curated and open the table, click on lineage and review the same as shown below. 
 
-![LIN-06](../01-images/10-06.png)   
+![LIN-5](../01-images/module-09-02-13.png)   
 <br><br>
 
-![LIN-07](../01-images/10-07.png)   
+![LIN-5](../01-images/module-09-02-06.png)   
 <br><br>
 
-![LIN-08](../01-images/10-08.png)   
+![LIN-5](../01-images/module-09-02-07.png)   
 <br><br>
 
-![LIN-09](../01-images/10-09.png)   
+![LIN-5](../01-images/module-09-02-08.png)   
 <br><br>
 
-![LIN-10](../01-images/10-10.png)   
+![LIN-5](../01-images/module-09-02-09.png)   
 <br><br>
 
-![LIN-11](../01-images/10-11.png)   
+![LIN-5](../01-images/module-09-02-10.png)   
 <br><br>
 
-![LIN-12](../01-images/10-12.png)   
+![LIN-5](../01-images/module-09-02-11.png)   
 <br><br>
 
-![LIN-13](../01-images/10-13.png)   
-<br><br>
+Go further upstream...
 
+![LIN-5](../01-images/module-09-02-12.png)   
+<br><br>
 
 
 <hr>
