@@ -55,10 +55,26 @@ SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
 
 ## 2. Create a Data Quality scan
 
-### 2.1. Follow the steps nelow - as depicted in the screenshots to create basic null checks
+### 2.1. Navigate to Auto Data Quality in Dataplex UI
 
 ![ADQ-3](../01-images/module-11-1-11.png)   
 <br><br>
+
+### 2.2. Click on Create Data Quality Scan
+
+![ADQ-3](../01-images/module-11-1-12.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-13.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-14.png)   
+<br><br>
+
+
+### 2.1. Follow the steps below - as depicted in the screenshots to create basic null checks
+
+
 
 ### 2.2. Lets add a validity check for SSN
 
