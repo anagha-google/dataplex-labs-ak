@@ -17,7 +17,11 @@ We will first create and test the queries in BigQuery, and then use an Apache Ai
 **Note:** <br>
 At the time of authoring of this lab, lineage in Cloud Composer was in preview, and supported for specific versions of Cloud Composer 2.
 
-### 2. The Data Engineering Pipeline - building blocks (BigQuery SQL)
+### 2. The Lake Layout for the module
+
+
+
+### 3. The Data Engineering Pipeline - building blocks (BigQuery SQL)
 
 #### 2.1. The DAG
 
