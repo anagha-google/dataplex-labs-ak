@@ -294,4 +294,27 @@ Follow the step as shown in the screenshot to run a profile scan-
 ![ADQ-5](../01-images/module-10-1-11.png)   
 <br><br>
 
+## 7. Visualize the Profiling job results
 
+At the time of the authoring of this lab, the results were only available visually. From the Dataplex Profiling UI, visualize the scan results-
+
+![ADQ-5](../01-images/module-10-1-12.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-13a.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-13b.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-13b.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-13d.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-13e.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-14.png)   
+<br><br>
