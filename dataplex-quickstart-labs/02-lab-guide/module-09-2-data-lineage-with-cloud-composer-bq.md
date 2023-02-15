@@ -184,7 +184,7 @@ Alternately from the UI, as follows:
 
 ### 3.2. Review the Airflow DAG Python script
 
-[Full script](https://github.com/anagha-google/dataplex-oda/blob/main/00-resources/scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py)
+[Full script](../00-resources/scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py)
 
 ```
 from airflow import models
