@@ -4,27 +4,13 @@
 
 To recap, a queryable Dataplex entity is a table - a BigQuery table, or a BigLake table/external table on structured Cloud Storage objects in the Dataplex Lake. 
 
-In this lab module, we will query Chicago Crimes in a BigQuery public dataset on the Data Engineering DEW Environment.
+In this lab module, we will query the Chicago Crimes BigQuery public dataset via a Jupyter Notebook, in the Data Engineering DEW Environment.
 
 <hr>
 
 ### Prerequisites
 
-1. Successful completion of the prior modules
-
-2. If you run queries that use the BigQuery API, you will need to grant the principal the following role-<br>
-roles/serviceusage.serviceUsageConsumer
-
-Lets go ahead and grant the User Managed Service Account the role, from Cloud Shell-
-
-```
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-UMSA_FQN="lab-sa@${PROJECT_ID}.iam.gserviceaccount.com"
-
-gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA_FQN \
---role="roles/serviceusage.serviceUsageConsumer"
-
-```
+Successful completion of the prior modules
 
 ### Recap
 
@@ -45,7 +31,7 @@ We created an environment in a prior module for exploration. Review this feature
 
 ## Lab
 
-### 1. Navigate to the Spark SQL Workbench 
+### 1. Navigate to the Explore
 Navigate to the Dataplex UI -> Explore as showin below, in the Cloud Console-
 
 ![DEW-1](../01-images/module-08-1-00.png)   
