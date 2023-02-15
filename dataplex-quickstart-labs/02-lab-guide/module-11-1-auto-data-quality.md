@@ -74,12 +74,31 @@ SELECT * FROM oda_product_zone.customer_master LIMIT 20
 
 ## 2. IAM permissions to run Data Quality checks
 
+### 2.1. Predefined IAM roles
+
 The following are the pre-defined roles available-
 
 ![ADQ-5](../01-images/module-11-1-06.png)   
 <br><br>
 
 Lets grant our User Managed Service Account the role ```role/dataplex.dataScanAdmin```
+
+### 2.2. Grant the User Managed Service Account the role/dataplex.dataScanAdmin role
+
+```
+# Variables
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
+
+# Permissions
+
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+    --member=serviceAccount:${UMSA_FQN} \
+    --role=roles/dataplex.dataScanAdmin
+```
+
+
 
 
 
