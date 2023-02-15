@@ -215,7 +215,7 @@ FROM
 
 TREND_BY_YEAR = f"""
 CREATE OR REPLACE TABLE
-  `{PROJECT_ID}.oda_consumption_zone.crimes_by_year` AS
+  `{PROJECT_ID}.oda_product_zone.crimes_by_year` AS
 SELECT
   case_year,
   COUNT(*) AS crime_count
@@ -227,7 +227,7 @@ GROUP BY
 
 TREND_BY_MONTH = f"""
 CREATE OR REPLACE TABLE
-  `{PROJECT_ID}.oda_consumption_zone.crimes_by_month` AS
+  `{PROJECT_ID}.oda_product_zone.crimes_by_month` AS
 SELECT
   case_month AS month,
   COUNT(*) AS crime_count
@@ -240,7 +240,7 @@ GROUP BY
 
 TREND_BY_DAY = f"""
 CREATE OR REPLACE TABLE
-  `{PROJECT_ID}.oda_consumption_zone.crimes_by_day` AS
+  `{PROJECT_ID}.oda_product_zone.crimes_by_day` AS
 SELECT
   case_day_of_week_name AS day,
   COUNT(*) AS crime_count
@@ -253,7 +253,7 @@ GROUP BY
 
 TREND_BY_HOUR = f"""
 CREATE OR REPLACE TABLE
-  `{PROJECT_ID}.oda_consumption_zone.crimes_by_hour` AS
+  `{PROJECT_ID}.oda_product_zone.crimes_by_hour` AS
 SELECT
   case_hour AS hour_of_day,
   COUNT(*) AS crime_count
