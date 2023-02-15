@@ -68,22 +68,25 @@ SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
 ![ADQ-3](../01-images/module-11-1-13.png)   
 <br><br>
 
-![ADQ-3](../01-images/module-11-1-14.png)   
+
+
+
+### 2.3. Define & run Data Quality Rules - COMPLETENESS checks
+
+#### 2.3.1. Define rules
+Click on the scan and define rules. Lets start with recommendations from Data profiling results.
+
+![ADQ-3](../01-images/module-11-1-17.png)   
 <br><br>
 
-
-### 2.3. Define Data Quality Rules - a few null checks
-
-
-![ADQ-3](../01-images/module-11-1-15.png)   
+![ADQ-3](../01-images/module-11-1-18.png)   
 <br><br>
 
-![ADQ-3](../01-images/module-11-1-16.png)   
+![ADQ-3](../01-images/module-11-1-19.png)   
 <br><br>
 
-### 2.2. Lets add a validity check for SSN
-
-### 2.3. Lets add a validity check for email
+![ADQ-3](../01-images/module-11-1-20.png)   
+<br><br>
 
 
 ## 3. Run a Data Quality scan
