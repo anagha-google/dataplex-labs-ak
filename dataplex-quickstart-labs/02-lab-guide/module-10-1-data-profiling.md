@@ -230,7 +230,7 @@ Understand the schema-
 
 ### 3.3. Post discovery run, you should see an asset registered in Dataplex ODA-DQ-ZONE
 
-![ADQ-5](../01-images/module-10-1-05.png)   
+![ADQ-5](../01-images/module-10-1-06.png)   
 <br><br>
 
 <hr>
