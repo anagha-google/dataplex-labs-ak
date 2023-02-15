@@ -2,9 +2,17 @@
 
 In this lab module, we will use the Dataplex Lineage API and make a custom lineage entry for the custom entry we created for Chicago Crimes Dataset that is part of the custom entry group we created called "Government Datasets", for a custom process we will create called "Load Public Dataset" to the bigquery public dataset table called "crime" from which we sourced data in module 3.
 
-**Prerequisite:**<br>
+<hr>
+
+### Prerequisite
 1. [Lab module on creating custom entries in Dataplex Catalog](../module-07-1-custom-entry-in-catalog.md)<br>
 2. [Lab module on native support for lineage with BQ SQL]()
+
+### Duration
+
+30 minutes or less
+
+<hr>
 
 ## Learning Goal 1: Custom lineage creation with Dataplex Lineage API
 | # | Unit | 
@@ -20,11 +28,6 @@ In this lab module, we will use the Dataplex Lineage API and make a custom linea
 | 5 | Delete custom run for the custom process |
 | 6 | Delete custom process |
 
-## Learning Goal 3: Learning units - custom metadata management with Dataplex Metadata API:
-| # | Unit | 
-| -- | :--- | 
-| 7 | Delete custom entry |
-| 8 | Delete custom entry group |
 
 <hr>
 
@@ -40,7 +43,7 @@ LOCATION="us-central1"
 
 <hr>
 
-## 2. Lineage Process 
+## 2. Lineage Process Management
 
 We will learn to create a process and list the same using the Lineage API.
 
@@ -96,7 +99,7 @@ Author's process sample:
 ```
 <hr>
 
-## 3. Lineage Process Run 
+## 3. Lineage Process Run Management
 
 We will create an execution instance of the "Load Public Dataset" process we created, and refer to it as a "run". 
 
@@ -156,7 +159,7 @@ echo $CUSTOM_LINEAGE_PROCESS_RUN_ID
 
 <hr>
 
-## 4. Lineage Event
+## 4. Lineage Event Management
 
 In this section, we will create a lineage event.
 
@@ -273,7 +276,7 @@ Lets navigate to the entity oda_raw_zone.crimes_raw in the Dataplex Search UI an
 
 <hr>
 
-## 7. Lineage REST Reference
+## 7. Lineage REST API Reference
 
 https://cloud.google.com/data-catalog/docs/reference/data-lineage/rest
 
