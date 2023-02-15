@@ -41,10 +41,14 @@ Same as prior module. We will use the same table as in the Data Profiling lab mo
 
 ### 2.1. Create a new scan called Customer Master DQ Scan - Validity on the same table
 
+Follow the step by step instructions detailed in the screenshots below. 
+
 ![ADQ-3](../01-images/module-11-1-27.png)   
 <br><br>
 
 ### 2.2. Add the recommended (out of the box) regex based validity checks for SSN and Email
+
+Follow the step by step instructions detailed in the screenshots below. 
 
 ![ADQ-3](../01-images/module-11-1-28.png)   
 <br><br>
@@ -66,6 +70,7 @@ Same as prior module. We will use the same table as in the Data Profiling lab mo
 
 ### 2.3. Run Data Quality Rules - VALIDITY checks
 
+Follow the step by step instructions detailed in the screenshots below. 
 
 ![ADQ-3](../01-images/module-11-1-33.png)   
 <br><br>
@@ -84,6 +89,8 @@ Same as prior module. We will use the same table as in the Data Profiling lab mo
 
 ### 2.4. Review Data Quality Rules - VALIDITY checks - results
 
+Follow the step by step instructions detailed in the screenshots below. 
+
 ![ADQ-3](../01-images/module-11-1-37.png)   
 <br><br>
 
@@ -100,7 +107,12 @@ Same as prior module. We will use the same table as in the Data Profiling lab mo
 <br><br>
 
 
+<hr>
+<hr>
 
+This concludes the module. Proceed to the next module.
+
+<hr>
 
 
 
