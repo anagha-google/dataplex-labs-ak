@@ -111,7 +111,7 @@ Optionally edit the code and perform any additional analysis
 
 ### 6. Explore other capabilities
 
-You can -
+Click on the ellipsis as shown before to see the context menu -
 1. Export the notebook
 2. Share the notebook
 3. Download the notebook
