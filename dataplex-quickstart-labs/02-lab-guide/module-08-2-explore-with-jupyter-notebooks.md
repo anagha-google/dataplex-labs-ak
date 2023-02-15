@@ -117,7 +117,7 @@ You can -
 3. Download the notebook
 4. Delete the notebook
 
-![DEW-1](../01-images/module-08-2-14.png)   
+![DEW-1](../01-images/module-08-2-15.png)   
 <br><br>
 
 Try out each of these features independently.
