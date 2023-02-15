@@ -22,26 +22,85 @@ Successful completion of prior modules
 [About Data Profiling](https://cloud.google.com/dataplex/docs/data-profiling-overview)<br>
 [Use Data Profiling](https://cloud.google.com/dataplex/docs/use-data-profiling)<br>
 
+<hr>
+
 
 ### Learning goals
 
-TODO
+1. Understand the data profiling feature - options, considerations, positioning
+2. Practical knowledge of how to use data profiling in Dataplex
+
+<hr>
+
+<hr>
+
+# PRODUCT FEATURE HIGHLIGHTS
+
+<hr>
+
+## 1. Product Feature Overview: About Data Profiling in Dataplex
+
+Dataplex data profiling lets you identify common statistical characteristics of the columns of your BigQuery tables. This information helps data consumers understand their data better, which makes it possible to analyze data more effectively. Dataplex also uses this information to recommend rules for data quality.
+
+### 1.1. Options for Data Profiling in Dataplex
+1. Auto Data Profiling
+2. User Configured Data Profiling
+
+### 1.2. Scope of this lab
+User Configured Data Profiling
+
+### 1.3. Note
+1. This feature is currently supported only for BigQuery tables.
+2. Data profiling compute used is Google managed, so you don't need to plan for/or handle any infrastructure complexity.
+
+### 1.4. Documentation
+[About](https://cloud.google.com/dataplex/docs/data-profiling-overview#limitations_in_public_preview) | 
+[Practitioner's Guide](https://cloud.google.com/dataplex/docs/use-data-profiling)
+
+### 1.5. User Configured Dataplex Profiling - what's involved
+
+| # | Step | 
+| -- | :--- |
+| 1 | A User Managed Service Account is needed with ```roles/dataplex.dataScanAdmin``` to run the profiling job|
+| 2 | A scan profile needs to be created against a table|
+| 3 | In the scan profile creation step, you can select a full scan or incremental|
+| 4 | In the scan profile creation step, you can configure profiing to run on schedue or on demand|
+| 5 | Profiling results are visually displayed|
+| 6 | [Configure RBAC](https://cloud.google.com/dataplex/docs/use-data-profiling#datascan_permissions_and_roles) for running scan versus viewing results |
+
+### 1.6. User Configured Dataplex Profiling - what's supported
+
+![supported](/lab8/resources/imgs/lab-profiling-01.png)
+
+### 1.7. Roles for Data Profiling - what's available
+
+```
+role/dataplex.dataScanAdmin: Full access to DataScan resources.
+role/dataplex.dataScanEditor: Write access to DataScan resources.
+role/dataplex.dataScanViewer: Read access to DataScan resources, excluding the results.
+role/dataplex.dataScanDataViewer: Read access to DataScan resources, including the results.
+```
+[Documentation on RBAC](https://cloud.google.com/dataplex/docs/use-data-profiling#datascan_permissions_and_roles)
 
 
+### 1.8. Provisioning Data Profiling tasks - what's supported
 
+At the time of authoring of this lab, Console and REST API only
+
+<hr>
 <hr>
 
 # LAB
 
 <hr>
 
-## 1. Create a BigQuery dataset for Data Profiling and Data Quality results
+## 2. Create a BigQuery dataset for Data Profiling and Data Quality results
 
 - Dataplex Profiling works with BigQuery managed tables only.
 - Lets create a BQ dataset for Data Profiling and Data Quality results.
 
 
-### 1.1. Declare variables
+### 2.1. Declare variables
 
 Paste in Cloud Shell-
 ```
@@ -113,7 +172,7 @@ gcloud dataplex assets create $DATA_QUALITY_ASSET_NM \
 
 <hr>
 
-## 3. Data to use to showcase profiling
+## 3. Data to be profiled
 
 ### 3.1. External table with Customer Master Data
 
@@ -163,4 +222,19 @@ Understand the schema-
 
 ![ADQ-5](../01-images/module-10-1-05.png)   
 <br><br>
+
+<hr>
+
+### 3.3. Post discovery run, you should see an asset registered in Dataplex ODA-DQ-ZONE
+
+![ADQ-5](../01-images/module-10-1-05.png)   
+<br><br>
+
+<hr>
+
+
+## 4. Permissions to create a Data Profile Scan
+
+
+
 
