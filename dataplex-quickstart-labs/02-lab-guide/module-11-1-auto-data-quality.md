@@ -55,4 +55,18 @@ SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
 
 ## 2. Create a Data Quality scan
 
+### 2.1. Follow the steps nelow - as depicted in the screenshots to create basic null checks
+
+![ADQ-3](../01-images/module-11-1-11.png)   
+<br><br>
+
+### 2.2. Lets add a validity check for SSN
+
+### 2.3. Lets add a validity check for email
+
+
+## 3. Run a Data Quality scan
+
+
+
 
