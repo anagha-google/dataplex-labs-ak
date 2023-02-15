@@ -347,13 +347,13 @@ start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, 
 
 ### 5.2. Run the DAG "Chicago_Crime_Trends_From_BQ_With_OOB_Lineage"
 
-![LIN-5](../01-images/module-09-2-02.png)   
+![LIN-5](../01-images/module-09-02-02.png)   
 <br><br>
 
-![LIN-5](../01-images/module-09-2-03.png)   
+![LIN-5](../01-images/module-09-02-03.png)   
 <br><br>
 
-![LIN-5](../01-images/module-09-2-04.png)   
+![LIN-5](../01-images/module-09-02-04.png)   
 <br><br>
 
 ### 4.3. Validate the creation of tables in BigQuery
