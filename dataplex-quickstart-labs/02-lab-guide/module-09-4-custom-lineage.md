@@ -1,12 +1,12 @@
 # M9-4: Custom Lineage with Custom Catalog Entry
 
-In this lab module, we will use the Dataplex Lineage API and make a custom lineage entry for the custom entry we created for Chicago Crimes Dataset that is part of the custom entry group we created called "Government Datasets", for a custom process we will create called "Load Public Dataset" to the bigquery public dataset table called "crime" from which we sourced data in module 3.
+In this lab module, we will use the Dataplex Lineage API and learn how to create custom lineage processes, process runs, lineage events and add them to an existing lineage graph.
 
 <hr>
 
 ### Prerequisite
 1. [Lab module on creating custom entries in Dataplex Catalog](../module-07-1-custom-entry-in-catalog.md)<br>
-2. [Lab module on native support for lineage with BQ SQL]()
+2. [Lab module on native support for lineage with BQ SQL](../module-09-1-data-lineage-with-bigquery.md)
 
 ### Duration
 
@@ -51,7 +51,7 @@ The lineage-
 
 ## Lineage at end of the lab
 
-
+The first entry, of the graph above should be the custom Catalog entry we created in a prior module "Chicago Crimes Dataset", that is linked upstream to the crime table - first node in the diagram above via a custom process (Load Government Dataset).
 
 <hr>
 
