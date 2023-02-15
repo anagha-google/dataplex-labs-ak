@@ -122,13 +122,62 @@ Lets check all the fields for quality scan and click on "run now".
 ![ADQ-3](../01-images/module-11-1-27.png)   
 <br><br>
 
-### 3.2. Add regex based validity checks for SSN and Email
+### 3.2. Add the recommended (out of the box) regex based validity checks for SSN and Email
 
 ![ADQ-3](../01-images/module-11-1-28.png)   
 <br><br>
 
 ![ADQ-3](../01-images/module-11-1-29.png)   
 <br><br>
+
+![ADQ-3](../01-images/module-11-1-30.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-31.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-32.png)   
+<br><br>
+
+
+### 3.3. Run Data Quality Rules - VALIDITY checks
+
+
+![ADQ-3](../01-images/module-11-1-33.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-34.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-35.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-36.png)   
+<br><br>
+
+### 3.4. Review Data Quality Rules - VALIDITY checks - results
+
+![ADQ-3](../01-images/module-11-1-37.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-38.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-39.png)   
+<br><br>
+
+
+![ADQ-3](../01-images/module-11-1-40.png)   
+<br><br>
+
+
 
 
 
