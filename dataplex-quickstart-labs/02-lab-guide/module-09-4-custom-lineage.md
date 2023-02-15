@@ -151,6 +151,7 @@ Output:
 Paste the below in cloud shell-
 ```
 CUSTOM_LINEAGE_PROCESS_RUN_ID=`cat custom_lineage_run.json | grep name | grep / | cut -d'/' -f8 | tr -d \" | tr -d ,`
+echo $CUSTOM_LINEAGE_PROCESS_RUN_ID
 ```
 
 <hr>
@@ -240,6 +241,7 @@ Capture the lineage event ID:
 
 ```
 CUSTOM_LINEAGE_EVENT_ID=`cat custom_lineage_events.json | grep name | cut -d':' -f2 | cut -d '/' -f10 | tr -d \" | tr -d , `
+echo $CUSTOM_LINEAGE_EVENT_ID
 ```
 
 <hr>
