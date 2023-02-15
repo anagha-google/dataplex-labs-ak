@@ -281,27 +281,10 @@ echo $CUSTOM_LINEAGE_EVENT_ID
 
 ## 5. Lineage UI walkthrough
 
-Lets navigate to the entity oda_raw_zone.crimes_raw in the Dataplex Search UI and click through to see the lineage as shown below. At the very upstream of the graph is the custom lineage entry. Note that it has an extra upstream entity, also called "crimes_raw". We will delete the same in the next step.
+Lets navigate to the entity oda_raw_zone.crimes_raw in the Dataplex Search UI and click through to see the lineage as shown below. At the very upstream of the graph is the custom lineage entry. 
 
-![CL](../01-images/CL-11.png)   
-<br><br>
 
-![CL](../01-images/CL-12.png)   
-<br><br>
-
-![CL](../01-images/CL-13.png)   
-<br><br>
-
-![CL](../01-images/CL-14.png)   
-<br><br>
-
-![CL](../01-images/CL-15.png)   
-<br><br>
-
-![CL](../01-images/CL-16.png)   
-<br><br>
-
-![CL](../01-images/CL-17.png)   
+![CL](../01-images/module-09-4-01.png)   
 <br><br>
 
 <hr>
