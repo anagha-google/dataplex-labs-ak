@@ -6,7 +6,7 @@ In this lab module, we will repeat what we did with lineage of BigQuery based Ai
 Successful completion of prior lab modules
 
 ### Duration
-~15 minutes
+~60 minutes
 
 ### Learning Units
 
@@ -15,15 +15,15 @@ Successful completion of prior lab modules
 
 <hr>
 
-## Learning goals
+### Learning goals
 
 1. We will run pre-created PySpark scripts that curate Chicago crimes, and then generate Crime trend reports
 2. Next, we will run a DAG to orchestrate the above, without custom lineage
 3. Finally, we will run a DAG to orchestrate, with custom lineage
 
-## 1. The PySpark scripts -run manually from CLI
+## 1. Lab - Run the PySpark scripts manually from CLI
 
-## 1.1. Variables
+### 1.1. Variables
 Paste the below in Cloud Shell-
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
@@ -34,8 +34,8 @@ BQ_CONNECTOR_PACKAGES="com.google.cloud.spark:spark-bigquery-with-dependencies_2
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 ```
 
+### 1.2. The PySpark code
 
-## 1.2. The PySpark code
 Copy the PySpark scripts from local to the code bucket (in case you modified anything) -
 ```
 cd ~/dataplex-quickstart-labs/00-resources/scripts/pyspark/
@@ -43,10 +43,11 @@ gsutil cp chicago-crimes-analytics/* gs://raw-code-${PROJECT_NBR}/pyspark/chicag
 
 ```
 
-## 1.3. Test each of the Spark jobs individually
+### 1.3. Test each of the Spark jobs individually
 
-### 1.3.1. Curate Chicago Crimes 
+#### 1.3.1. Curate Chicago Crimes 
 
+Run the command below to curate crimes-
 ```
 PIPELINE_ID=$RANDOM
 
@@ -58,10 +59,14 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
--- --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
+--version=1.1.2 \
+-- --projectID=$PROJECT_ID --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
 ```
 
-## 1.3.2. Chicago Crimes by Year Report
+Visualizae the execution in the Dataproc->Batches UI-
+
+
+#### 1.3.2. Chicago Crimes by Year Report
 
 ```
 PIPELINE_ID=$RANDOM
@@ -82,10 +87,13 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
+--version=1.1.2 \
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-## 1.3.3. Chicago Crimes by Month Report
+
+
+#### 1.3.3. Chicago Crimes by Month Report
 
 ```
 PIPELINE_ID=$RANDOM
@@ -106,10 +114,11 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
+--version=1.1.2 \
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-## 1.3.4. Chicago Crimes by Day of Week Report
+#### 1.3.4. Chicago Crimes by Day of Week Report
 
 ```
 PIPELINE_ID=$RANDOM
@@ -130,6 +139,7 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
+--version=1.1.2 \
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
@@ -155,6 +165,7 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --service-account $UMSA_FQN \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
+--version=1.1.2 \
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
