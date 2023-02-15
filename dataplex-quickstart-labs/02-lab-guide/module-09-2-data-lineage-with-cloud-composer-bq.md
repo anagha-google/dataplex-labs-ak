@@ -17,13 +17,18 @@ We will first create and test the queries in BigQuery, and then use an Apache Ai
 **Note:** <br>
 At the time of authoring of this lab, lineage in Cloud Composer was in preview, and supported for specific versions of Cloud Composer 2.
 
+<hr>
+
 ### 2. The Lake Layout for the module
 
+![LIN-5](../01-images/module-09-2-00.png)   
+<br><br>
 
+<hr>
 
 ### 3. The Data Engineering Pipeline - building blocks (BigQuery SQL)
 
-#### 2.1. The DAG
+#### 3.1. The DAG
 
 We will create the following DAG-
 
@@ -35,20 +40,31 @@ We will create the following DAG-
 | Step 2c |  **Trend Report 3: Crimes by Day:**<br>Details: Generate report on crimes by day of week from the curated crimes<br>Persist to: ODA Product Zone| 
 | Step 2d |  **Trend Report 4: Crimes by Hour:**<br>Details: Generate report on crimes by hour of day from the curated crimes<br>Persist to: ODA Product Zone| 
 
-![LIN-5](../01-images/09-05.png)   
+![LIN-5](../01-images/module-09-2-01.png)   
 <br><br>
-
-#### 2.2. Just FYI - Source table: oda_raw_zone.chicago_crimes
-This is purely informaional and repetative as it was already covered in a prior module.<br>
-
-Recap: The table, oda_raw_zone.crimes_raw was populated from the BigQuery public dataset using this SQL below which you do not need to run:
 
 <hr>
 
+#### 3.2. Source table: oda_raw_zone.crimes_raw
 
-#### 2.3. Pipeline Step 1: Curate Chicago Crimes
+Lets create the raw source table by hand in the BigQuery UI.
 
-The SQL for this is below. Do not run it, we will run from Airflow. This is identical to what we did in the prior module - but note the suffix of _cc2.
+```
+CREATE OR REPLACE TABLE
+  oda_raw_zone.chicago_crimes_raw AS
+SELECT
+  *
+FROM
+  oda_crimes_staging_ds.crimes_staging;
+
+```
+
+<hr>
+
+#### 3.3. Pipeline Step 1: Curate Chicago Crimes
+
+The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
+**Do not run it, we will run from Airflow.**
 
 ```
 CREATE OR REPLACE TABLE
@@ -71,7 +87,8 @@ FROM
 
 #### 2.4. Pipeline Step 2a: Create Crimes Report by Year
 
-The SQL for this is below. Do not run it, we will run from Airflow. This is identical to what we did in the prior module - but note the suffix of _cc2.
+The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
+**Do not run it, we will run from Airflow.**
 
 ```
 CREATE OR REPLACE TABLE
@@ -89,7 +106,8 @@ GROUP BY
 
 #### 2.5. Pipeline Step 2b: Create Crimes Report by Month 
 
-The SQL for this is below. Do not run it, we will run from Airflow. This is identical to what we did in the prior module - but note the suffix of _cc2.
+The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
+**Do not run it, we will run from Airflow.**
 
 ```
 CREATE OR REPLACE TABLE
@@ -107,7 +125,8 @@ GROUP BY
 
 #### 2.6. Pipeline Step 2c: Create Crimes Report by Day of Week
 
-The SQL for this is below. Do not run it, we will run from Airflow. This is identical to what we did in the prior module - but note the suffix of _cc2.
+The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
+**Do not run it, we will run from Airflow.**
 
 ```
 CREATE OR REPLACE TABLE
@@ -125,7 +144,8 @@ GROUP BY
 
 #### 2.7. Pipeline Step 2d: Create Crimes Report by Hour of Day
 
-The SQL for this is below. Do not run it, we will run from Airflow. This is identical to what we did in the prior module - but note the suffix of _cc2.
+The SQL for this is below. Its identical to our prior exercise (BQ SQL -lineage) but while the tables there had "chicago_crimes" suffix, this has just "crimes_" suffix.<br>
+**Do not run it, we will run from Airflow.**
 
 ```
 CREATE OR REPLACE TABLE
