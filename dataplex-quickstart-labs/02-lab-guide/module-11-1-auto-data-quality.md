@@ -88,12 +88,26 @@ Click on the scan and define rules. Lets start with recommendations from Data pr
 <br><br>
 
 
-### 2.4. Run COMPLETENESS checks
+### 2.4. Run Data Quality Rules - COMPLETENESS checks
 
 Lets check all the fields for quality scan and click on "run now".
 
 ![ADQ-3](../01-images/module-11-1-22.png)   
 <br><br>
+
+![ADQ-3](../01-images/module-11-1-23.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-24.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-25.png)   
+<br><br>
+
+![ADQ-3](../01-images/module-11-1-26.png)   
+<br><br>
+
+
 
 
 
