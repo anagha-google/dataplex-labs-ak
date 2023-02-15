@@ -1,7 +1,13 @@
 
-# M11-1: Data Quality - out of the box
+# M11-1: Auto Data Quality 
 
-Dataplex offers a feature called AutoDQ or automated data quality and this lab showcases the same.
+Dataplex provides the following two options to validate data quality:
+
+**Auto data quality** (Public Preview) provides an automated experience for getting quality insights about your data. Auto data quality automates and simplifies quality definition with recommendations and UI-driven workflows. It standardizes on insights with built-in reports and drives actions through alerting and troubleshooting.
+
+**Dataplex data quality task** (Generally Available) offers a highly customizable experience to manage your own rule repository and customize execution and results, using Dataplex for managed / serverless execution. Dataplex data quality task uses an open source component, CloudDQ, that can also open up choices for customers who want to enhance the code to their needs.
+
+The focus of this lab module is Auto data quality.
 
 ### Prerequisites
 
