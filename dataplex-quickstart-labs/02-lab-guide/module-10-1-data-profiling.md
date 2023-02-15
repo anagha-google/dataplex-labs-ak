@@ -70,7 +70,8 @@ User Configured Data Profiling
 
 ### 1.6. User Configured Dataplex Profiling - what's supported
 
-![supported](/lab8/resources/imgs/lab-profiling-01.png)
+![ADQ-3](../01-images/lab-profiling-01.png)   
+<br><br>
 
 ### 1.7. Roles for Data Profiling - what's available
 
