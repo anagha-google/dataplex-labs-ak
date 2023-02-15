@@ -33,7 +33,8 @@ In this lab module, we will use the Dataplex Lineage API and make a custom linea
 
 ## Lineage at onset of the lab
 
-Lets review the lineage at the onset of this lab, from the BigQuery UI in the Cloud Console.
+Lets review the lineage at the onset of this lab, from the BigQuery UI in the Cloud Console.<br>
+The first entity in the graph is a BQ native table called crime (BQ public dataset)- a table not indexed in Dataplex.
 
 ![CL](../01-images/module-09-4-00-a.png)   
 <br><br>
@@ -45,6 +46,12 @@ The lineage-
 
 ![CL](../01-images/module-09-4-01.png)   
 <br><br>
+
+<hr>
+
+## Lineage at end of the lab
+
+
 
 <hr>
 
