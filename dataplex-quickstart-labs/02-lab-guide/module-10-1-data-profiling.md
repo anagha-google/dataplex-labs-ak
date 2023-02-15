@@ -236,7 +236,9 @@ Understand the schema-
 <hr>
 
 
-## 4. Permissions to create a Data Profile Scan
+## 4. IAM permissions
+
+### 4.1. Permissions to create a Data Profile Scan
 
 Lets grant our user managed service account admin role for Data profiling-
 
@@ -252,4 +254,44 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA
 ![ADQ-5](../01-images/module-11-1-07.png)   
 <br><br>
 
+### 4.2. Permissions for Dataplex Google Managed Service Account
+
+Dataplex has a service account it auto-creates when you enable the Dataplex API. This API needs BigQuery read permissions. Lets grant it the same.
+
+```
+DATAPLEX_GMSA_FQN = "service-$PROJECT_NBR@gcp-sa-dataplex.iam.gserviceaccount.com"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$DATAPLEX_GMSA_FQN \
+--role="roles/roles/bigquery.dataViewer"
+
+```
+
 <hr>
+
+
+## 5. Create a Data Profile Scan
+
+Follow the steps as shown in the screenshots to create a profile scan-
+
+![ADQ-5](../01-images/module-10-1-07.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-08.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-09.png)   
+<br><br>
+
+![ADQ-5](../01-images/module-10-1-10.png)   
+<br><br>
+
+<hr>
+
+## 6. Run a Data Profiling scan
+
+Follow the step as shown in the screenshot to run a profile scan-
+
+![ADQ-5](../01-images/module-10-1-11.png)   
+<br><br>
+
+
