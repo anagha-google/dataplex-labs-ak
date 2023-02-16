@@ -69,7 +69,7 @@ Click on the scan and define rules. Lets start with recommendations from Data pr
 ![ADQ-3](../01-images/module-11-1c-02.png)   
 <br><br>
 
-![ADQ-3](../01-images/module-11-1c-02\3.png)   
+![ADQ-3](../01-images/module-11-1c-03.png)   
 <br><br>
 
 ![ADQ-3](../01-images/module-11-1c-04.png)   
