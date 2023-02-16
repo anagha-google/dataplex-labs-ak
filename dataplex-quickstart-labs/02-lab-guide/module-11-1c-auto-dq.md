@@ -62,7 +62,7 @@ SELECT * FROM oda_dq_scratch_ds.customer_master LIMIT 20
 ![ADQ-3](../01-images/module-11-1c-01.png)   
 <br><br>
 
-### 2.3. Define Data Quality Rules - VALUE CHECK checks
+### 2.3. Define Data Quality Rules - VALUE SET checks
 
 Click on the scan and define rules. Lets start with recommendations from Data profiling results.
 
