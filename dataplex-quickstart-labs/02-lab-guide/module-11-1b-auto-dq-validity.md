@@ -37,16 +37,16 @@ Same as prior module. We will use the same table as in the Data Profiling lab mo
 
 
 
-## 2. Create a Data Quality scan with validity (null value) checks on SSN and Email columns
+## 2. Create a Data Quality scan with validity checks on SSN and Email columns
 
-### 2.1. Create a new scan called Customer Master DQ Scan - Validity on the same table
+### 2.1. Create a new scan called Customer Master DQ Scan - VALIDITY on the same table
 
 Follow the step by step instructions detailed in the screenshots below. 
 
 ![ADQ-3](../01-images/module-11-1-27.png)   
 <br><br>
 
-### 2.2. Add the recommended (out of the box) regex based validity checks for SSN and Email
+### 2.2. Add the recommended (out of the box) regex based VALIDITY checks for SSN and Email
 
 Follow the step by step instructions detailed in the screenshots below. 
 
