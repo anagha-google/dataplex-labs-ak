@@ -86,6 +86,10 @@ Click on the scan and define rules. Lets start with recommendations from Data pr
 
 Lets check all the fields for quality scan and click on "run now".
 
+![ADQ-3](../01-images/module-11-1c-10.png)   
+<br><br>
+
+
 ![ADQ-3](../01-images/module-11-1c-07.png)   
 <br><br>
 
@@ -94,16 +98,10 @@ Lets check all the fields for quality scan and click on "run now".
 ![ADQ-3](../01-images/module-11-1c-08.png)   
 <br><br>
 
-### 2.6. Click on the DQ - VALUE SET job that completed
+### 2.6. Click on the DQ - VALUE SET job that completed & review the results
 
 ![ADQ-3](../01-images/module-11-1c-09.png)   
 <br><br>
-
-### 2.7. Review the results for the DQ - VALUE SET job that completed
-
-![ADQ-3](../01-images/module-11-1c-10.png)   
-<br><br>
-
 
 
 <hr>
