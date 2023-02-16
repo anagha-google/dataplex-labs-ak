@@ -346,13 +346,6 @@ Lineage API supports the following when it comes to lineage processes:<br>
 
 You need to provide the process ID for lineage management.<br>
 
-Paste these variables in Cloud Shell-
-```
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-LOCATION_MULTI="us"
-LOCATION="us-central1"
-```
 
 #### 8.1.1. List Lineage Processes
 
