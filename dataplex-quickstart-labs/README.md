@@ -59,6 +59,7 @@ Complete the lab modules in a sequential manner. For a better lab experience, re
 | 01 | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10 minutes |
 | 02 | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45 minutes |
 | 03 | [Organize your Data Lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15 minutes |
+| 04 | [Create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15 minutes |
 
 ## 10. Dont forget to 
 Shut down/delete resources when done to avoid unnecessary billing.
