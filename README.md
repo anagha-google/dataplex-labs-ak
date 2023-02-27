@@ -7,7 +7,7 @@ This repository features self-contained, hands-on-labs with detailed and step-by
 
 | # | Lab | Lab summary | Author |
 | -- | :--- | :--- |:--- |
-| 1. |Dataplex Quickstart Labs| (Product-centric) Lab series showcasing Dataplex features with a gcloud CLI experience for learning the product| Anagha Khanolkar|
+| 1. |Dataplex Product Labs| (Product-centric) Lab series showcasing Dataplex features with a gcloud CLI experience for learning the product| Anagha Khanolkar|
 | 2. |Data Mesh Labs| (Solution-centric) Lab series showcasing Data Mesh architectutre powered by Dataplex on GCP with a Banking usecase| Mansi Maharana |
 
 
