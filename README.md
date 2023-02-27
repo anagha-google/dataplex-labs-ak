@@ -1,7 +1,7 @@
 # Dataplex Labs
 
 ## About
-This repository features self-contained, hands-on-labs with detailed and step-by-step instructions, associated collateral (data, code, configuration, terraform etc) that demystify features and integration points of Dataplex - GCP's Data Governance and Management Service.
+This repository features self-contained, hands-on-labs with detailed and step-by-step instructions and associated collateral (data, code, configuration, terraform etc) that demystify features and integration points of Dataplex - GCP's Data Governance and Management Service.
 
 ## Labs
 
