@@ -8,7 +8,7 @@ This repository features self-contained, hands-on-labs with detailed and step-by
 | # | Lab | Lab summary | Author |
 | -- | :--- | :--- |:--- |
 | 1. |Dataplex Product Labs| (Product-centric) Lab series showcasing Dataplex features for a learning experience. [Dont know the product and want step by step instructions on every feature, as and when they are released] | Anagha Khanolkar|
-| 2. |Data Mesh Labs| (Solution-centric) Lab series showcasing Data Mesh architectutre powered by Dataplex on GCP with a Banking usecase. [Know Datalex already and want to learn how to architect a Data Mesh]| Mansi Maharana |
+| 2. |Data Mesh Labs| (Solution-centric) Lab series showcasing Data Mesh architecture powered by Dataplex on GCP with a Banking usecase. [Know Datalex already and want to learn how to architect a Data Mesh]| Mansi Maharana |
 
 
 ## Contributing
