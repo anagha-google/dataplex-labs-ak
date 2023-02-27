@@ -60,7 +60,7 @@ Complete the lab modules in a sequential manner. For a better lab experience, re
 | 01 | N/A | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10  |
 | 02 | N/A | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45  |
 | 03 | Dataplex Lakes and Zones | [Organize your Data Lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15  |
-| 04 | Dataplex Lakes and Zones | Dataplex Discovery | [Create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15  |
+| 04 | Dataplex Discovery | [Create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15  |
 | 05 | Dataplex Lakes and Zones | [Register assets into your Dataplex lake zones](02-lab-guide/module-05-register-assets-into-zones.md) | 15  |
 
 
