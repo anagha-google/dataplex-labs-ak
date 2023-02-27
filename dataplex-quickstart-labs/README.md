@@ -54,27 +54,27 @@ For your convenience, all the code is pre-authored, so you can focus on understa
 
 ## 9. The lab modules
 Complete the lab modules in a sequential manner. For a better lab experience, read *all* the modules and then start working on them.
-| # | Module | Duration | 
+| # | Module | Duration minutes | 
 | -- | :--- | :--- |
-| 01 | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10 minutes |
-| 02 | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45 minutes |
-| 03 | [Dataplex Lakes & Zones: organize your Data Lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15 minutes |
-| 04 | [Dataplex Lakes & Zones: create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15 minutes |
-| 05 | [Dataplex Lakes & Zones: register assets into your Dataplex lake zones](02-lab-guide/module-05-register-assets-into-zones.md) | 15 minutes |
-| 06 | [Dataplex Discovery: discovery of structured Cloud Storage objects - study of entities, schemas, catalog entries, automated external table defintions in Dataproc Metastore Service and BigQuery](02-lab-guide/module-06-discovery.md) | 15 minutes |
-| 07 | [Dataplex Catalog - creating a custom metadata entry](02-lab-guide/module-07-1-custom-entry-in-catalog.md) | 10 minutes |
-| 08 | [Dataplex Catalog - creating a tag template and populating tags](02-lab-guide/module-07-2-create-tag-template-for-catalog-entry.md) | 15 minutes |
-| 10 | [Dataplex Catalog - searching the catalog](02-lab-guide/module-07-4-search-catalog.md) | 10 minutes |
-| 11 | [Dataplex Explore - exploring data & metadata with Spark SQL workbench](02-lab-guide/module-08-1-explore-with-spark-sql.md) | 15 minutes |
-| 12 | [Dataplex Explore - exploring data with Jupyter notebooks](02-lab-guide/module-08-2-explore-with-jupyter-notebooks.md) | 15 minutes |
-| 13 | [Dataplex Lineage - out of the box lineage capture for BigQuery objects](02-lab-guide/module-09-1-data-lineage-with-bigquery.md) | 15 minutes |
-| 14 | [Dataplex Lineage - BigQuery lineage with Apache Airflow on Cloud Composer for orchestration ](02-lab-guide/module-09-2-data-lineage-with-cloud-composer-bq.md) | 15 minutes |
-| 13 | [Dataplex Lineage - custom lineage for Apache Spark applications on Cloud Dataproc with Apache Airflow on Cloud Composer pipelines ](02-lab-guide/module-09-3-data-lineage-with-cloud-composer-spark.md) | 30 minutes |
-| 13 | [Dataplex Lineage - custom lineage & managing lineage with Dataplex Lineage API](02-lab-guide/module-09-4-custom-lineage.md) | 15 minutes |
-| 14 | [Dataplex Profiling - data profiling in Dataplex](02-lab-guide/module-10-1-data-profiling.md) | 15 minutes |
-| 15 | [Dataplex Quality - Auto Data Quality for completeness checks](02-lab-guide/module-11-1a-auto-dq-completeness.md) | 15 minutes |
-| 16 | [Dataplex Quality - Auto Data Quality for validity - pattern checks](02-lab-guide/module-11-1b-auto-dq-validity.md) | 15 minutes |
-| 17 | [Dataplex Quality - Auto Data Quality for validity - allowed values checks](02-lab-guide/module-11-1c-auto-dq-value-set.md) | 15 minutes |
+| 01 | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10  |
+| 02 | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45  |
+| 03 | [Dataplex Lakes & Zones: organize your Data Lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15  |
+| 04 | [Dataplex Lakes & Zones: create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15  |
+| 05 | [Dataplex Lakes & Zones: register assets into your Dataplex lake zones](02-lab-guide/module-05-register-assets-into-zones.md) | 15  |
+| 06 | [Dataplex Discovery: discovery of structured Cloud Storage objects - study of entities, schemas, catalog entries, automated external table defintions in Dataproc Metastore Service and BigQuery](02-lab-guide/module-06-discovery.md) | 15  |
+| 07 | [Dataplex Catalog - creating a custom metadata entry](02-lab-guide/module-07-1-custom-entry-in-catalog.md) | 10  |
+| 08 | [Dataplex Catalog - creating a tag template and populating tags](02-lab-guide/module-07-2-create-tag-template-for-catalog-entry.md) | 15  |
+| 10 | [Dataplex Catalog - searching the catalog](02-lab-guide/module-07-4-search-catalog.md) | 10  |
+| 11 | [Dataplex Explore - exploring data & metadata with Spark SQL workbench](02-lab-guide/module-08-1-explore-with-spark-sql.md) | 15  |
+| 12 | [Dataplex Explore - exploring data with Jupyter notebooks](02-lab-guide/module-08-2-explore-with-jupyter-notebooks.md) | 15  |
+| 13 | [Dataplex Lineage - out of the box lineage capture for BigQuery objects](02-lab-guide/module-09-1-data-lineage-with-bigquery.md) | 15  |
+| 14 | [Dataplex Lineage - BigQuery lineage with Apache Airflow on Cloud Composer for orchestration ](02-lab-guide/module-09-2-data-lineage-with-cloud-composer-bq.md) | 15  |
+| 13 | [Dataplex Lineage - custom lineage for Apache Spark applications on Cloud Dataproc with Apache Airflow on Cloud Composer pipelines ](02-lab-guide/module-09-3-data-lineage-with-cloud-composer-spark.md) | 30  |
+| 13 | [Dataplex Lineage - custom lineage & managing lineage with Dataplex Lineage API](02-lab-guide/module-09-4-custom-lineage.md) | 15  |
+| 14 | [Dataplex Profiling - data profiling in Dataplex](02-lab-guide/module-10-1-data-profiling.md) | 15  |
+| 15 | [Dataplex Quality - Auto Data Quality for completeness checks](02-lab-guide/module-11-1a-auto-dq-completeness.md) | 15  |
+| 16 | [Dataplex Quality - Auto Data Quality for validity - pattern checks](02-lab-guide/module-11-1b-auto-dq-validity.md) | 15  |
+| 17 | [Dataplex Quality - Auto Data Quality for validity - allowed values checks](02-lab-guide/module-11-1c-auto-dq-value-set.md) | 15  |
 
 
 
