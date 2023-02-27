@@ -7,10 +7,8 @@ This repository features self-contained, hands-on-labs with detailed and step-by
 
 | # | Product feature | Lab summary | Author |
 | -- | :--- | :--- |:--- |
-| 1. |Dataplex Quickstart Labs|||
-| 2. ||||
-| 3. ||||
-
+| 1. |Dataplex Quickstart Labs| Quickstart lab showcasing Dataplex features with a gcloud CLI experience for learning the product| Anagha Khanolkar|
+| 2. |Data Mesh Labs| Lab showcasing how you can build a Data Mesh architectutre powered by Dataplex on GCP with a Banking usecase| Mansi Maharana |
 
 
 ## Contributing
