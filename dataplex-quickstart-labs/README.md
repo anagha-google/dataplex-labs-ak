@@ -55,7 +55,7 @@ For your convenience, all the code is pre-authored, so you can focus on understa
 ## 9. The lab modules
 Complete the lab modules in a sequential manner. For a better lab experience, read *all* the modules and then start working on them.
 
-| # | Feature | Module | Duration minutes | 
+| # | Feature | Module | Duration<br>minutes | 
 | -- |:--- | :--- | :--- |
 | 01 | N/A | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10  |
 | 02 | N/A | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45  |
