@@ -59,7 +59,7 @@ Complete the lab modules in a sequential manner. For a better lab experience, re
 | -- |:--- | :--- | :--- |
 | 01 |  | [Lab environment overview](02-lab-guide/module-01-lab-environment-overview.md) | 10  |
 | 02 |  | [Lab environment provisioning with Terraform](02-lab-guide/module-02-terraform-provisioning.md) | 45  |
-| 03 | Lakes & Zones | [Organize your Data Lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15  |
+| 03 | Lakes & Zones | [Organize your data lake with Dataplex](02-lab-guide/module-03-organize-your-data-lake.md) | 15  |
 | 04 | Lakes & Zones | [Register assets into your Dataplex lake zones](02-lab-guide/module-05-register-assets-into-zones.md) | 15  |
 | 05 | Discovery |[Create an Exploration Environment Dataplex Exploration Workbench](02-lab-guide/module-04-create-exploration-environment.md) | 15  |
 | 06 | Discovery |[Discovery of structured Cloud Storage objects - study of entities, schemas, automated external table defintions in Dataproc Metastore Service and BigQuery](02-lab-guide/module-06-discovery.md) | 15  |
