@@ -1,13 +1,13 @@
 # Dataplex Labs
 
 ## About
-This repository features self-contained, hands-on-labs with detailed and step-by-step instructions, associated collateral (data, code, configuration, terraform etc) that demystify features and integration points of Dataplex - GCP's Data Fabric as a Service for standing up Data Mesh Architecture.
+This repository features self-contained, hands-on-labs with detailed and step-by-step instructions, associated collateral (data, code, configuration, terraform etc) that demystify features and integration points of Dataplex - GCP's Data Governance and Management Service.
 
 ## Labs
 
 | # | Product feature | Lab summary | Author |
 | -- | :--- | :--- |:--- |
-| 1. ||||
+| 1. |Dataplex Quickstart Labs|||
 | 2. ||||
 | 3. ||||
 
