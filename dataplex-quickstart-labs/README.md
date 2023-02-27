@@ -1,4 +1,4 @@
-# Dataplex Quickstart for Practitioners
+# Dataplex Quickstart for Cloud Architects and Engineers
 
 ## 1. About
 
