@@ -45,7 +45,7 @@ There are various usecases covered including Chicago Crimes Analytics, TelCo Cus
 
 ## 8. Flow of the lab
 
-![AF](../01-images/landing-page-00.png)   
+![LP-00](01-images/landing-page-00.png)   
 <br><br>
 
 For your convenience, all the code is pre-authored, so you can focus on understanding product features and integration.
