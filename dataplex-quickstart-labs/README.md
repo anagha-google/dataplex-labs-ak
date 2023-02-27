@@ -38,7 +38,7 @@ Simplify your learning and adoption journey of our product stack for governance 
 
 <hr>
 
-## 7. Use case covered
+## 7. Use cases covered
 There are various usecases covered including Chicago Crimes Analytics, TelCo Customer Churn Prediction, Cell Tower Anomaly Detection, Icecream Sales Forecasting and more. This is an ever-evovlving lab series, we recommend reviewing the release history for updates on use cases.
 
 <hr>
