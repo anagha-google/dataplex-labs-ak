@@ -15,6 +15,8 @@ Completion of prior modules
 
 ### Targeted Data Lake Layout
 
+We will create a Dataplex Lake and Zones as shown below-
+
 ![IAM](../01-images/m3-01.png)   
 <br><br>
 
