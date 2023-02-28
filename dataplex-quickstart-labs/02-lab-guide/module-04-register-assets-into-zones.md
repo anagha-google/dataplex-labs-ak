@@ -7,6 +7,19 @@ In this module, we will register assets into the Dataplex Zones created.
 [Lab A: Register assets in BigQuery](module-05-register-assets-into-zones.md#1-lab-a-register-bigquery-datasets) <br>
 [Lab B: Register assets in Cloud Storage](module-05-register-assets-into-zones.md#2-lab-b-register-assets-in-google-cloud-storage)
 
+### Prerequisites
+Completion of prior modules
+
+### Approximate duration
+20 minutes or less
+
+### Pictorial overview of lab module
+
+![IAM](../01-images/m4-00.png)   
+<br><br>
+
+<hr>
+
 
 ## 1. Lab A: Register BigQuery Datasets
 
