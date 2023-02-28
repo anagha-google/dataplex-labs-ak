@@ -10,7 +10,8 @@ Please read the narrative of the lab in the landing page for the quickstart lab 
 
 ## 2. Pictorial overview of what gets provisioned
 
-
+![AF](../01-images/m1-00.png)   
+<br><br>
 
 ## 3. APIs enabled
 
