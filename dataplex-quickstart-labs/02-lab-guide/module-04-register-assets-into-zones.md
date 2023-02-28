@@ -18,6 +18,9 @@ Completion of prior modules
 ![IAM](../01-images/m4-00.png)   
 <br><br>
 
+![IAM](../01-images/m4-01.png)   
+<br><br>
+
 <hr>
 
 
