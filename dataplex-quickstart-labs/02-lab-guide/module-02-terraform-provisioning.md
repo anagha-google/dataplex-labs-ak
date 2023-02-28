@@ -249,7 +249,7 @@ THIS IS INFORMATIONAL
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
-gsutil ls gs://raw-notebook-$PROJECT_NBR/
+gsutil ls -r gs://raw-notebook-$PROJECT_NBR/
 ```
 
 This is what it should look like-
@@ -289,7 +289,7 @@ THIS IS INFORMATIONAL
 After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
-gsutil ls gs://raw-notebook-$PROJECT_NBR/
+gsutil ls -r gs://raw-notebook-$PROJECT_NBR/
 ```
 
 This is what it should look like-
