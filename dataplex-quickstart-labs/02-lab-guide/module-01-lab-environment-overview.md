@@ -268,6 +268,7 @@ Its empty at the onset and does not have any precreated databases.
 
 
 <hr>
-This concludes the module. Please proceed to the [next module](module-02-terraform-provisioning.md).
+
+This concludes the module. Please proceed to the [next module](module-02-terraform-provisioning.md)
 
 <hr>
