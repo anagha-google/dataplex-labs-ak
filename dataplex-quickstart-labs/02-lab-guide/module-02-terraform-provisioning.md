@@ -29,18 +29,6 @@ Run in Cloud Shell-
 cp -r dataplex-labs-ak/dataplex-quickstart-labs ~/
 ```
 
-### 1.3. Datasets setup
-
-Run the shell script below that untars a few datasets.
-```
-# Permissions
-chmod +x ~/dataplex-quickstart-labs/00-resources/scripts/bash/dataset_untar.sh
-
-# Untar & remove archives
-./dataplex-quickstart-labs/00-resources/scripts/bash/dataset_untar.sh
-
-```
-
 <hr>
 
 ## 2. Declare variables
