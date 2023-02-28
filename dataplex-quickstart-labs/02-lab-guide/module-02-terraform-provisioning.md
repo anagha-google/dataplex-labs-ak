@@ -1,6 +1,6 @@
 # M2: Provisioning the lab environment
 
-The previous lab module covered what gets provisioned automatically. In this module, we will provision the **foundational** lab environment with Terraform. 
+The previous lab module provided an overview of what gets provisioned automatically at the onset of the lab. In this module, we will complete the provisioning with Terraform. This will create a foundational lab environment within which we can learn Dataplex in the subsequent modules. 
 
 ### Prerequisites
 1. A GCP project
