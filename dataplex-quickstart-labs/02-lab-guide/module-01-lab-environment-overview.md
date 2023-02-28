@@ -8,7 +8,7 @@ Please read the narrative of the lab in the landing page for the quickstart lab 
 
 <hr>
 
-## 2. Pictorial overview of what gets provisioned
+## 2. Pictorial overview of what gets provisioned via Terraform
 
 ![AF](../01-images/m1-00.png)   
 <br><br>
