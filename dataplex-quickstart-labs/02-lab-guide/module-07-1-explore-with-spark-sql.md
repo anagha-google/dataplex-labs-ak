@@ -22,16 +22,6 @@ Completion of prior modules
 
 ~ 15 minutes
 
-### Recap
-
-We created two environment templates in a prior module for exploration. Review this feature from LAKE-ENVIRONMENT as show below-
-
-![DEW-1](../01-images/module-08-1-pre-1.png)   
-<br><br>
-
-![DEW-1](../01-images/module-08-1-pre-2.png)   
-<br><br>
-
 
 ### Pictorial overview of lab
 
@@ -44,6 +34,16 @@ We created two environment templates in a prior module for exploration. Review t
 <hr>
 
 ## Lab
+
+### 0. Recap
+
+We created two environment templates in a prior module for exploration. Review this feature from LAKE-ENVIRONMENT as show below-
+
+![DEW-1](../01-images/module-08-1-pre-1.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-1-pre-2.png)   
+<br><br>
 
 ### 1. Setup
 
