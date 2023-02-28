@@ -8,7 +8,7 @@ Completion of prior modules
 ### Approximate duration
 20 minutes or less
 
-### Pictorial overview of lab module
+### Pictorial overview of work to be completed in the lab module
 
 ![IAM](../01-images/m3-00.png)   
 <br><br>
