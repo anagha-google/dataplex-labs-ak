@@ -1,4 +1,4 @@
-# M8-3: Create a tag template in Dataplex Catalog & associate with a Dataplex Catalog Entry
+# M8-2: Create a tag template in Dataplex Catalog & associate with a Dataplex Catalog Entry
 
 A Dataplex tag template is a metadata template for attributes you want to attach to an entry. You can use available tag templates or create a custom tag template based on your unique requirements and persist to Dataplex Catalog. You can then associate the same template with a Catalog entry - with values populated for the attributed you defined.
 
