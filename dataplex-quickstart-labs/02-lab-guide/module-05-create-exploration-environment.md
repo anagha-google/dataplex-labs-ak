@@ -1,5 +1,5 @@
 
-# M4: Create a Dataplex Exploration Environment - for Spark SQL and Jupyter notebook based metadata and data exploration
+# M5: Create a Dataplex Exploration Environment - for Spark SQL and Jupyter notebook based metadata and data exploration
 
 This module covers the featire "Dataplex Explore", and has a lab module.
 
