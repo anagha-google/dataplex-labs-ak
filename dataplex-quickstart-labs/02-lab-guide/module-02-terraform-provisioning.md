@@ -143,7 +143,7 @@ gs://raw-model-705495340985/
 gs://raw-model-metrics-705495340985/
 gs://raw-model-mleap-bundle-705495340985/
 gs://raw-notebook-705495340985/
-gs://us-central1-oda-70549534098-275215ea-bucket/
+gs://us-central1-oda-70549534098-275215ea-bucket/ <-- created by Cloud Composer
 ```
 
 #### 6.1.3. Raw Datasets
