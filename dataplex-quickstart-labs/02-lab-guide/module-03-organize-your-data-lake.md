@@ -70,7 +70,7 @@ To add a zone, you must be granted IAM roles containing the dataplex.lakes.creat
 
 <hr>
 
-## 2. Lab
+## 2. Lab - Foundations
 
 In this lab module, we will organize all the lab assets into a Dataplex Lake and into Zones.
 
@@ -127,7 +127,14 @@ Validate in the Dataproc Metastore UI-
 
 Documentation: https://cloud.google.com/dataproc-metastore/docs/data-catalog-sync
 
-### 2.4. Create a Lake
+## 3. Lab
+
+### 3.1. Lake layout from the lab module
+
+![IAM](../01-images/m3-02.png)   
+<br><br>
+
+### 3.2. Create a Lake
 
 We will create a Dataplex Lake with the metastore attached to it.
 
@@ -144,9 +151,9 @@ This takes about 2 minutes.
 
 <hr>
 
-### 2.5. Create zones with the lake
+### 3.3. Create zones with the lake
 
-#### 2.5.1. Create zones for the structured data assets
+#### 3.3.1. Create zones for the structured data assets
 
 We will create a zone each for raw, curated and data product, for the structured data assets, with discovery enabled.
 
@@ -196,7 +203,7 @@ gcloud dataplex zones create ${DATA_PRODUCT_ZONE_NM} \
 
 <hr>
 
-#### 2.5.2. Create a zone for the non-data assets 
+#### 3.3.2. Create a zone for the non-data assets 
 
 We will create a raw zone for the non-data assets, without discovery, as they are mostly code, and therefore unstructured.
 ```
@@ -204,7 +211,7 @@ gcloud dataplex zones create ${MISC_RAW_ZONE_NM} --location=$LOCATION --lake=$LA
 --resource-location-type=SINGLE_REGION --type=RAW 
 ```
 
-#### 2.5.3. Pictorial of zones created
+#### 3.3.3. Pictorial of zones created
 
 
 ![LAKE](../01-images/03-22.png)   
