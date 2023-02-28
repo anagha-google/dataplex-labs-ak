@@ -1,5 +1,5 @@
 
-# M5: Create a Dataplex Exploration Environment - for Spark SQL and Jupyter notebook based metadata and data exploration
+# M5: Create Dataplex Exploration Environment templates for Data Engineering and Data Science
 
 This module covers the creation of "Dataplex Explore" environment templates, that is part of the Data Exploration Workbench. We will use this environment in the next module (Dataplex Discovery), to explore metadata in Dataproc Metastore Service as well as exlore data with Apache Spark in subsequent modules.
 
