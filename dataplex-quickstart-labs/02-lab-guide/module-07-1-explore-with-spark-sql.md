@@ -14,7 +14,40 @@ In this lab module, we will query the raw GCS entity Chicago Crimes Reference Da
 2. If you run queries that use the BigQuery API, you will need to grant the principal the following role-<br>
 roles/serviceusage.serviceUsageConsumer
 
-Lets go ahead and grant the User Managed Service Account the role, from Cloud Shell-
+### Prerequisites
+
+Completion of prior modules
+
+### Duration
+
+~ 15 minutes
+
+### Recap
+
+We created two environment templates in a prior module for exploration. Review this feature from LAKE-ENVIRONMENT as show below-
+
+![DEW-1](../01-images/module-08-1-pre-1.png)   
+<br><br>
+
+![DEW-1](../01-images/module-08-1-pre-2.png)   
+<br><br>
+
+
+### Pictorial overview of lab
+
+![IAM](../01-images/m71-00.png)   
+<br><br>
+
+<hr>
+
+
+<hr>
+
+## Lab
+
+### 1. Setup
+
+Lets go ahead and grant the User Managed Service Account the role below, from Cloud Shell-
 
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
@@ -25,33 +58,14 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member=serviceAccount:$UMSA
 
 ```
 
-### Recap
-
-We created an environment in a prior module for exploration. Review this feature from LAKE-ENVIRONMENT as show below-
-
-![DEW-1](../01-images/module-08-1-pre-1.png)   
-<br><br>
-
-
-![DEW-1](../01-images/module-08-1-pre-2.png)   
-<br><br>
-<hr>
-
-### Duration
-~15 minutes or less
-
-<hr>
-
-## Lab
-
-### 1. Navigate to the Spark SQL Workbench 
+### 2. Navigate to the Spark SQL Workbench 
 Navigate to the Dataplex UI -> Explore as showin below, in the Cloud Console-
 
 ![DEW-1](../01-images/module-08-1-00.png)   
 <br><br>
 <hr>
 
-### 2. Query the GCS external table Chicago Crimes Reference Data that has IUCR codes
+### 3. Query the GCS external table Chicago Crimes Reference Data that has IUCR codes
 
 Run the query below, which queries crimes in the table created in lab sub-module 4 in the raw zone.
 
@@ -70,7 +84,7 @@ Author's output-
 
 <hr>
 
-### 3. Explore the table - count distinct IUCR codes
+### 4. Explore the table - count distinct IUCR codes
 
 Run an aggregation query-
 ```
@@ -86,7 +100,7 @@ Author's output-
 
 <hr>
 
-### 4. Persist the SQL script
+### 5. Persist the SQL script
 
 We will persist the SQL with the name -
 ```
@@ -106,11 +120,11 @@ Notice where the script is persisted - in the content store in Dataplex.
 
 <hr>
 
-### 5. Schedule the SQL script to run
+### 6. Schedule the SQL script to run
 
 We will schedule a report to run and write results to a GCS bucket.
 
-#### 5.1. Schedule a Spark SQL script via UI
+#### 6.1. Schedule a Spark SQL script via UI
 
 Follow the steps detailed in screenshots below-
 
@@ -121,7 +135,7 @@ Follow the steps detailed in screenshots below-
 <br><br>
 
 
-#### 5.2. FYI - Schedule a Spark SQL script via gcloud
+#### 6.2. FYI - Schedule a Spark SQL script via gcloud
 
 You can schedule with a gcloud command.
 ```
@@ -149,7 +163,7 @@ gcloud dataplex tasks create chicago-crimes-report-$RAND_VAL \
 
 ```
 
-### 6. Share SQL scripts with other users
+### 7. Share SQL scripts with other users
 
 You can share scripts with other principals as shown below-
 
@@ -160,7 +174,7 @@ You can share scripts with other principals as shown below-
 <br><br>
 <hr>
 
-### 7. Query a native table in the BigQuery 
+### 8. Query a native table in the BigQuery 
 
 Try running a query against a BigQuery dataset and it will fail. This is because the data Exploration Workbench only supports assets in the lake.
 
