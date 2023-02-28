@@ -1,6 +1,6 @@
 
 
-# M8-2: Explore Dataplex entities with Spark on Data Exploration Workbench Notebooks
+# M7-2: Explore Dataplex entities with Spark on Data Exploration Workbench Notebooks
 
 To recap, a queryable Dataplex entity is a table - a BigQuery table, or a BigLake table/external table on structured Cloud Storage objects in the Dataplex Lake. 
 
