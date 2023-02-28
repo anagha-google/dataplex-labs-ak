@@ -14,9 +14,6 @@ In this lab module, we will query the raw GCS entity Chicago Crimes Reference Da
 2. If you run queries that use the BigQuery API, you will need to grant the principal the following role-<br>
 roles/serviceusage.serviceUsageConsumer
 
-### Prerequisites
-
-Completion of prior modules
 
 ### Duration
 
@@ -31,7 +28,6 @@ Completion of prior modules
 <hr>
 
 
-<hr>
 
 ## Lab
 
