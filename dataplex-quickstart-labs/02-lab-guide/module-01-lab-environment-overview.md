@@ -8,7 +8,11 @@ Please read the narrative of the lab in the landing page for the quickstart lab 
 
 <hr>
 
-## 2. APIs enabled
+## 2. Pictorial overview of what gets provisioned
+
+
+
+## 3. APIs enabled
 
 compute.googleapis.com<br>
 dataproc.googleapis.com<br>
@@ -37,7 +41,7 @@ datalineage.googleapis.com
 
 <hr>
 
-## 3. Services provisioned
+## 4. Services provisioned
 
 VPC<br>
 Subnet<br>
@@ -47,7 +51,7 @@ BigQuery<br>
 Dataproc Metastore Service<br>
 Cloud Composer
 
-## 4. Security setup
+## 5. Security setup
 
 1. A user managed service account with requisite permissions
 2. Permissions for you to impersonate the user managed service account
@@ -56,11 +60,11 @@ Cloud Composer
 
 <hr>
 
-## 5. Cloud Storage
+## 6. Cloud Storage
 
 A number of buckets will be automatically created by the Terraform, and content copied into them. The following is a listing.
 
-### 5.1. Cloud Storage Buckets created
+### 6.1. Cloud Storage Buckets created
 
 ```
 (the author's project number is 705495340985, and therefore appears as suffix, your listing will reflect your project number)
@@ -78,7 +82,7 @@ gs://raw-notebook-705495340985/
 gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud Composer
 ```
 
-### 5.3. Raw Datasets
+### 6.2. Raw Datasets
 
 ```
 
@@ -112,7 +116,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud C
 
 ```
 
-### 5.4. Raw Sensitive Datasets
+### 6.3. Raw Sensitive Datasets
 
 ```
 
@@ -130,7 +134,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud C
 
 ```
 
-### 5.5. Curated Datasets
+### 6.4. Curated Datasets
 
 
 ```
@@ -151,7 +155,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud C
 
 ```
 
-### 5.6. Notebooks
+### 6.5. Notebooks
 
 
 ```
@@ -182,7 +186,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud C
 
 ```
 
-### 5.7. Scripts
+### 6.6. Scripts
 
 
 ```
@@ -213,7 +217,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud C
 
 ```
 
-### 5.8. The rest of the buckets
+### 6.7. The rest of the buckets
 ```
 - THIS IS INFORMATIONAL -
 
@@ -229,14 +233,14 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ --> Automatically created buck
 <hr>
 
 
-## 6. BigQuery
+## 7. BigQuery
 
 Nothing is provisioned at the onset of the lab.
 
 <hr>
 
 
-## 7. Cloud Composer
+## 8. Cloud Composer
 
 1. A Cloud Composer environment is created
 2. Two DAGs are placed in the cloud composer DAG directory
@@ -257,7 +261,7 @@ And here are the DAGs in the Airflow UI-
 
 <hr>
 
-## 8. Dataproc Metastore Service
+## 9. Dataproc Metastore Service
 
 Its empty at the onset and does not have any precreated databases.
 
