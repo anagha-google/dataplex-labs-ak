@@ -60,30 +60,9 @@ Cloud Composer
 
 A number of buckets will be automatically created by the Terraform, and content copied into them. The following is a listing.
 
-### 5.1. Declare variables
+### 5.1. Cloud Storage Buckets created
 
-Paste the below in Cloud Shell scoped to the project you will use for the Dataplex Quickstart Lab. Modify these variables as needed-
 ```
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-GCP_ACCOUNT_NAME=`gcloud auth list --filter=status:ACTIVE --format="value(account)"`
-ORG_ID=`gcloud organizations list --format="value(name)"`
-CLOUD_COMPOSER_IMG_VERSION="composer-2.1.3-airflow-2.3.4"
-YOUR_GCP_REGION="us-central1"
-YOUR_GCP_ZONE="us-central1-a"
-YOUR_GCP_MULTI_REGION="US"
-```
-
-### 5.2. Cloud Storage Buckets created
-
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
-```
-gsutil ls
-```
-
-The author's output-
-```
-THIS IS INFORMATIONAL 
 (the author's project number is 705495340985, and therefore appears as suffix, your listing will reflect your project number)
 
 gs://curated-data-705495340985/
@@ -96,20 +75,12 @@ gs://raw-model-705495340985/
 gs://raw-model-metrics-705495340985/
 gs://raw-model-mleap-bundle-705495340985/
 gs://raw-notebook-705495340985/
-gs://us-central1-oda-70549534098-275215ea-bucket/
+gs://us-central1-oda-70549534098-275215ea-bucket/ <-- this is created by Cloud Composer
 ```
 
 ### 5.3. Raw Datasets
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
-
 ```
-gsutil ls -r gs://raw-data-$PROJECT_NBR/
-```
-
-This is what it should look like-
-```
-THIS IS INFORMATIONAL
 
 -CELL TOWER DATA SAMPLE-
 ------------------------
@@ -143,15 +114,7 @@ THIS IS INFORMATIONAL
 
 ### 5.4. Raw Sensitive Datasets
 
-After running the next module, you should see the listing below-
-
 ```
-gsutil ls -r gs://raw-data-sensitive-$PROJECT_NBR/
-```
-
-This is what it should look like-
-```
-THIS IS INFORMATIONAL
 
 -BANKING DATA SAMPLE-
 ---------------------
@@ -169,17 +132,8 @@ THIS IS INFORMATIONAL
 
 ### 5.5. Curated Datasets
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
-gsutil ls gs://curated-data-$PROJECT_NBR/
-```
-
-This is what it should look like-
-```
-THIS IS INFORMATIONAL
-
-
 -CELL TOWER DATA SAMPLE-
 ------------------------
 ├── cell-tower-anomaly-detection
@@ -199,16 +153,8 @@ THIS IS INFORMATIONAL
 
 ### 5.6. Notebooks
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
-gsutil ls gs://raw-notebook-$PROJECT_NBR/
-```
-
-This is what it should look like-
-```
-THIS IS INFORMATIONAL
-
 
 -CHICAGO CRIMES ANALYSIS STARTER NOTEBOOK-
 ------------------------------------------
@@ -239,16 +185,7 @@ THIS IS INFORMATIONAL
 ### 5.7. Scripts
 
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
-
 ```
-gsutil ls gs://raw-notebook-$PROJECT_NBR/
-```
-
-This is what it should look like-
-```
-THIS IS INFORMATIONAL
-
 
 -AIRFLOW DAG STARTER SCRIPTS-
 ------------------------------------------
@@ -279,7 +216,6 @@ THIS IS INFORMATIONAL
 ### 5.8. The rest of the buckets
 ```
 - THIS IS INFORMATIONAL -
-
 
 gs://lab-spark-bucket-705495340985/ --> For use by Dataproc Serverless Spark
 
