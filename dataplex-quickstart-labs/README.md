@@ -77,7 +77,7 @@ Complete the lab modules in a sequential manner. For a better lab experience, re
 | 18 | Quality | [Auto Data Quality for completeness - null checks](02-lab-guide/module-11-1a-auto-dq-completeness.md) | 15  |
 | 19 | Quality | [Auto Data Quality for validity - pattern checks](02-lab-guide/module-11-1b-auto-dq-validity.md) | 15  |
 | 20 | Quality | [Auto Data Quality for validity - allowed values checks](02-lab-guide/module-11-1c-auto-dq-value-set.md) | 15  |
-| 21 | Quality | [Auto Data Quality for uniqueness - duplication checks](02-lab-guide/module-11-1d-auto-dq-uniqueness.md) | 15  |
+| 21 | Quality | [Auto Data Quality for uniqueness - unique value checks](02-lab-guide/module-11-1d-auto-dq-uniqueness.md) | 15  |
 | 22 | Quality | [Auto Data Quality for validity - date checks with SQL row function](02-lab-guide/module-11-1e-auto-dq-sql-row-date.md) | 15  |
 
 <hr>
