@@ -142,7 +142,9 @@ Note the libraries added to the enviorment template for bootstrapping.
 
 
 <hr>
+
 This concludes the lab module. Proceed to the [next module](module-06-discovery.md).
+
 <hr>
 
 
