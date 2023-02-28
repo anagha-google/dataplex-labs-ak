@@ -35,6 +35,8 @@ lab_vpc_nm                  = "lab-vpc-${local.project_nbr}"
 lab_subnet_nm               = "lab-snet"
 lab_subnet_cidr             = "10.0.0.0/16"
 
+lab_sensitive_data_bucket_raw= "raw-data-sensitive-${local.project_nbr}"
+
 lab_data_bucket_raw         = "raw-data-${local.project_nbr}"
 lab_code_bucket             = "raw-code-${local.project_nbr}"
 lab_notebook_bucket         = "raw-notebook-${local.project_nbr}"
@@ -410,6 +412,19 @@ resource "google_storage_bucket" "lab_data_bucket_raw_creation" {
   ]
 }
 
+
+
+resource "google_storage_bucket" "lab_sensitive_data_bucket_raw_creation" {
+  project                           = local.project_id 
+  name                              = local.lab_sensitive_data_bucket_raw
+  location                          = local.location_multi
+  uniform_bucket_level_access       = true
+  force_destroy                     = true
+  depends_on = [
+      time_sleep.sleep_after_identities_permissions
+  ]
+}
+
 resource "google_storage_bucket" "lab_code_bucket_creation" {
   project                           = local.project_id 
   name                              = local.lab_code_bucket
@@ -504,7 +519,8 @@ resource "time_sleep" "sleep_after_bucket_creation" {
     google_storage_bucket.lab_metrics_bucket_creation,
     google_storage_bucket.lab_bundle_bucket_creation,
     google_storage_bucket.lab_data_bucket_curated_creation,
-    google_storage_bucket.lab_data_bucket_product_creation
+    google_storage_bucket.lab_data_bucket_product_creation,
+    google_storage_bucket.lab_sensitive_data_bucket_raw_creation
 
   ]
 }
@@ -546,21 +562,7 @@ variable "csv_datasets_to_upload" {
     "../datasets/telco-customer-churn-prediction/machine_learning_scoring/tccp_customer_churn_score_candidates.csv"="telco-customer-churn-prediction/machine_learning_scoring/tccp_customer_churn_score_candidates.csv",
     "../datasets/telco-customer-churn-prediction/machine_learning_training/tccp_customer_churn_train_candidates.csv"="telco-customer-churn-prediction/machine_learning_training/tccp_customer_churn_train_candidates.csv",
     "../datasets/chicago-crimes/reference_data/crimes_chicago_iucr_ref.csv"="chicago-crimes/reference_data/crimes_chicago_iucr_ref.csv",
-    "../datasets/banking/credit_card_reference_data_raw/card_read_type/card_read_type.csv"="banking/credit_card_reference_data_raw/card_read_type/card_read_type.csv",
-    "../datasets/banking/credit_card_reference_data_raw/card_type_facts/card_type_facts.csv"="banking/credit_card_reference_data_raw/card_type_facts/card_type_facts.csv",
-    "../datasets/banking/credit_card_reference_data_raw/currency/currency.csv"="banking/credit_card_reference_data_raw/currency/currency.csv",
-    "../datasets/banking/credit_card_reference_data_raw/events_type/events_type.csv"="banking/credit_card_reference_data_raw/events_type/events_type.csv",
-    "../datasets/banking/credit_card_reference_data_raw/origination_code/origination_code.csv"="banking/credit_card_reference_data_raw/origination_code/origination_code.csv",
-    "../datasets/banking/credit_card_reference_data_raw/payment_methods/payment_methods.csv"="banking/credit_card_reference_data_raw/payment_methods/payment_methods.csv",
-    "../datasets/banking/credit_card_reference_data_raw/signature/signature.csv"="banking/credit_card_reference_data_raw/signature/signature.csv",
-    "../datasets/banking/credit_card_reference_data_raw/swiped_code/swiped_code.csv"="banking/credit_card_reference_data_raw/swiped_code/swiped_code.csv",
-    "../datasets/banking/credit_card_reference_data_raw/trans_type/trans_type.csv"="banking/credit_card_reference_data_raw/trans_type/trans_type.csv",
-    "../datasets/banking/credit_card_transactions_raw/credit_card_authorizations/date=2022-05-01/credit_card_auth_transactions.csv"="banking/credit_card_transactions_raw/credit_card_authorizations/date=2022-05-01/credit_card_auth_transactions.csv",
-    "../datasets/banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv"="banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv",
-    "../datasets/banking/customers_raw/customers/date=2022-05-01/customers.csv"="banking/customers_raw/customers/date=2022-05-01/customers.csv",
-    "../datasets/banking/merchants_raw/mcc_codes/date=2022-05-01/mcc_codes.csv"="banking/merchants_raw/mcc_codes/date=2022-05-01/mcc_codes.csv",
-    "../datasets/banking/merchants_raw/merchants/date=2022-05-01/merchants.csv"="banking/merchants_raw/merchants/date=2022-05-01/merchants.csv"
-  }
+    }
 }
 
 resource "google_storage_bucket_object" "upload_to_gcs_datasets_raw" {
@@ -571,8 +573,26 @@ resource "google_storage_bucket_object" "upload_to_gcs_datasets_raw" {
   depends_on = [
     time_sleep.sleep_after_bucket_creation
   ]
-
 }
+
+variable "sensitive_csv_datasets_to_upload" {
+  type = map(string)
+  default = {
+    "../datasets/banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv"="banking/customers_raw/credit_card_customers/date=2022-05-01/credit_card_customers.csv",
+    "../datasets/banking/customers_raw/customers/date=2022-05-01/customers.csv"="banking/customers_raw/customers/date=2022-05-01/customers.csv",
+    }
+}
+
+resource "google_storage_bucket_object" "upload_to_gcs_sensitive_datasets_raw" {
+  for_each = var.sensitive_csv_datasets_to_upload
+  name     = each.value
+  source   = "${path.module}/${each.key}"
+  bucket   = "${local.lab_sensitive_data_bucket_raw}"
+  depends_on = [
+    time_sleep.sleep_after_bucket_creation
+  ]
+}
+
 
 variable "parquet_datasets_to_upload" {
   type = map(string)

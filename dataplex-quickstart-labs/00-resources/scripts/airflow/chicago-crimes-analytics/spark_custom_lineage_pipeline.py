@@ -29,8 +29,8 @@ SUBNET  = models.Variable.get("subnet")
 UMSA_FQN=UMSA+"@"+PROJECT_ID+".iam.gserviceaccount.com"
 
 # PySpark script files in GCS, of the individual Spark applications in the pipeline
-GCS_URI_CURATE_CRIMES_PYSPARK= f"gs://oda-raw-code-{PROJECT_NBR}/pyspark/chicago-crimes-analytics/curate_crimes.py"
-GCS_URI_CRIME_TRENDS_REPORT_PYSPARK= f"gs://oda-raw-code-{PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py"
+GCS_URI_CURATE_CRIMES_PYSPARK= f"gs://raw-code-{PROJECT_NBR}/pyspark/chicago-crimes-analytics/curate_crimes.py"
+GCS_URI_CRIME_TRENDS_REPORT_PYSPARK= f"gs://raw-code-{PROJECT_NBR}/pyspark/chicago-crimes-analytics/crimes_report.py"
 
 # Dataproc Metastore Resource URI
 DPMS_RESOURCE_URI = f"projects/{PROJECT_ID}/locations/{REGION}/services/lab-dpms-{PROJECT_NBR}"
@@ -47,166 +47,167 @@ REPORT_BASE_NM_CRIMES_YEAR="crimes-by-year"
 REPORT_BASE_NM_CRIMES_MONTH="crimes-by-month"
 REPORT_BASE_NM_CRIMES_DAY="crimes-by-day"
 REPORT_BASE_NM_CRIMES_HOUR="crimes-by-hour"
-REPORT_BASE_DIR=f"gs://oda-consumption-data-{PROJECT_NBR}"
+REPORT_BASE_DIR=f"gs://product-data-{PROJECT_NBR}"
 REPORT_CRIMES_YEAR_LOCATION=f"{REPORT_BASE_DIR}/{REPORT_BASE_NM_CRIMES_YEAR}-spark"
 REPORT_CRIMES_MONTH_LOCATION=f"{REPORT_BASE_DIR}/{REPORT_BASE_NM_CRIMES_MONTH}-spark"
 REPORT_CRIMES_DAY_LOCATION=f"{REPORT_BASE_DIR}/{REPORT_BASE_NM_CRIMES_DAY}-spark"
 REPORT_CRIMES_HOUR_LOCATION=f"{REPORT_BASE_DIR}/{REPORT_BASE_NM_CRIMES_HOUR}-spark"
 
 
-# Curate Crimes Spark application args
+# 1a. Curate Crimes Spark application args
 CURATE_CRIMES_ARGS_ARRAY = [ 
+        f"--projectID={PROJECT_ID}", \
         f"--tableFQN=oda_curated_zone.crimes_curated_spark", \
-        f"--peristencePath=gs://oda-curated-data-{PROJECT_NBR}/chicago-crimes-curated-spark/"]
+        f"--peristencePath=gs://curated-data-{PROJECT_NBR}/chicago-crimes-curated-spark/"]
 
-# Curate Crimes Spark application conf
+# 1b. Curate Crimes Spark application conf
 CURATE_CRIMES_DATAPROC_SERVERLESS_BATCH_CONFIG = {
     "pyspark_batch": {
         "main_python_file_uri": GCS_URI_CURATE_CRIMES_PYSPARK,
-        "args": CURATE_CRIMES_ARGS_ARRAY,
-        "jar_file_uris": [
-      "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-    ]
+        "args": CURATE_CRIMES_ARGS_ARRAY
+        #,"jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"]
+    },
+    "runtime_config":{
+        "version": "1.1"
     },
     "environment_config":{
         "execution_config":{
               "service_account": UMSA_FQN,
             "subnetwork_uri": SUBNET
-            },
+        },
         "peripherals_config": {
             "metastore_service": DPMS_RESOURCE_URI
-                
-            },
         },
+    },
 }
 
-
-# Crimes By Year args
+# 2a. Crimes By Year Spark application args
 CRIMES_BY_YEAR_ARGS_ARRAY = [f"--projectNbr={PROJECT_NBR} ",  \
         f"--projectID={PROJECT_ID} ",  \
         f"--reportDirGcsURI={REPORT_CRIMES_YEAR_LOCATION}",  \
         f"--reportName=Chicago Crime Trend by Year ",  \
         f"--reportSQL=SELECT cast(case_year as int) case_year,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_year; ",  \
         f"--reportPartitionCount=1",  \
-        f"--reportTableFQN=oda_consumption_zone.crimes_by_year_spark ",  \
-        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_consumption_zone.crimes_by_year_spark (case_year int, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_YEAR_LOCATION}\"" 
+        f"--reportTableFQN=oda_product_zone.crimes_by_year_spark ",  \
+        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_product_zone.crimes_by_year_spark (case_year int, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_YEAR_LOCATION}\"" 
         ]
 
-# Crimes By Year Spark application conf
+# 2b. Crimes By Year Spark application conf
 CRIMES_BY_YEAR_DATAPROC_SERVERLESS_BATCH_CONFIG = {
     "pyspark_batch": {
         "main_python_file_uri": GCS_URI_CRIME_TRENDS_REPORT_PYSPARK,
-        "args": CRIMES_BY_YEAR_ARGS_ARRAY,
-        "jar_file_uris": [
-      "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-    ]
+        "args": CRIMES_BY_YEAR_ARGS_ARRAY
+        #,"jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"]
+    },
+    "runtime_config":{
+        "version": "1.1"
     },
     "environment_config":{
         "execution_config":{
               "service_account": UMSA_FQN,
             "subnetwork_uri": SUBNET
-            },
+        },
         "peripherals_config": {
             "metastore_service": DPMS_RESOURCE_URI
-                
-            },
         },
+    },
 }
 
-# Crimes By Month args
+# 3a. Crimes By Month Spark application args
 CRIMES_BY_MONTH_ARGS_ARRAY = [f"--projectNbr={PROJECT_NBR} " ,  \
         f"--projectID={PROJECT_ID} ",  \
         f"--reportDirGcsURI={REPORT_CRIMES_MONTH_LOCATION}",  \
         f"--reportName=Chicago Crime Trend by Month ",  \
         f"--reportSQL=SELECT case_month,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_month; ",  \
         f"--reportPartitionCount=1",  \
-        f"--reportTableFQN=oda_consumption_zone.crimes_by_month_spark ",  \
-        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_consumption_zone.crimes_by_month_spark(case_month string, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_MONTH_LOCATION}\"" 
+        f"--reportTableFQN=oda_product_zone.crimes_by_month_spark ",  \
+        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_product_zone.crimes_by_month_spark(case_month string, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_MONTH_LOCATION}\"" 
         ]
 
-# Crimes By Month Spark application conf
+# 3b. Crimes By Month Spark application conf
 CRIMES_BY_MONTH_DATAPROC_SERVERLESS_BATCH_CONFIG = {
     "pyspark_batch": {
         "main_python_file_uri": GCS_URI_CRIME_TRENDS_REPORT_PYSPARK,
-        "args": CRIMES_BY_MONTH_ARGS_ARRAY,
-        "jar_file_uris": [
-      "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-    ]
+        "args": CRIMES_BY_MONTH_ARGS_ARRAY
+        #,"jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"]
+    },
+    "runtime_config":{
+        "version": "1.1"
     },
     "environment_config":{
         "execution_config":{
-              "service_account": UMSA_FQN,
+            "service_account": UMSA_FQN,
             "subnetwork_uri": SUBNET
-            },
-        "peripherals_config": {
-            "metastore_service": DPMS_RESOURCE_URI
-                
-            },
         },
+        "peripherals_config": {
+            "metastore_service": DPMS_RESOURCE_URI  
+        },
+    },
 }
 
-# Crimes By Day args
+# 4a. Crimes By Day Spark application args
 CRIMES_BY_DAY_ARGS_ARRAY = [f"--projectNbr={PROJECT_NBR} " ,   \
         f"--projectID={PROJECT_ID} ",   \
         f"--reportDirGcsURI={REPORT_CRIMES_DAY_LOCATION}" , \
         f"--reportName=Chicago Crime Trend by Day " ,  \
         f"--reportSQL=SELECT case_day_of_week,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_day_of_week; " , \
         f"--reportPartitionCount=1" , \
-        f"--reportTableFQN=oda_consumption_zone.crimes_by_day_spark ",  \
-        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS  oda_consumption_zone.crimes_by_day_spark (case_day_of_week string, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_DAY_LOCATION}\"" 
+        f"--reportTableFQN=oda_product_zone.crimes_by_day_spark ",  \
+        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS  oda_product_zone.crimes_by_day_spark (case_day_of_week string, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_DAY_LOCATION}\"" 
         ]
 
-# Crimes By Day Spark application conf
+# 4b. Crimes By Day Spark application conf
 CRIMES_BY_DAY_DATAPROC_SERVERLESS_BATCH_CONFIG = {
     "pyspark_batch": {
         "main_python_file_uri": GCS_URI_CRIME_TRENDS_REPORT_PYSPARK,
-        "args": CRIMES_BY_DAY_ARGS_ARRAY,
-        "jar_file_uris": [
-      "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-    ]
+        "args": CRIMES_BY_DAY_ARGS_ARRAY 
+        #,"jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"]
+    },
+    "runtime_config":{
+        "version": "1.1"
     },
     "environment_config":{
         "execution_config":{
-              "service_account": UMSA_FQN,
+            "service_account": UMSA_FQN,
             "subnetwork_uri": SUBNET
-            },
-        "peripherals_config": {
-            "metastore_service": DPMS_RESOURCE_URI
-                
-            },
         },
+        "peripherals_config": {
+            "metastore_service": DPMS_RESOURCE_URI     
+        }
+    }
 }
 
-# Crimes By Hour args
+# 5a. Crimes By Hour Spark application args
 CRIMES_BY_HOUR_ARGS_ARRAY = [f"--projectNbr={PROJECT_NBR} " ,   \
         f"--projectID={PROJECT_ID} ",   \
         f"--reportDirGcsURI={REPORT_CRIMES_HOUR_LOCATION}" , \
         f"--reportName=Chicago Crime Trend by Hour " ,  \
         f"--reportSQL=SELECT CAST(case_hour_of_day AS int) case_hour_of_day,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_hour_of_day; " , \
         f"--reportPartitionCount=1",  \
-        f"--reportTableFQN=oda_consumption_zone.crimes_by_hour_spark ",  \
-        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_consumption_zone.crimes_by_hour_spark(case_hour_of_day int, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_HOUR_LOCATION}\" " 
+        f"--reportTableFQN=oda_product_zone.crimes_by_hour_spark ",  \
+        f"--reportTableDDL=CREATE TABLE IF NOT EXISTS oda_product_zone.crimes_by_hour_spark(case_hour_of_day int, crime_count long) STORED AS PARQUET LOCATION \"{REPORT_CRIMES_HOUR_LOCATION}\" " 
         ]
 
-# Crimes By Hour Spark application conf
+# 5b. Crimes By Hour Spark application conf
 CRIMES_BY_HOUR_DATAPROC_SERVERLESS_BATCH_CONFIG = {
     "pyspark_batch": {
         "main_python_file_uri": GCS_URI_CRIME_TRENDS_REPORT_PYSPARK,
-        "args": CRIMES_BY_HOUR_ARGS_ARRAY,
-        "jar_file_uris": [
-      "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
-    ]
+        "args": CRIMES_BY_HOUR_ARGS_ARRAY
+        #,"jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"]
+    },
+    "runtime_config":{
+        "version": "1.1"
     },
     "environment_config":{
         "execution_config":{
               "service_account": UMSA_FQN,
             "subnetwork_uri": SUBNET
-            },
+        },
         "peripherals_config": {
             "metastore_service": DPMS_RESOURCE_URI
                 
-            },
         },
+    }
 }
 
 
@@ -252,7 +253,7 @@ with models.DAG(
         )],
         outlets=[BigQueryTable(
         project_id=PROJECT_ID,
-        dataset_id='oda_consumption_zone',
+        dataset_id='oda_product_zone',
         table_id='crimes_by_year_spark',
         )]
     )
@@ -270,7 +271,7 @@ with models.DAG(
         )],
         outlets=[BigQueryTable(
         project_id=PROJECT_ID,
-        dataset_id='oda_consumption_zone',
+        dataset_id='oda_product_zone',
         table_id='crimes_by_month_spark',
         )]
     )
@@ -288,7 +289,7 @@ with models.DAG(
         )],
         outlets=[BigQueryTable(
         project_id=PROJECT_ID,
-        dataset_id='oda_consumption_zone',
+        dataset_id='oda_product_zone',
         table_id='crimes_by_day_spark',
         )]
     )
@@ -306,7 +307,7 @@ with models.DAG(
         )],
         outlets=[BigQueryTable(
         project_id=PROJECT_ID,
-        dataset_id='oda_consumption_zone',
+        dataset_id='oda_product_zone',
         table_id='crimes_by_hour_spark',
         )]
     )
