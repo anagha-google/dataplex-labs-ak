@@ -92,7 +92,7 @@ terraform apply \
   --auto-approve >> dataplex-quickstart-lab.output
 ```
 
-You can tail the log file to view the provisioning process logs-
+You can tail the log file to view the provisioning process logs in a separate tab-
 ```
 tail -f ~/dataplex-quickstart-labs/00-resources/terraform/dataplex-quickstart-lab.output
 ```
