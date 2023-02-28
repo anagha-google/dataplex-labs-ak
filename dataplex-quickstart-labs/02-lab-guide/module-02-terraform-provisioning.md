@@ -10,6 +10,12 @@ The previous lab module covered what gets provisioned automatically. In this mod
 Approximately 45 minutes
 
 
+### Pictorial overview of what gets provisioned via Terraform
+
+![AF](../01-images/m1-00.png)   
+<br><br>
+
+
 <hr>
 
 ## 1. Getting set up for the lab
