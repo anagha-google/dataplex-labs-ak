@@ -24,7 +24,12 @@ Completion of prior modules
 
 ### Duration
 
-~ 30 minutes
+~ 15 minutes
+
+### Pictorial overview of lab
+
+![IAM](../01-images/m6-00.png)   
+<br><br>
 
 <hr>
 
