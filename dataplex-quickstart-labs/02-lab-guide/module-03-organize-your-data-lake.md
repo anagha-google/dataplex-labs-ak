@@ -13,6 +13,11 @@ Completion of prior modules
 ![IAM](../01-images/m3-00.png)   
 <br><br>
 
+### Targeted Data Lake Layout
+
+![IAM](../01-images/m3-01.png)   
+<br><br>
+
 <hr>
 
 ## 1. Concepts
