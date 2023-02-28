@@ -123,7 +123,7 @@ YOUR_GCP_MULTI_REGION="US"
 
 #### 6.1.2. Cloud Storage Buckets created
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
+You should see the listing below, when you paste the command below in Cloud Shell-
 ```
 gsutil ls
 ```
@@ -148,7 +148,7 @@ gs://us-central1-oda-70549534098-275215ea-bucket/ <-- created by Cloud Composer
 
 #### 6.1.3. Raw Datasets
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
+You should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls -r gs://raw-data-$PROJECT_NBR/
@@ -190,7 +190,7 @@ THIS IS INFORMATIONAL
 
 #### 6.1.4. Raw Sensitive Datasets
 
-After running the next module, you should see the listing below-
+You should see the listing below-
 
 ```
 gsutil ls -r gs://raw-data-sensitive-$PROJECT_NBR/
@@ -216,7 +216,7 @@ THIS IS INFORMATIONAL
 
 #### 6.1.5. Curated Datasets
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
+You should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls -r gs://curated-data-$PROJECT_NBR/
@@ -246,7 +246,7 @@ THIS IS INFORMATIONAL
 
 #### 6.1.6. Notebooks
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
+You should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls -r gs://raw-notebook-$PROJECT_NBR/
@@ -286,7 +286,7 @@ THIS IS INFORMATIONAL
 #### 6.1.7. Scripts
 
 
-After running the next module, you should see the listing below, when you paste the command below in Cloud Shell-
+You should see the listing below, when you paste the command below in Cloud Shell-
 
 ```
 gsutil ls -r gs://raw-notebook-$PROJECT_NBR/
