@@ -1,4 +1,4 @@
-# M8-4: Search the Dataplex Catalog for a Catalog Entry
+# M8-5: Search the Dataplex Catalog for a Catalog Entry
 
 In this lab module, we will learn how to search the Dataplex Catalog.
 
