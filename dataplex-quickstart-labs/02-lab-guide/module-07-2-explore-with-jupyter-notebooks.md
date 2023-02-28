@@ -12,7 +12,22 @@ In this lab module, we will query the Chicago Crimes BigQuery public dataset via
 
 Successful completion of the prior modules
 
-### Recap
+
+### Duration
+
+~ 5 minutes or less
+
+
+### Pictorial overview of lab
+
+![IAM](../01-images/m72-00.png)   
+<br><br>
+
+<hr>
+
+## Lab
+
+### 0. Recap
 
 We created an environment in a prior module for exploration. Review this feature from LAKE-ENVIRONMENT as show below-
 
@@ -23,13 +38,6 @@ We created an environment in a prior module for exploration. Review this feature
 ![DEW-1](../01-images/module-08-1-pre-2.png)   
 <br><br>
 <hr>
-
-### Duration
-~15 minutes or less
-
-<hr>
-
-## Lab
 
 ### 1. Navigate to the Explore
 Navigate to the Dataplex UI -> Explore as show below, in the Cloud Console. The click on notebooks.
