@@ -13,10 +13,14 @@ Completion of prior modules
 ### Approximate duration
 20 minutes or less
 
-### Pictorial overview of lab module
+### Pictorial overview of lab module - what we will work on
 
 ![IAM](../01-images/m4-00.png)   
 <br><br>
+
+
+
+### Assets we will register into zones
 
 ![IAM](../01-images/m4-01.png)   
 <br><br>
