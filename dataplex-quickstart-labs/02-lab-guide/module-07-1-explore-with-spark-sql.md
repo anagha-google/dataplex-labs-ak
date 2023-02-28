@@ -183,5 +183,5 @@ Try running a query against a BigQuery dataset and it will fail. This is because
 <br><br>
 
 <hr>
-This concludes the lab module. Proceed to the next module.
+This concludes the lab module. Proceed to the [next module]().
 <hr>
