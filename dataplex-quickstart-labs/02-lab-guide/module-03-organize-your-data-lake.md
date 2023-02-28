@@ -202,7 +202,7 @@ gcloud dataplex zones create ${MISC_RAW_ZONE_NM} --location=$LOCATION --lake=$LA
 
 <hr>
 
-This concludes the lab module. Proceed to the next lab module.
+This concludes the lab module. Proceed to the [next module](module-04-register-assets-into-zones.md).
 
 <hr>
 
