@@ -138,7 +138,7 @@ Expand and review the filters available
 
 <hr>
 
-This concludes the module. Proceed to the [next module](module-08-3-create-custom-entry-in-catalog.md).
+This concludes the module. Proceed to the [next module](module-08-2-create-custom-entry-in-catalog.md).
 
 <hr>
 
