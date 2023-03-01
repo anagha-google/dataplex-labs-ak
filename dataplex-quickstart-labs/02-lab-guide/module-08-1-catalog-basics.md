@@ -114,14 +114,18 @@ Expand and review the filters available
 <br><br>
 
 
+### 9. Study the schema for the BigQuery based Icecream Sales Forecasting table
+
 ![DEW-1](../01-images/m081-17.png)   
 <br><br>
+
+### 10. Study the lineage for the BigQuery based Icecream Sales Forecasting table
 
 
 ![DEW-1](../01-images/m081-18.png)   
 <br><br>
 
-### 9. Review other menu items available for BigQuery tables
+### 11. Review other menu items available for BigQuery tables
 
 ![DEW-1](../01-images/m081-19.png)   
 <br><br>
