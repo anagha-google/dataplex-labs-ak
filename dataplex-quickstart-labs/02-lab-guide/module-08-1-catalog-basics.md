@@ -113,17 +113,23 @@ Expand and review the filters available
 ![DEW-1](../01-images/m081-16.png)   
 <br><br>
 
+<hr>
+
 
 ### 9. Study the schema for the BigQuery based Icecream Sales Forecasting table
 
 ![DEW-1](../01-images/m081-17.png)   
 <br><br>
 
+<hr>
+
 ### 10. Study the lineage for the BigQuery based Icecream Sales Forecasting table
 
 
 ![DEW-1](../01-images/m081-18.png)   
 <br><br>
+
+<hr>
 
 ### 11. Review other menu items available for BigQuery tables
 
@@ -132,7 +138,7 @@ Expand and review the filters available
 
 <hr>
 
-This concludes the module. Proceed to the next module.
+This concludes the module. Proceed to the [next module](module-08-2-create-tag-template-for-catalog-entry.md).
 
 <hr>
 
