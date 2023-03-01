@@ -114,7 +114,7 @@ Where we left off in the Catalog Entry listing, click on the steward icon on the
 ![CE](../01-images/M07-Entry-09.png)   
 <br><br>
 
-<hr>
+
 
 <hr>
 
