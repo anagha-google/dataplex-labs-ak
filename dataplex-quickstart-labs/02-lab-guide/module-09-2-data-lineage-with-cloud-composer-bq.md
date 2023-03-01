@@ -14,10 +14,16 @@ Successful completion of prior lab modules
 ### Duration
 ~15 minutes
 
-### Pictorial overview of lab module
+### Pictorial overview of the lab module
 
 ![LIN-5](../01-images/m092-00.png)   
 <br><br>
+
+### Solution Architecture
+
+![LIN-5](../01-images/m092-SA.png)   
+<br><br>
+
 
 <hr>
 
