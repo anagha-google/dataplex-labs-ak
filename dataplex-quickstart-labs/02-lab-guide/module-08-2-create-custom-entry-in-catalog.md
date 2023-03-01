@@ -1,4 +1,4 @@
-# M8-3: Create a custom entry in Dataplex Catalog & designate a steward
+# M8-2: Create a custom entry in Dataplex Catalog & designate a steward
 
 In this lab module, we will learn how to create entries in Cloud Catalog, manually, using the Metadata API. We will first create an entry group and then an entry belonging to the group. In a subsequent lab, we will use it to demonstrate lineage. We will designate a steward for the entry.
 
@@ -110,5 +110,7 @@ Where we left off in the Catalog Entry listing, click on the steward icon on the
 <hr>
 
 <hr>
-This concludes the lab module. You can proceed to the next module.
+
+This concludes the lab module. You can proceed to the [next module](module-08-3-create-tag-template-for-catalog-entry.md).
+
 <hr>
