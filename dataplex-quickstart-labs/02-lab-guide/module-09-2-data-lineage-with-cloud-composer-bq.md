@@ -408,7 +408,9 @@ Go further upstream...
 
 
 <hr>
-This concules the lab module. Proceed to the next module.
+
+This concules the lab module. Proceed to the [next module](module-09-3-data-lineage-with-cloud-composer-spark.md), where we demonstrate custom lineage for Spark pipelines orchestrated in Airflow on Cloud Composer.
+
 <hr>
 
 
