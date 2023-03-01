@@ -78,12 +78,16 @@ Expand and review thr filters available
 ![DEW-1](../01-images/m081-08.png)   
 <br><br>
 
+<hr>
+
 ### 6. Search for keyword "forecasting" with system predicate of dataplex
 
 ![DEW-1](../01-images/m081-09.png)   
 <br><br>
 
-### 7. Study the metadata for Cloud Storage Based Icecream Sales Forecasting table
+<hr>
+
+### 7. Study the metadata for Cloud Storage based Icecream Sales Forecasting table
 
 ![DEW-1](../01-images/m081-10.png)   
 <br><br>
@@ -100,7 +104,31 @@ Expand and review thr filters available
 ![DEW-1](../01-images/m081-14.png)   
 <br><br>
 
+<hr>
+
+### 8. Study the metadata for BigQuery based Icecream Sales Forecasting table
+
 ![DEW-1](../01-images/m081-15.png)   
 <br><br>
 
+![DEW-1](../01-images/m081-16.png)   
+<br><br>
+
+
+![DEW-1](../01-images/m081-17.png)   
+<br><br>
+
+
+![DEW-1](../01-images/m081-18.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-19.png)   
+<br><br>
+
 <hr>
+
+This concludes the module. Proceed to the next module.
+
+<hr>
+
+
