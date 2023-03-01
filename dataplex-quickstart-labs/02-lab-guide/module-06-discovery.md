@@ -358,5 +358,7 @@ SELECT * FROM oda_curated_zone.retail_transactions_anomaly_detection LIMIT 2;
 <hr>
 
 <hr>
-This concludes the lab module. Proceed to the next module, where we will create a Dataplex "Environment" lanuch up a Jupyter notebook and explore metadata.
+
+This concludes the lab module. Proceed to the [next module](module-07-1-explore-with-spark-sql.md).
+
 <hr>
