@@ -201,6 +201,6 @@ Here is the author's lineage graph from clicking on the curated crimes table.
 
 <hr>
 
-This concludes the lab module, proceed to the next module where you will learn how lineage works with Cloud Composer.
+This concludes the lab module, proceed to the [next module](module-09-2-data-lineage-with-cloud-composer-bq.md) where you will learn how lineage works with Cloud Composer, tofr this exact same pipeline.
 
 <hr>
