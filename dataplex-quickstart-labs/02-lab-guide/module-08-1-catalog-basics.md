@@ -57,8 +57,12 @@ Expand and review thr filters available
 ![DEW-1](../01-images/m081-05.png)   
 <br><br>
 
+### 3. Review options under the "sort by" dropdown
+
 ![DEW-1](../01-images/m081-06.png)   
 <br><br>
+
+### 4. Search for keyword "forecasting"
 
 ![DEW-1](../01-images/m081-07.png)   
 <br><br>
