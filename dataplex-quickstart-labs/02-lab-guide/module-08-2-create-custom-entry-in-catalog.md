@@ -8,6 +8,13 @@ Successful completion of prior modules
 ### Approximate duration
 15 minutes or less to complete
 
+### Pictorial overview of lab
+
+![IAM](../01-images/m82-00.png)   
+<br><br>
+
+<hr>
+
 
 ## 1. Create custom entry group
 
