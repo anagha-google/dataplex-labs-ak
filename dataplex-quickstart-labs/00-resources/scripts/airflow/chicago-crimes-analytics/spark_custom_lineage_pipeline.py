@@ -319,5 +319,3 @@ with models.DAG(
 
 
 start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, trend_by_hour] >> end
-
-
