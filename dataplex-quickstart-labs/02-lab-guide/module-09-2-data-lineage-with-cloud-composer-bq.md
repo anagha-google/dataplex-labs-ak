@@ -64,7 +64,7 @@ Lets create the raw source table by hand in the BigQuery UI.
 
 ```
 CREATE OR REPLACE TABLE
-  oda_raw_zone.chicago_crimes_raw AS
+  oda_raw_zone.crimes_raw AS
 SELECT
   *
 FROM
