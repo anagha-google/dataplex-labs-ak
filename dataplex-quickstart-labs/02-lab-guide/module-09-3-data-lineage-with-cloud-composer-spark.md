@@ -13,13 +13,28 @@ Successful completion of prior lab modules
 [1. Concepts](module-08-data-lineage-with-bigquery.md#concepts-data-lineage-information-model) <br>
 [2. Lab](module-08-data-lineage-with-bigquery.md#lab-automated-lineage-capture-for-bigquery-jobs)
 
-<hr>
+### Solution Architecture
+
+![LIN-5](../01-images/m093-SA.png)   
+<br><br>
+
+
+### Pictorial overview of the lab module
+
+![LIN-5](../01-images/m093-00.png)   
+<br><br>
+
+
 
 ### Learning goals
 
 1. We will run pre-created PySpark scripts that curate Chicago crimes, and then generate Crime trend reports
 2. Next, we will run a DAG to orchestrate the above, without custom lineage
 3. Finally, we will run a DAG to orchestrate, with custom lineage
+
+<hr>
+
+## LAB
 
 ## 1. Lab - Run the PySpark scripts manually from CLI
 
@@ -63,10 +78,17 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectID=$PROJECT_ID --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
 ```
 
-Visualizae the execution in the Dataproc->Batches UI-
+Visualize the execution in the Dataproc->Batches UI-
 
 
+![LIN-5](../01-images/m093-01.png)   
+<br><br>
 
+
+![LIN-5](../01-images/m093-02.png)   
+<br><br>
+
+<hr>
 
 #### 1.3.2. Chicago Crimes by Year Report
 
