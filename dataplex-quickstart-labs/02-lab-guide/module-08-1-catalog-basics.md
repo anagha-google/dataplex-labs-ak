@@ -11,7 +11,7 @@ It offers:
 5. Unified and Integrated security with IAM to provide granular access controls for metadata access
 6. Open APIs to enable read, write or search metadata with support for Python, Java, Go, Ruby, C# and PHP
   
-In this lab module, we will review the Dataplex Catalog UI.
+In this lab module, we will study the Dataplex Catalog UI for a Cloud Storage based table and a BigQuery table.
 
 <hr>
 
@@ -27,7 +27,7 @@ Successful completion of the prior modules
 
 ### Pictorial overview of lab
 
-![IAM](../01-images/m81-00.png)   
+![IAM](../01-images/m081-00.png)   
 <br><br>
 
 <hr>
@@ -38,6 +38,6 @@ Successful completion of the prior modules
 ### 1. Navigate to the Cloud Catalog
 Navigate to the Dataplex UI -> Search as show below, in the Cloud Console. 
 
-![DEW-1](../01-images/module-08-2-00.png)   
+![DEW-1](../01-images/m081-01.png)   
 <br><br>
 <hr>
