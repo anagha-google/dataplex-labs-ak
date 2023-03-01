@@ -75,5 +75,7 @@ Associate the tag to the custom entry as shown below, and populate. Follow the s
 
 
 <hr>
-This concludes the lab module. You can proceed to the next module.
+
+This concludes the lab module. You can proceed to the [next module](module-08-4-create-overview-for-catalog-entry.md).
+
 <hr>
