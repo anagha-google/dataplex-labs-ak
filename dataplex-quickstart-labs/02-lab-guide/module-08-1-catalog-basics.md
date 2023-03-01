@@ -41,3 +41,23 @@ Navigate to the Dataplex UI -> Search as show below, in the Cloud Console.
 ![DEW-1](../01-images/m081-01.png)   
 <br><br>
 <hr>
+
+### 2. Study the filters
+Expand and review thr filters available
+
+![DEW-1](../01-images/m081-02.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-03.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-04.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-05.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-06.png)   
+<br><br>
+
+<hr>
