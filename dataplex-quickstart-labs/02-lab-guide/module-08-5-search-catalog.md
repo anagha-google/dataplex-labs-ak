@@ -44,10 +44,16 @@ Lets search for all those entries that have a steward tagged in the "overview" t
 ![CE](../01-images/m085-04.png)   
 <br><br>
 
+<hr>
+
+### 1.4. Search for a specific value of a tag template key
+Lets search for all those entries that have you as the steward.
+
+![CE](../01-images/m085-05.png)   
+<br><br>
 
 <hr>
 
+This concludes the lab module. You can proceed to the [next module](module-09-1-data-lineage-with-bigquery.md).
 
-<hr>
-This concludes the lab module. You can proceed to the next module.
 <hr>
