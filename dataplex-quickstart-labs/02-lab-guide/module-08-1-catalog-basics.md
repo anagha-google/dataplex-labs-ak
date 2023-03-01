@@ -73,13 +73,17 @@ Expand and review thr filters available
 
 <hr>
 
-### 5. Search for keyword "forecasting" with system predicate
+### 5. Search for keyword "forecasting" with system predicate of bigquery
 
 ![DEW-1](../01-images/m081-08.png)   
 <br><br>
 
+### 6. Search for keyword "forecasting" with system predicate of dataplex
+
 ![DEW-1](../01-images/m081-09.png)   
 <br><br>
+
+
 
 ![DEW-1](../01-images/m081-10.png)   
 <br><br>
