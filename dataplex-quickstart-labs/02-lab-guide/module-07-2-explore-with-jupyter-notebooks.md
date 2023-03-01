@@ -132,5 +132,7 @@ Try out each of these features independently.
 
 
 <hr>
-This concludes the lab module. Proceed to the next module.
+
+This concludes the lab module. Proceed to the [next module](module-08-1-catalog-basics.md).
+
 <hr>
