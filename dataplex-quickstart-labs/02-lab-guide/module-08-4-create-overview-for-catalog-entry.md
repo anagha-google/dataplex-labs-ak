@@ -10,6 +10,12 @@ Successful completion of prior modules
 
 15 minutes or less to complete
 
+### Pictorial overview
+
+![CE](../01-images/m084-00.png)   
+<br><br>
+
+
 <hr>
 
 ## 1. Lab
