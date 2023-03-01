@@ -10,7 +10,7 @@ Successful completion of prior modules
 
 ### Pictorial overview of lab
 
-![IAM](../01-images/m82-00.png)   
+![IAM](../01-images/m082-00.png)   
 <br><br>
 
 <hr>
