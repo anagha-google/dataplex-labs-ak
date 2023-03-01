@@ -60,4 +60,16 @@ Expand and review thr filters available
 ![DEW-1](../01-images/m081-06.png)   
 <br><br>
 
+![DEW-1](../01-images/m081-07.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-08.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-09.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-10.png)   
+<br><br>
+
 <hr>
