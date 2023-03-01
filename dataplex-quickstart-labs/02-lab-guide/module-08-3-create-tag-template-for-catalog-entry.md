@@ -12,6 +12,11 @@ Successful completion of prior modules
 
 15 minutes or less to complete
 
+### Pictorial overview of the lab module
+
+![IAM](../01-images/m083-00.png)   
+<br><br>
+
 <hr>
 
 ## 1. Lab
@@ -67,7 +72,7 @@ Associate the tag to the custom entry as shown below, and populate. Follow the s
 ![CE](../01-images/M07-Entry-21.png)   
 <br><br>
 
-<hr>
+
 
 <hr>
 This concludes the lab module. You can proceed to the next module.
