@@ -83,9 +83,24 @@ Expand and review thr filters available
 ![DEW-1](../01-images/m081-09.png)   
 <br><br>
 
-
+### 7. Study the metadata for Cloud Storage Based Icecream Sales Forecasting table
 
 ![DEW-1](../01-images/m081-10.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-11.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-12.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-13.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-14.png)   
+<br><br>
+
+![DEW-1](../01-images/m081-15.png)   
 <br><br>
 
 <hr>
