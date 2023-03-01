@@ -14,6 +14,13 @@ Successful completion of prior lab modules
 ### Duration
 ~15 minutes
 
+### Pictorial overview of lab module
+
+![LIN-5](../01-images/m092-00.png)   
+<br><br>
+
+<hr>
+
 ### 1. What's involved in this lab module
 
 In the prior module, we reviewed lineage with executing plain BigQuery SQL. In this lab module, we will demonstrate lineage capture off of an Airflow DAG composed of BigQuery actions.
