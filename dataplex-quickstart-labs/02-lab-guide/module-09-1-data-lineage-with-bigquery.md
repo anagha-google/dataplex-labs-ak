@@ -16,6 +16,11 @@ Successful completion of prior lab modules
 [1. Concepts](module-08-data-lineage-with-bigquery.md#concepts-data-lineage-information-model) <br>
 [2. Lab](module-08-data-lineage-with-bigquery.md#lab-automated-lineage-capture-for-bigquery-jobs)
 
+### Pictorial overview of the lab module
+
+![CE](../01-images/m091-00.png)   
+<br><br>
+
 <hr>
 
 ## Concepts: Data Lineage Information Model
@@ -44,6 +49,17 @@ https://cloud.google.com/data-catalog/docs/concepts/about-data-lineage#lineage-s
 ### 1. What's involved in this lab
 
 In lab module 4, we created a BigQuery table in our raw zone based off of the BigQuery public dataset hosting Chicago Crimes. The rest of this lab will be using the same table as a basis to demonstrate lineage, with a bunch of SQL statements.
+
+
+![CE](../01-images/m091-01.png)   
+<br><br>
+
+![CE](../01-images/m091-02.png)   
+<br><br>
+
+
+![CE](../01-images/m091-03.png)   
+<br><br>
 
 
 ### 2. Source raw Chicago crimes into the raw zone
