@@ -34,7 +34,6 @@ Successful completion of the prior modules
 
 ## Lab
 
-
 ### 1. Navigate to the Cloud Catalog
 Navigate to the Dataplex UI -> Search as show below, in the Cloud Console. 
 
@@ -43,7 +42,7 @@ Navigate to the Dataplex UI -> Search as show below, in the Cloud Console.
 <hr>
 
 ### 2. Study the filters
-Expand and review thr filters available
+Expand and review the filters available
 
 ![DEW-1](../01-images/m081-02.png)   
 <br><br>
@@ -121,6 +120,8 @@ Expand and review thr filters available
 
 ![DEW-1](../01-images/m081-18.png)   
 <br><br>
+
+### 9. Review other menu items available for BigQuery tables
 
 ![DEW-1](../01-images/m081-19.png)   
 <br><br>
