@@ -80,5 +80,7 @@ Next lets add an image to the overview as shown below. The author downloaded the
 
 
 <hr>
-This concludes the lab module. You can proceed to the next module.
+
+This concludes the lab module. You can proceed to the [next module](module-08-5-search-catalog.md).
+
 <hr>
