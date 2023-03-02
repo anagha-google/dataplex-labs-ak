@@ -75,7 +75,7 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
 --properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --version=1.1 \
--- --projectID=$PROJECT_ID --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/chicago-crimes-curated-spark/" 
+-- --projectID=$PROJECT_ID --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/crimes-curated-spark/" 
 ```
 
 Visualize the execution in the Dataproc->Batches UI-
