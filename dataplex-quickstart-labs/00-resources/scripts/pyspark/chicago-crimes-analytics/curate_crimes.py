@@ -13,6 +13,7 @@ import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from datetime import datetime
+from google.cloud import storage
 
 
 def fnParseArguments():
@@ -41,6 +42,26 @@ def fnParseArguments():
         required=True)
     return argsParser.parse_args()
 # }} End fnParseArguments()
+
+def fnDeleteSuccessFlagFile(bucket_uri):
+# {{ Start 
+    """Deletes a blob from the bucket."""
+    # bucket_name = "your-bucket-name"
+    # blob_name = "your-object-name"
+
+    storage_client = storage.Client()
+    bucket_name = bucket_uri.split("/")[2]
+    object_name = "/".join(bucket_uri.split("/")[3:]) 
+
+    print(f"Bucket name: {bucket_name}")
+    print(f"Object name: {object_name}")
+
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(f"{object_name}/_SUCCESS")
+    blob.delete()
+
+    print(f"_SUCCESS file deleted.")
+# }} End
 
 def fnMain(logger, args):
 # {{ Start main
@@ -103,6 +124,11 @@ def fnMain(logger, args):
         # 8. Refresh table 
         logger.info('....Refresh table')
         spark.sql(f"REFRESH TABLE {tableFQN};").show(truncate=False)
+        logger.info('....===================================')
+
+        # 9. Remove _SUCCESS file
+        logger.info('....Deleting _SUCCESS')
+        fnDeleteSuccessFlagFile(peristencePath)
         logger.info('....===================================')
 
 
