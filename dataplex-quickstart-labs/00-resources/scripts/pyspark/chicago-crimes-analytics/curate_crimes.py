@@ -57,7 +57,7 @@ def fnDeleteSuccessFlagFile(bucket_uri):
     print(f"Object name: {object_name}")
 
     bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(f"{object_name}/_SUCCESS")
+    blob = bucket.blob(f"{object_name}_SUCCESS")
     blob.delete()
 
     print(f"_SUCCESS file deleted.")
@@ -130,7 +130,6 @@ def fnMain(logger, args):
         logger.info('....Deleting _SUCCESS')
         fnDeleteSuccessFlagFile(peristencePath)
         logger.info('....===================================')
-
 
     except RuntimeError as coreError:
             logger.error(coreError)
