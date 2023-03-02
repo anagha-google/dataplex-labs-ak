@@ -55,7 +55,6 @@ Copy the PySpark scripts from local to the code bucket (in case you modified any
 ```
 cd ~/dataplex-quickstart-labs/00-resources/scripts/pyspark/
 gsutil cp chicago-crimes-analytics/* gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/
-
 ```
 
 ### 1.3. Test each of the Spark jobs individually
