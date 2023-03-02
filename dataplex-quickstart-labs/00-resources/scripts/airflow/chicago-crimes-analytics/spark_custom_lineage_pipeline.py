@@ -58,7 +58,7 @@ REPORT_CRIMES_HOUR_LOCATION=f"{REPORT_BASE_DIR}/{REPORT_BASE_NM_CRIMES_HOUR}-spa
 CURATE_CRIMES_ARGS_ARRAY = [ 
         f"--projectID={PROJECT_ID}", \
         f"--tableFQN=oda_curated_zone.crimes_curated_spark", \
-        f"--peristencePath=gs://curated-data-{PROJECT_NBR}/chicago-crimes-curated-spark/"]
+        f"--peristencePath=gs://curated-data-{PROJECT_NBR}/crimes-curated-spark/"]
 
 # 1b. Curate Crimes Spark application conf
 CURATE_CRIMES_DATAPROC_SERVERLESS_BATCH_CONFIG = {
@@ -319,3 +319,5 @@ with models.DAG(
 
 
 start >> curate_chicago_crimes >> [trend_by_year, trend_by_month, trend_by_day, trend_by_hour] >> end
+
+
