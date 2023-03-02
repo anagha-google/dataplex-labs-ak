@@ -111,7 +111,7 @@ def fnMain(logger, args):
         # 6. Persist to the data lake bucket in the curated zone
         logger.info('....Persisting dataframe in overwrite mode')
         print(f"peristencePath is {peristencePath}")
-        curatedCrimesDF.coalesce(17).write.parquet(peristencePath, mode='overwrite')
+        curatedCrimesDF.repartition(17).write.parquet(peristencePath, mode='overwrite')
         logger.info('....===================================')
     
         # 7. Create table definition
