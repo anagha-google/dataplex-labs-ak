@@ -389,11 +389,11 @@ Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-MISC-ZONE -> Assets & famil
 
 <hr>
 
-### 2.5. Register empty bucket, as asset into Curated Zone: oda-consumption-zone
+### 2.5. Register empty bucket, as asset into Curated Zone: oda-product-zone
 
 #### 2.5.1. Assets to be registered
 
-There are not objects to be registered into the Dataplex Raw Zone called oda-consumption-zone. The asset is the GCS bucket located at -<br>
+There are not objects to be registered into the Dataplex curated Zone called oda-product-zone. The asset is the GCS bucket located at -<br>
 GCS Path: gs://product-data-PROJECT_NBR<br>
 
 
@@ -402,7 +402,7 @@ GCS Path: gs://product-data-PROJECT_NBR<br>
 To register the notebook assets, we will merely register the buckets and the notebook assets will automatically get discovered and entities registered. We will review entities created in the next lab module.
 
 ```
-gcloud dataplex assets create consumption-assets \
+gcloud dataplex assets create product-assets \
 --location=$LOCATION \
 --lake=$LAKE_NM \
 --zone=$DATA_PRODUCT_ZONE_NM \
