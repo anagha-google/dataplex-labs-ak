@@ -2,6 +2,8 @@
 
 In this lab module, we will repeat what we did with lineage of BigQuery based Airflow DAG, except, we will use Apache Spark on Dataproc Serverless instead. Note that Dataproc Serverless is not a natively supported service with Dataplex automated lineage capture. So, we will have use custom lineage feature in Cloud Composer.
 
+
+
 ### Prerequisites
 Successful completion of prior lab modules
 
@@ -289,10 +291,19 @@ Navigate to the Cloud Storage to check for output files-
 
 ## 2. Dataplex Discovery of the Cloud Storage objects from the Spark applications run
 
+### Note
+Availability of lineage is contingent on completion of discovery of the Cloud Storage objects. 
 
-### 2.1. Add the cloud storage bucket oda-product* as an asset to the product zone
+### 2.1. Add the cloud storage bucket product-data* as an asset to the product zone
 
 ```
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+LOCATION="us-central1"
+LAKE_NM="oda-lake"
+DATA_PRODUCT_ZONE_NM="oda-product-zone"
+
+
 gcloud dataplex assets create product-assets \
 --location=$LOCATION \
 --lake=$LAKE_NM \
