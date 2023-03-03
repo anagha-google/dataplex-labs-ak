@@ -303,6 +303,6 @@ You should NOT see the deletion targeted process.
 
 <hr>
 
-This concludes the lab module.
+This concludes the lab module. Proceed to the [next module.](module-10-1-data-profiling.md)
 
 <hr>
