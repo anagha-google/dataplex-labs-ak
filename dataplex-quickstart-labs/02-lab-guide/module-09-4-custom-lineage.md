@@ -12,7 +12,11 @@ In this lab module, we will use the Dataplex Lineage API and learn how to create
 
 30 minutes or less
 
-<hr>
+### Lab flow
+
+![CL](../01-images/m094-00.png)   
+<br><br>
+
 
 ## Learning Goal: Custom lineage creation with Dataplex Lineage API
 | # | Unit | 
@@ -22,7 +26,7 @@ In this lab module, we will use the Dataplex Lineage API and learn how to create
 | 3 | Create custom lineage event for the custom run |
 
 
-<hr>
+
 
 ## Lineage at onset of the lab
 
