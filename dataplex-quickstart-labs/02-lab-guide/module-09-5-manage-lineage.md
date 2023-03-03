@@ -11,6 +11,11 @@ Completion of prior modules
 
 15 minutes or less
 
+### Lab flow
+
+![CL](../01-images/m095-00.png)   
+<br><br>
+
 ### Lineage REST API Reference
 
 https://cloud.google.com/data-catalog/docs/reference/data-lineage/rest
