@@ -96,7 +96,10 @@ Visualize the execution in the Dataproc->Batches UI-
 <br><br>
 
 
-![LIN-5](../01-images/m093-02.png)   
+![LIN-5](../01-images/m093-02a.png)   
+<br><br>
+
+![LIN-5](../01-images/m093-02b.png)   
 <br><br>
 
 <hr>
