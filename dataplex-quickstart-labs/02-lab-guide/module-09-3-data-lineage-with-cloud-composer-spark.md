@@ -442,7 +442,10 @@ SELECT * FROM `oda_product_zone.crimes_by_hour_spark` LIMIT 5
 
 
 1. The lineage captured is custom and BQ external table centric and therefore not visible in the Dataplex UI. The latency of lineage avaialability is dependent on discovery settings for the asset.
-2. Navigate to the BigQuery UI and click on the oda_curated_zone.crimes_curated_spark table. Click on lineage.
+2. Navigate to the BigQuery UI and click on the external table, oda_curated_zone.crimes_curated_spark table. 
+3. Click on lineage for the table.
+
+
 
 
 
