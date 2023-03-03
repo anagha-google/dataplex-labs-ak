@@ -87,16 +87,18 @@ https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATIO
 
 Paste the below in cloud shell, to list the processes-
 ```
+mkdir -p ~/temp-lineage
 
-rm -rf lineage_processes_listing.json
+rm -rf ~/temp-lineage/lineage_processes_listing.json
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \
 -H "Content-Type: application.json" \
-https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes >> lineage_processes_listing.json
+https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes >> ~/temp-lineage/lineage_processes_listing.json
 ```
 
 The process we created has the keyword "Public", lets zone in:
 ```
+cd ~/temp-lineage
 cat lineage_processes_listing.json | grep -C 1 Public
 ```
 
@@ -145,6 +147,7 @@ https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATIO
 
 Paste the below in cloud shell-
 ```
+cd ~/temp-lineage
 rm -rf custom_lineage_run.json
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \
@@ -235,6 +238,7 @@ This is informational-
 
 Paste the below in cloud shell-
 ```
+cd ~/temp-lineage
 rm -rf custom_lineage_events.json
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \
