@@ -23,12 +23,12 @@ Successful completion of prior lab modules
 
 ### Pictorial overview of the lab module
 
-![LIN-5](../01-images/m093-00.png)   
+![LIN-5](../01-images/m093-00-a.png)   
 <br><br>
 
 ### Lake layout
 
-![LIN-5](../01-images/m093-00-a.png)   
+![LIN-5](../01-images/m093-00-b.png)   
 <br><br>
 
 
