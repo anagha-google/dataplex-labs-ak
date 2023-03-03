@@ -289,7 +289,28 @@ Navigate to the Cloud Storage to check for output files-
 
 ## 2. Dataplex Discovery of the Cloud Storage objects from the Spark applications run
 
-It takes a few minutes for Dataplex Discovery to complete from the point of completion of the Spark jobs above, at the end of which, you should see entities discovered reflected in the Dataplex UI.
+
+### 2.1. Add the cloud storage bucket oda-product* as an asset to the product zone
+
+```
+gcloud dataplex assets create product-assets \
+--location=$LOCATION \
+--lake=$LAKE_NM \
+--zone=$DATA_PRODUCT_ZONE_NM \
+--resource-type=STORAGE_BUCKET \
+--resource-name=projects/$PROJECT_ID/buckets/product-data-$PROJECT_NBR \
+--discovery-enabled \
+--discovery-schedule="0 * * * *" \
+--display-name 'Product Assets'
+```
+
+### 2.2. Review the assets registered in the Dataplex UI
+
+It takes a few minutes for assets to get discovered and external tables to get created. 
+Navigate to Dataplex UI -> Manage -> ODA-LAKE -> ODA-PRODUCT-ZONE -> Entities.
+
+### 2.3. Review the entities
+
 
 Navigate and click on each entity-
 
@@ -407,6 +428,7 @@ SELECT * FROM `oda_product_zone.crimes_by_hour_spark` LIMIT 5
 <hr>
 
 ## 5. Custom lineage captured from Airflow on Cloud Composer
+
 
 1. The lineage captured is custom and BQ external table centric and therefore not visible in the Dataplex UI. The latency of lineage avaialability is dependent on discovery settings for the asset.
 2. Navigate to the BigQuery UI and click on the oda_curated_zone.crimes_curated_spark table. Click on lineage.
