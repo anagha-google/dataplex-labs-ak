@@ -106,6 +106,7 @@ Visualize the execution in the Dataproc->Batches UI-
 
 #### 1.3.2. Chicago Crimes by Year Report
 
+Run the crimes_report.py script to generate the "Crimes by Year" report-
 ```
 PIPELINE_ID=$RANDOM
 baseName="crimes-by-year-spark"
@@ -128,10 +129,20 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
+Navigate to the Dataproc Batches UI and view the execution-
+![LIN-5](../01-images/m093-03a.png)   
+<br><br>
+
+Navigate to the Cloud Storage to check for output files-
+![LIN-5](../01-images/m093-03b.png)   
+<br><br>
+
+<hr>
 
 
 #### 1.3.3. Chicago Crimes by Month Report
 
+Run the crimes_report.py script to generate the "Crimes by Month" report-
 ```
 PIPELINE_ID=$RANDOM
 baseName="crimes-by-month-spark"
@@ -154,8 +165,20 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
+Navigate to the Dataproc Batches UI and view the execution-
+![LIN-5](../01-images/m093-04a.png)   
+<br><br>
+
+
+Navigate to the Cloud Storage to check for output files-
+![LIN-5](../01-images/m093-04b.png)   
+<br><br>
+
+<hr>
+
 #### 1.3.4. Chicago Crimes by Day of Week Report
 
+Run the crimes_report.py script to generate the "Crimes by Day" report-
 ```
 PIPELINE_ID=$RANDOM
 baseName="crimes-by-day-spark"
@@ -177,6 +200,16 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --version=1.1 \
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
+
+Navigate to the Dataproc Batches UI and view the execution-
+![LIN-5](../01-images/m093-05a.png)   
+<br><br>
+
+Navigate to the Cloud Storage to check for output files-
+![LIN-5](../01-images/m093-05b.png)   
+<br><br>
+
+<hr>
 
 ## 1.3.5. Chicago Crimes by Hour of Day Report
 
@@ -203,6 +236,14 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-#--properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
+Navigate to the Dataproc Batches UI and view the execution-
+![LIN-5](../01-images/m093-06a.png)   
+<br><br>
+
+Navigate to the Cloud Storage to check for output files-
+![LIN-5](../01-images/m093-06b.png)   
+<br><br>
+
+<hr>
 
 ## 2. The Airflow DAG WITH custom lineage - run on Cloud Composer
