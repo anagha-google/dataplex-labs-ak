@@ -13,6 +13,11 @@ There are several types of profiling. Dataplex does column-level profiling.
 
 Successful completion of prior modules
 
+### Lab module flow
+
+![ADQ-3](../01-images/m10-1-00.png)   
+<br><br>
+
 ### Duration
 
 30 minutes
