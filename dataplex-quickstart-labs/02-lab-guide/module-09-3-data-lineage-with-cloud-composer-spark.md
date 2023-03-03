@@ -91,7 +91,6 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 
 Visualize the execution in the Dataproc->Batches UI-
 
-
 ![LIN-5](../01-images/m093-01.png)   
 <br><br>
 
@@ -101,6 +100,8 @@ Visualize the execution in the Dataproc->Batches UI-
 <br><br>
 
 <hr>
+
+Navigate to the Cloud Storage to check for output files-
 
 ![LIN-5](../01-images/m093-02b.png)   
 <br><br>
@@ -132,14 +133,21 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-Navigate to the Dataproc Batches UI and view the execution-
+Visualize the execution in the Dataproc->Batches UI-
+
 ![LIN-5](../01-images/m093-03a.png)   
 <br><br>
 
 <hr>
 
-Navigate to the Cloud Storage to check for output files-
 ![LIN-5](../01-images/m093-03b.png)   
+<br><br>
+
+<hr>
+
+Navigate to the Cloud Storage to check for output files-
+
+![LIN-5](../01-images/m093-03c.png)   
 <br><br>
 
 <hr>
@@ -170,13 +178,21 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-Navigate to the Dataproc Batches UI and view the execution-
+Visualize the execution in the Dataproc->Batches UI-
+
 ![LIN-5](../01-images/m093-04a.png)   
 <br><br>
 
+<hr>
+
+![LIN-5](../01-images/m093-04b.png)   
+<br><br>
+
+<hr>
 
 Navigate to the Cloud Storage to check for output files-
-![LIN-5](../01-images/m093-04b.png)   
+
+![LIN-5](../01-images/m093-04c.png)   
 <br><br>
 
 <hr>
@@ -206,12 +222,21 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-Navigate to the Dataproc Batches UI and view the execution-
+Visualize the execution in the Dataproc->Batches UI-
+
 ![LIN-5](../01-images/m093-05a.png)   
 <br><br>
 
-Navigate to the Cloud Storage to check for output files-
+<hr>
+
 ![LIN-5](../01-images/m093-05b.png)   
+<br><br>
+
+<hr>
+
+Navigate to the Cloud Storage to check for output files-
+
+![LIN-5](../01-images/m093-05c.png)   
 <br><br>
 
 <hr>
@@ -241,12 +266,21 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 -- --projectNbr=$PROJECT_NBR --projectID=$PROJECT_ID --reportDirGcsURI="$reportDirGcsURI" --reportName="$reportName" --reportSQL="$reportSQL" --reportPartitionCount=$reportPartitionCount --reportTableFQN="$reportTableFQN" --reportTableDDL="$reportTableDDL"
 ```
 
-Navigate to the Dataproc Batches UI and view the execution-
+Visualize the execution in the Dataproc->Batches UI-
+
 ![LIN-5](../01-images/m093-06a.png)   
 <br><br>
 
-Navigate to the Cloud Storage to check for output files-
+<hr>
+
 ![LIN-5](../01-images/m093-06b.png)   
+<br><br>
+
+<hr>
+
+Navigate to the Cloud Storage to check for output files-
+
+![LIN-5](../01-images/m093-06c.png)   
 <br><br>
 
 <hr>
