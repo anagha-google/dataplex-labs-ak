@@ -191,9 +191,12 @@ Paste the below in Cloud Shell-
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
 CC2_ENV_NM="oda-${PROJECT_NBR}-cc2"
+LOCATION="us-central1"
 
-gcloud composer environments update oda-36819656457-cc2 \
+gcloud beta composer environments update oda-$PROJECT_NBR-cc2 \
+    --location $LOCATION \
     --enable-cloud-data-lineage-integration
+
 ```
 
 Alternately from the UI, as follows:
