@@ -46,8 +46,6 @@ PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d'
 LOCATION="us-central1"
 SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
-
-#BQ_CONNECTOR_PACKAGES="com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.0"
 ```
 
 ### 1.2. The PySpark code
