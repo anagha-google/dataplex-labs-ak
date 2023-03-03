@@ -450,6 +450,26 @@ SELECT * FROM `oda_product_zone.crimes_by_hour_spark` LIMIT 5
 3. Click on lineage for the table.
 
 
+![LIN-5](../01-images/m93-00-c.png)   
+<br><br>
 
+![LIN-5](../01-images/m93-00-d.png)   
+<br><br>
+
+
+![LIN-5](../01-images/m93-00-e.png)   
+<br><br>
+
+![LIN-5](../01-images/m93-00-f.png)   
+<br><br>
+
+![LIN-5](../01-images/m93-00-g.png)   
+<br><br>
+
+<hr>
+
+This concludes the lab module. Proceed to the [next module](module-09-4-custom-lineage.md).
+
+<hr>
 
 
