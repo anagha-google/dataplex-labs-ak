@@ -347,6 +347,5 @@ The one below is of integer data type-
 
 
 <hr>
-This concludes the lab module. Proceed to the next lab module.
-
+This concludes the lab module.
 <hr>
