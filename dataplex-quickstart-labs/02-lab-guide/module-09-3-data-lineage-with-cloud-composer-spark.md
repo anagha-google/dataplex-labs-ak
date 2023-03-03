@@ -287,4 +287,127 @@ Navigate to the Cloud Storage to check for output files-
 <hr>
 
 
-## 2. The Airflow DAG WITH custom lineage - run on Cloud Composer
+## 2. Dataplex Discovery of the Cloud Storage objects from the Spark applications run
+
+It takes a few minutes for Dataplex Discovery to complete from the point of completion of the Spark jobs above, at the end of which, you should see entities discovered reflected in the Dataplex UI.
+
+Navigate and click on each entity-
+
+![LIN-5](../01-images/m093-discovery-dataplex-00.png)   
+<br><br>
+
+<hr>
+
+![LIN-5](../01-images/m093-discovery-dataplex-01.png)   
+<br><br>
+
+<hr>
+
+![LIN-5](../01-images/m093-discovery-dataplex-02.png)   
+<br><br>
+
+<hr>
+
+![LIN-5](../01-images/m093-discovery-dataplex-03.png)   
+<br><br>
+
+<hr>
+
+![LIN-5](../01-images/m093-discovery-dataplex-04.png)   
+<br><br>
+
+<hr>
+
+## 3. Dataplex Discovery jobs auto-create BigQuery external tables for the Cloud Storage objects from the Spark applications run
+
+It takes a few minutes for Dataplex Discovery to complete from the point of completion of the Spark jobs above, at the end of which, you should see external tables in BigQuery UI.
+
+Navigate and query the tables created-
+
+
+![LIN-5](../01-images/m093-discovery-bq-00.png)   
+<br><br>
+
+<hr>
+
+
+![LIN-5](../01-images/m093-discovery-bq-01.png)   
+<br><br>
+
+<hr>
+
+Here are the queries you can try out-
+
+```
+SELECT * FROM `oda_curated_zone.crimes_curated_spark` LIMIT 5
+
+SELECT * FROM `oda_product_zone.crimes_by_year_spark` LIMIT 5;
+
+SELECT * FROM `oda_product_zone.crimes_by_month_spark` LIMIT 5
+
+SELECT * FROM `oda_product_zone.crimes_by_day_spark` LIMIT 5
+
+SELECT * FROM `oda_product_zone.crimes_by_hour_spark` LIMIT 5
+
+```
+
+<hr>
+<hr>
+
+
+## 4. The Airflow DAG WITH custom lineage - run on Cloud Composer
+
+1. Lets navigate to the Cloud Composer UI and launch the Airflow UI
+
+![LIN-5](../01-images/m093-airflow-00.png)   
+<br><br>
+
+<hr>
+
+2. Lets click on the Spark DAG
+
+![LIN-5](../01-images/m093-airflow-01.png)   
+<br><br>
+
+<hr>
+
+3. The following is the DAG
+
+![LIN-5](../01-images/m093-airflow-02.png)   
+<br><br>
+
+<hr>
+
+4. Lets review the code by clicking on the code tab
+
+![LIN-5](../01-images/m093-airflow-03.png)   
+<br><br>
+
+<hr>
+
+5. Scroll to look at the "inlet" and "outlet" where we specify lineage for BigQuery external tables.
+
+![LIN-5](../01-images/m093-airflow-04.png)   
+<br><br>
+
+<hr>
+
+6. Run the DAG 
+
+![LIN-5](../01-images/m093-airflow-05.png)   
+<br><br>
+
+<hr>
+
+7. Navigate to the Dataproc Batches UI and you should see the completed Dataproc Serverless batch jobs
+
+![LIN-5](../01-images/m093-airflow-06.png)   
+<br><br>
+
+<hr>
+
+## 5. Custom lineage captured from Airflow on Cloud Composer
+
+The lineage captured is custom and BQ external table centric and therefore not visible in the Dataplex UI.
+Navogate
+
