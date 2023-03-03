@@ -95,9 +95,12 @@ Visualize the execution in the Dataproc->Batches UI-
 ![LIN-5](../01-images/m093-01.png)   
 <br><br>
 
+<hr>
 
 ![LIN-5](../01-images/m093-02a.png)   
 <br><br>
+
+<hr>
 
 ![LIN-5](../01-images/m093-02b.png)   
 <br><br>
@@ -132,6 +135,8 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 Navigate to the Dataproc Batches UI and view the execution-
 ![LIN-5](../01-images/m093-03a.png)   
 <br><br>
+
+<hr>
 
 Navigate to the Cloud Storage to check for output files-
 ![LIN-5](../01-images/m093-03b.png)   
