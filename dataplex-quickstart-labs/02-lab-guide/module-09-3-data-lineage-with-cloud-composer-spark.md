@@ -284,5 +284,7 @@ Navigate to the Cloud Storage to check for output files-
 <br><br>
 
 <hr>
+<hr>
+
 
 ## 2. The Airflow DAG WITH custom lineage - run on Cloud Composer
