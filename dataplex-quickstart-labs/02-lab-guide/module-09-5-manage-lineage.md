@@ -41,13 +41,6 @@ LOCATION="us-central1"
 
 ## 2. Managing Lineage with the Lineage REST API
 
-Lets declare variables:
-```
-PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
-PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
-LOCATION_MULTI="us"
-LOCATION="us-central1"
-```
 
 ### 2.1. Managing Lineage Processes
 
@@ -65,7 +58,8 @@ You need to provide the process ID for lineage management.<br>
 
 Lets write all the processes to a file
 ```
-rm -rf my_lineage_processes.json
+cd ~/temp-lineage
+rm -rf *
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes >> my_lineage_processes.json
 ```
@@ -133,6 +127,7 @@ You need to provide the process run ID for lineage event association.
 
 Lets write all the lineage events for the process above to a file
 ```
+cd ~/temp-lineage
 rm -rf my_lineage_process_runs.json
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes/$MY_CUSTOM_PROCESS_ID/runs >> my_lineage_process_runs.json
@@ -192,6 +187,7 @@ You need to provide the process run ID for lineage event management.
 #### 2.3.1. List lineage event runs
 
 ```
+cd ~/temp-lineage
 rm -rf my_lineage_event_runs.json
 
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes/$MY_CUSTOM_PROCESS_ID/runs/$MY_CUSTOM_PROCESS_RUN_ID/lineageEvents/ >> my_lineage_event_runs.json
@@ -244,6 +240,7 @@ a) List the candidate for deletion-
 
 ```
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes/$MY_CUSTOM_PROCESS_ID/runs/$MY_CUSTOM_PROCESS_RUN_ID/lineageEvents/
+
 ```
 
 b) Delete the candidate for deletion-
@@ -255,6 +252,7 @@ curl -X DELETE -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "
 c) Validate deletion with a list command-
 ```
 curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application.json" https://us-datalineage.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_MULTI/processes/$MY_CUSTOM_PROCESS_ID/runs/$MY_CUSTOM_PROCESS_RUN_ID/lineageEvents/
+
 ```
 
 You should see empty curly braces.
@@ -302,10 +300,9 @@ curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Ty
 You should NOT see the deletion targeted process.
 
 
-<hr>
-
-
 
 <hr>
+
 This concludes the lab module.
+
 <hr>
