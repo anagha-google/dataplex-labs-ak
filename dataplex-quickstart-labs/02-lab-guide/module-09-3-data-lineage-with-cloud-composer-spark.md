@@ -48,19 +48,33 @@ SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 ```
 
-### 1.2. The PySpark code
+<hr>
 
-Copy the PySpark scripts from local to the code bucket (in case you modified anything) -
+### 1.2. Review the PySpark code and copy it to the raw code bucket
+
+1. Review the code at the location below-
+```
+cd ~/dataplex-quickstart-labs/00-resources/scripts/pyspark/chicago-crimes-analytics/
+```
+Review the two PySpark scripts
+
+<hr>
+
+2. Copy the PySpark scripts from local to the code bucket (in case you modified anything) -
 ```
 cd ~/dataplex-quickstart-labs/00-resources/scripts/pyspark/
 gsutil cp chicago-crimes-analytics/* gs://raw-code-${PROJECT_NBR}/pyspark/chicago-crimes-analytics/
 ```
 
+<hr>
+
 ### 1.3. Test each of the Spark jobs individually
 
 #### 1.3.1. Curate Chicago Crimes 
 
-Run the command below to curate crimes-
+In this section we will curate Chicago crimes with PySpark on Dataproc Serverless - we will dedupe, and augment the crimes data with some temporal attributes for trending.<br>
+
+Run the command below to curate crimes with PySpark-
 ```
 PIPELINE_ID=$RANDOM
 
