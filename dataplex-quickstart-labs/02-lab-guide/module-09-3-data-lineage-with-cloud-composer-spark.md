@@ -45,8 +45,9 @@ PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
 LOCATION="us-central1"
 SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
-#BQ_CONNECTOR_PACKAGES="com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.0"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
+
+#BQ_CONNECTOR_PACKAGES="com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.0"
 ```
 
 ### 1.2. The PySpark code
@@ -72,7 +73,6 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/chic
 --subnet $SUBNET_URI \
 --service-account $UMSA_FQN \
 --metastore-service "projects/$PROJECT_ID/locations/$LOCATION/services/lab-dpms-$PROJECT_NBR" \
---properties "spark.jars.packages=${BQ_CONNECTOR_PACKAGES}" \
 --version=1.1 \
 -- --projectID=$PROJECT_ID --tableFQN="oda_curated_zone.crimes_curated_spark" --peristencePath="gs://curated-data-$PROJECT_NBR/crimes-curated-spark/" 
 ```
@@ -122,7 +122,7 @@ PIPELINE_ID=$RANDOM
 baseName="crimes-by-month-spark"
 dataprocServerlessSparkBatchID="$baseName-$PIPELINE_ID"
 reportName='Chicago Crime Trend by Month'
-reportDirGcsURI="gs://oda-product-data-${PROJECT_NBR}/$baseName"
+reportDirGcsURI="gs://product-data-${PROJECT_NBR}/$baseName"
 reportSQL='SELECT case_month,count(*) AS crime_count FROM oda_curated_zone.crimes_curated_spark GROUP BY case_month;'
 reportPartitionCount=1
 reportTableFQN="oda_product_zone.crimes_by_month_spark"
