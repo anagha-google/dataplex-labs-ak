@@ -26,6 +26,10 @@ Successful completion of prior lab modules
 ![LIN-5](../01-images/m093-00.png)   
 <br><br>
 
+### Lake layout
+
+![LIN-5](../01-images/m093-00-a.png)   
+<br><br>
 
 
 ### Learning goals
