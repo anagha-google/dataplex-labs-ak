@@ -78,7 +78,7 @@ def fnMain(logger, args):
     logger.info('....Creating a base DF off of a BigQuery table')
     baseDF = spark.read \
     .format('bigquery') \
-    .load(f'{PROJECT_ID}.oda_raw_zone.nyc_taxi_trips_yellow')
+    .load(tableFQN)
     logger.info('....===================================')
    
     try:
