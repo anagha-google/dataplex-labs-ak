@@ -624,6 +624,7 @@ variable "code_to_upload" {
     
     "../scripts/pyspark/chicago-crimes-analytics/curate_crimes.py" = "pyspark/chicago-crimes-analytics/curate_crimes.py"
     "../scripts/pyspark/chicago-crimes-analytics/crimes_report.py" = "pyspark/chicago-crimes-analytics/crimes_report.py"
+    "../scripts/pyspark/nyc-taxi-trip-analytics/taxi_trips_data_generator.py" = "pyspark/nyc-taxi-trip-analytics/taxi_trips_data_generator.py"
 
     "../scripts/airflow/chicago-crimes-analytics/bq_lineage_pipeline.py" = "airflow/chicago-crimes-analytics/bq_lineage_pipeline.py"
     "../scripts/airflow/chicago-crimes-analytics/spark_custom_lineage_pipeline.py" = "airflow/chicago-crimes-analytics/spark_custom_lineage_pipeline.py"
