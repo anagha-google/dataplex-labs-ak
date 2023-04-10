@@ -85,7 +85,7 @@ def fnMain(logger, args):
         # 4. Persist to Cloud Storage
         
         logger.info('....Persisting dataframe in overwrite mode')
-        baseDF.coalesce(2).write.partitionBy("trip_year","trip_month","trip_day").parquet(peristencePath, mode='overwrite')
+        baseDF.write.partitionBy("trip_year","trip_month","trip_day").parquet(peristencePath, mode='overwrite')
         logger.info('....===================================')
     
        
