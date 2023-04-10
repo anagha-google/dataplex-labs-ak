@@ -162,8 +162,24 @@ DELETE FROM oda_raw_zone.nyc_taxi_trips_yellow where trip_year NOT IN (2020,2021
 
 ## 3. Run a Spark job that reads the data in BigQuery and persists to Cloud Storage
 
-
 ```
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+LOCATION="us-central1"
+SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
+UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
+TARGET_BUCKET_GCS_URI=f"gs://nyc-taxi-data-{PROJECT_NBR}/"
+
+S8S_BATCH_ID=$RANDOM
+
+gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/nyc-taxi-trip-analytics/taxi_trips_data_generator.py \
+--project $PROJECT_ID \
+--region $LOCATION  \
+--batch generate-nyc-yellow-taxi-trips-$S8S_BATCH_ID \
+--subnet $SUBNET_URI \
+--service-account $UMSA_FQN \
+--version=1.1 \
+-- --projectID=$PROJECT_ID --tableFQN="oda_raw_zone.nyc_taxi_trips_yellow" --peristencePath="$TARGET_BUCKET_GCS_URI/raw" 
 
 ```
 
