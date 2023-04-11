@@ -16,6 +16,7 @@ From Cloud Shell create a bucket-
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+DATAPLEX_LOCATION="us-central1"
 BQ_LOCATION_MULTI="us"
 BQ_DATASET_ID="oda_raw_zone"
 LAKE_NM="oda-lake"
@@ -169,9 +170,13 @@ LOCATION="us-central1"
 SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 TARGET_BUCKET_GCS_URI=f"gs://nyc-taxi-data-{PROJECT_NBR}/"
-
 S8S_BATCH_ID=$RANDOM
+DATA_RAW_ZONE_NM="oda-raw-zone"
 
+# Delete any existing content in the bucket
+gsutil rm -r $BUCKET_NM/nyc_yellow_taxi_trips
+
+# Persist NYC Yellow Taxi trips to Cloud Storage
 gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/nyc-taxi-trip-analytics/taxi_trips_data_generator.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
@@ -179,15 +184,41 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/nyc-
 --subnet $SUBNET_URI \
 --service-account $UMSA_FQN \
 --version=1.1 \
--- --projectID=$PROJECT_ID --tableFQN="oda_raw_zone.nyc_taxi_trips_yellow" --peristencePath="$TARGET_BUCKET_GCS_URI/raw" 
+-- --projectID=$PROJECT_ID --tableFQN="oda_raw_zone.nyc_taxi_trips_yellow" --peristencePath="$TARGET_BUCKET_GCS_URI/nyc_yellow_taxi_trips" 
 
 ```
 
+It takes ~16 minutes to complete.
+
+Lets review the file listing-
+```
+gsutil ls -r $BUCKET_NM
+```
+
+You should see a number of parquet files listed.
+
 <hr>
 
-## 4. Lets create a BigLake table on the data in Cloud Storage
 
+## 5. Add the bucket to the raw zone in the Dataplex lake oda-lake
 
+Paste the below in Cloud Shell-
+
+```
+gcloud dataplex assets create nyc-taxi-trips \
+--location=$DATAPLEX_LOCATION \
+--lake=$LAKE_NM \
+--zone=$DATA_RAW_ZONE_NM \
+--resource-type=STORAGE_BUCKET \
+--resource-name=projects/$PROJECT_ID/buckets/nyc-taxi-data-$PROJECT_NBR \
+--discovery-enabled \
+--discovery-schedule="0 * * * *" \
+--display-name 'NYC Taxi Dataset'
+```
+
+Discovery will start immediately after adding the bucket as an asset to the raw zone. Allow 5 minutes for discovery to complete and till the entity "nyc-taxi-trips" gets displayed in the Dataplex UI
+
+## 6. 
 
 
 
