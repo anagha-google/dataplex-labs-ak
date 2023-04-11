@@ -524,6 +524,10 @@ AND fare_amount BETWEEN 0 AND  1000
 
 We did not see significant improvement in the performance with query acceleration enabled due to the fact that there is an overhead to BigLake and performance gains can be observed at scale just like with all Big Data solutions.
 
+## 11. TODO for the lab author
+
+Add green taxi data into section 2 to demonstrate BigLake query acceleration more effectively.
+
 
 <hr>
 
