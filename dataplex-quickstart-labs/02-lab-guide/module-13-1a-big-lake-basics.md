@@ -35,8 +35,8 @@ gsutil mb -l $BQ_LOCATION_MULTI $BUCKET_NM
 The SQL below will create a managed table in BigQuery called nyc_taxi_trips_yellow in the dataset oda_raw_zone. Run this in the BigQuery UI-
 
 ```
-DROP TABLE IF EXISTS oda_raw_zone.nyc_taxi_trips_yellow;
-CREATE TABLE oda_raw_zone.nyc_taxi_trips_yellow (trip_year INT64,
+DROP TABLE IF EXISTS oda_raw_zone.nyc_yellow_taxi_trips_raw;
+CREATE TABLE oda_raw_zone.nyc_yellow_taxi_trips_raw (trip_year INT64,
     trip_month INT64,
     trip_day INT64,
     taxi_type STRING,
@@ -156,7 +156,7 @@ CREATE TABLE oda_raw_zone.nyc_taxi_trips_yellow (trip_year INT64,
   FROM
     `bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2022` );
 
-DELETE FROM oda_raw_zone.nyc_taxi_trips_yellow where trip_year NOT IN (2020,2021,2022);
+DELETE FROM oda_raw_zone.nyc_yellow_taxi_trips_raw where trip_year NOT IN (2020,2021,2022);
 ```
 
 <hr>
@@ -172,6 +172,7 @@ UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 TARGET_BUCKET_GCS_URI=f"gs://nyc-taxi-data-{PROJECT_NBR}/"
 S8S_BATCH_ID=$RANDOM
 BIGLAKE_PERSISTENCE_ZONE_NM="oda_curated_zone"
+TABLE_FQN="oda_raw_zone.nyc_yellow_taxi_trips_raw"
 
 # Delete any existing content in the bucket
 gsutil rm -r $BUCKET_NM/nyc_yellow_taxi_trips
@@ -184,7 +185,7 @@ gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/nyc-
 --subnet $SUBNET_URI \
 --service-account $UMSA_FQN \
 --version=1.1 \
--- --projectID=$PROJECT_ID --tableFQN="oda_raw_zone.nyc_taxi_trips_yellow" --peristencePath="$TARGET_BUCKET_GCS_URI/nyc_yellow_taxi_trips" 
+-- --projectID=$PROJECT_ID --tableFQN=$TABLE_FQN --peristencePath="$TARGET_BUCKET_GCS_URI/nyc_yellow_taxi_trips" 
 
 ```
 
