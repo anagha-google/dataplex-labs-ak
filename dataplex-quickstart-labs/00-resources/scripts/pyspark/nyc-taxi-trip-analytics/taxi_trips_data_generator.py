@@ -87,6 +87,11 @@ def fnMain(logger, args):
         logger.info('....Persisting dataframe in overwrite mode')
         baseDF.coalesce(2).write.partitionBy("trip_year","trip_month","trip_day").parquet(peristencePath, mode='overwrite')
         logger.info('....===================================')
+        
+        # 5. Delete flag files
+        logger.info('....Deleting _SUCCESS')
+        fnDeleteSuccessFlagFile(peristencePath)
+        logger.info('....===================================')
     
        
     except RuntimeError as coreError:
