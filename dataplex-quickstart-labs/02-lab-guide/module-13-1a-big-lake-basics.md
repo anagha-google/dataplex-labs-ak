@@ -401,28 +401,57 @@ format=\"PARQUET\");"
 
 ### 9.4. Update the schema of the Biglake table for the datatype of the partition columns
 
-Run the below DDL generator in the Cloud Shell-
+9.4.1. Run the below DDL generator in the Cloud Shell-
 
 ```
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+TARGET_BUCKET_GCS_URI="gs://nyc-taxi-data-${PROJECT_NBR}/"
+BQ_LOCATION_MULTI="US"
+BQ_CONNECTION=`bq ls --connection --project_id=$PROJECT_ID --location=$BQ_LOCATION_MULTI | tail -1 | cut -d ' ' -f3`
 
-```
 
-
-```
-ALTER EXTERNAL TABLE `dataplex-edu-labs.oda_curated_zone.nyc_yellow_taxi_trips`
+echo "CREATE OR REPLACE EXTERNAL TABLE \`$PROJECT_ID.oda_curated_zone.nyc_yellow_taxi_trips\`
 WITH PARTITION COLUMNS (trip_year INT64,trip_month INT64,trip_day INT64)
-WITH CONNECTION `684200045981.us.oda-curated-zone`
+WITH CONNECTION \`$BQ_CONNECTION\`
 OPTIONS(
-compression="NONE",  
-format="PARQUET",
-hive_partition_uri_prefix="gs://nyc-taxi-data-684200045981/nyc_yellow_taxi_trips/",
+format=\"PARQUET\",
+hive_partition_uri_prefix=\"gs://nyc-taxi-data-$PROJECT_NBR/nyc_yellow_taxi_trips/\",
 require_hive_partition_filter=true,
-uris=["gs://nyc-taxi-data-684200045981/nyc_yellow_taxi_trips/*"]
-);
+uris=[\"gs://nyc-taxi-data-$PROJECT_NBR/nyc_yellow_taxi_trips/*\"]
+);"
+
+echo ""
+echo ""
+echo ""
+
 ```
+
+9.4.2. Grab the output "CREATE OR REPLACE" statement and run it in the BigQuery UI.
+
+
+![IAM](../01-images/m13-1a-21.png)   
+<br><br>
 
 
 ### 9.3. Run a query on the regular external table without BigQuery results caching
+
+
+Run in the BigQuery UI-
+```
+SELECT *
+FROM `oda_nyc_taxi_trips_staging_ds.nyc_yellow_taxi_trips_regular`
+WHERE
+trip_year = 2021 and trip_month = 3 and
+trip_distance < 30
+AND fare_amount BETWEEN 0 AND  1000
+```
+
+![IAM](../01-images/m13-1a-22.png)   
+<br><br>
+
+
+### 9.4. Run a query on the BigLake table without performance acceleration without BigQuery results caching
 
 Run in the BigQuery UI-
 ```
@@ -434,30 +463,67 @@ trip_distance < 30
 AND fare_amount BETWEEN 0 AND  1000
 ```
 
-### 9.4. Run a query on the Biglake table without performance acceleration without BigQuery results caching
+![IAM](../01-images/m13-1a-23.png)   
+<br><br>
+
+### 9.5. Enable performance acceleration on the BigLake table
+
+9.5.1. Run the below DDL generator in the Cloud Shell-
+
+```
+PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
+PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
+TARGET_BUCKET_GCS_URI="gs://nyc-taxi-data-${PROJECT_NBR}/"
+BQ_LOCATION_MULTI="US"
+BQ_CONNECTION=`bq ls --connection --project_id=$PROJECT_ID --location=$BQ_LOCATION_MULTI | tail -1 | cut -d ' ' -f3`
+
+
+echo "CREATE OR REPLACE EXTERNAL TABLE \`$PROJECT_ID.oda_curated_zone.nyc_yellow_taxi_trips\`
+WITH PARTITION COLUMNS (trip_year INT64,trip_month INT64,trip_day INT64)
+WITH CONNECTION \`$BQ_CONNECTION\`
+OPTIONS(
+format=\"PARQUET\",
+metadata_cache_mode=\"AUTOMATIC\",
+max_staleness=INTERVAL '1' DAY,
+hive_partition_uri_prefix=\"gs://nyc-taxi-data-$PROJECT_NBR/nyc_yellow_taxi_trips/\",
+require_hive_partition_filter=true,
+uris=[\"gs://nyc-taxi-data-$PROJECT_NBR/nyc_yellow_taxi_trips/*\"]
+);"
+
+echo ""
+echo ""
+echo ""
+
+```
+
+9.5.2. Grab the output "CREATE OR REPLACE" statement and run it in the BigQuery UI.
+
+
+![IAM](../01-images/m13-1a-24.png)   
+<br><br>
+
+
+### 9.6. Run the query on the BigLake table to observe the improvement without BigQuery results caching 
+
 
 Run in the BigQuery UI-
 ```
 SELECT *
 FROM `oda_curated_zone.nyc_yellow_taxi_trips`
 WHERE
-trip_year = '2021' and trip_month = '3' and
+trip_year = 2021 and trip_month = 3 and
 trip_distance < 30
 AND fare_amount BETWEEN 0 AND  1000
 ```
 
-### 9.5. Enable performance acceleration on the BigLake table
 
-
-### 9.6. Run the query on the BigLake table to observe the improvement without BigQuery results caching 
-
+![IAM](../01-images/m13-1a-25.png)   
+<br><br>
 
 
 
 <hr>
 
-
 This concludes the module. Proceed to the next module.
-
 
 <hr>
