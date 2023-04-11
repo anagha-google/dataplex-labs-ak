@@ -257,6 +257,7 @@ gcloud services enable bigqueryconnection.googleapis.com
 ## 8. Visualize lineage
 
 
+
 ## 9. Query acceleration with BigLake
 
 ### 9.1. Create a BigQuery dataset that is not a Dataplex asset
@@ -271,7 +272,7 @@ bq --location=$BQ_LOCATION_MULTI mk \
 
 ```
 
-### 9.2. Create a plain external BigQuery table on the curated NYC taxi trips
+### 9.2. Create a regular external BigQuery table on the curated NYC taxi trips
 
 ```
 BQ_CONNECTION=`bq ls --connection --project_id=$PROJECT_ID --location=$BQ_LOCATION_MULTI | tail -1 | cut -d ' ' -f3`
@@ -287,7 +288,6 @@ WITH PARTITION COLUMNS (
   trip_month INTEGER,
   trip_day INTEGER
 )
-WITH CONNECTION \`$BQ_CONNECTION\`
 OPTIONS(
 hive_partition_uri_prefix =\"$TARGET_BUCKET_GCS_URI\",
 uris=[\"${TARGET_BUCKET_GCS_URI}nyc_yellow_taxi_trips/*.parquet\"],
@@ -295,3 +295,12 @@ format=\"PARQUET\");"
 
 ```
 
+### 9.3. Run a query on the Biglake table
+
+
+
+### 9.4. Run a query on the regular external table
+
+
+
+## 10. Attribute based access control
