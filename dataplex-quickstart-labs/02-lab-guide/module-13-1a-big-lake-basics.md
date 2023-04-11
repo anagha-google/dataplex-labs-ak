@@ -4,6 +4,49 @@ In this lab module, we will learn how to upgrade a Dataplex external table based
 
 <hr>
 
+## Concepts
+
+### C1: About external tables
+
+External tables are similar to standard BigQuery tables, in that these tables store their metadata and schema in BigQuery storage. However, their data resides in an external source.
+
+External tables are contained inside a dataset, and you manage them in the same way that you manage a standard BigQuery table. For example, you can view the table's properties, set access controls, and so forth. You can query these tables and in most cases you can join them with other tables.
+
+There are three kinds of external tables:
+
+1. BigLake tables
+2. Non-BigLake external tables
+3. Object tables
+
+We will only focus on #1 and #2 in this module.
+
+### C2: BigLake tables
+
+BigLake tables let you query structured data in external data stores with access delegation. Access delegation decouples access to the BigLake table from access to the underlying data store. An external connection associated with a service account is used to connect to the data store. Because the service account handles retrieving data from the data store, you only have to grant users access to the BigLake table. This lets you enforce fine-grained security at the table level, including row-level and column-level security. For BigLake tables based on Cloud Storage, you can also use dynamic data masking. To learn more about multi-cloud analytic solutions using BigLake tables with Amazon S3 or Blob Storage data, see BigQuery Omni.
+
+For more information, see Introduction to BigLake tables.
+
+### C3: Dataplex and BigLake
+
+Dataplex allows upgrading an external table in a lake to a BigLake table and then allows you to define attribute based entitlements.
+
+<hr>
+
+## Lab overview
+
+### Prerequisites
+Completion of prior modules
+
+### Approximate duration
+30 minutes or less
+
+### Pictorial overview of work to be completed in the lab module
+
+![IAM](../01-images/m13-1a-landing-page.png)   
+<br><br>
+
+<hr>
+
 ## LAB
 
 <hr>
