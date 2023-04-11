@@ -236,7 +236,15 @@ ORDER BY
   CAST(trip_month AS int64)
 ```
 
-## 7. Upgrade the external table in Dataplex to Biglake
+## 7. Upgrade the external table in Dataplex to BigLake
+
+### 7.1. Enable the BigQuery connections API
+
+```
+gcloud services enable bigqueryconnection.googleapis.com
+```
+
+### 7.2. Upgrade the external table to managed BigLake table
 
 
 
