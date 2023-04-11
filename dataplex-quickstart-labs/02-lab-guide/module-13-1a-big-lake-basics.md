@@ -22,9 +22,9 @@ BQ_DATASET_ID="oda_raw_zone"
 LAKE_NM="oda-lake"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 BUCKET_NM="gs://nyc-taxi-data-$PROJECT_NBR"
+BIGLAKE_PERSISTENCE_ZONE_NM="oda-curated-zone"
 
 gsutil mb -l $BQ_LOCATION_MULTI $BUCKET_NM
-
 ```
 
 <hr>
@@ -171,7 +171,7 @@ SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
 TARGET_BUCKET_GCS_URI=f"gs://nyc-taxi-data-{PROJECT_NBR}/"
 S8S_BATCH_ID=$RANDOM
-DATA_RAW_ZONE_NM="oda-raw-zone"
+BIGLAKE_PERSISTENCE_ZONE_NM="oda_curated_zone"
 
 # Delete any existing content in the bucket
 gsutil rm -r $BUCKET_NM/nyc_yellow_taxi_trips
@@ -208,7 +208,7 @@ Paste the below in Cloud Shell-
 gcloud dataplex assets create nyc-taxi-trips \
 --location=$DATAPLEX_LOCATION \
 --lake=$LAKE_NM \
---zone=$DATA_RAW_ZONE_NM \
+--zone=$BIGLAKE_PERSISTENCE_ZONE_NM \
 --resource-type=STORAGE_BUCKET \
 --resource-name=projects/$PROJECT_ID/buckets/nyc-taxi-data-$PROJECT_NBR \
 --discovery-enabled \
