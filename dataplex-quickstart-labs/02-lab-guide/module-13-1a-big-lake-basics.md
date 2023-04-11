@@ -520,6 +520,9 @@ AND fare_amount BETWEEN 0 AND  1000
 ![IAM](../01-images/m13-1a-25.png)   
 <br><br>
 
+## 10. In summary
+
+We did not see significant improvement in the performance with query acceleration enabled due to the fact that there is an overhead to BigLake and performance gains can be observed at scale just like with all Big Data solutions.
 
 
 <hr>
