@@ -20,10 +20,10 @@ BQ_LOCATION_MULTI="us"
 BQ_DATASET_ID="oda_raw_zone"
 LAKE_NM="oda-lake"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
-BUCKET_NM="gs://nyc-taxi-data-$PROJECT_NBR"
+TARGET_BUCKET_GCS_URI="gs://nyc-taxi-data-$PROJECT_NBR"
 BIGLAKE_PERSISTENCE_ZONE_NM="oda-curated-zone"
 
-gsutil mb -l $BQ_LOCATION_MULTI $BUCKET_NM
+gsutil mb -l $BQ_LOCATION_MULTI $TARGET_BUCKET_GCS_URI
 ```
 
 
@@ -190,7 +190,7 @@ TABLE_FQN="oda_raw_zone.nyc_yellow_taxi_trips_raw"
 PYSPARK_CODE_BUCKET="gs://raw-code-${PROJECT_NBR}/pyspark"
 
 # Delete any existing content in the bucket
-gsutil rm -r $BUCKET_NM/nyc_yellow_taxi_trips
+gsutil rm -r ${TARGET_BUCKET_GCS_URI}nyc_yellow_taxi_trips/*
 
 # Persist NYC Yellow Taxi trips to Cloud Storage
 gcloud dataproc batches submit pyspark $PYSPARK_CODE_BUCKET/nyc-taxi-trip-analytics/taxi_trips_data_generator.py \
@@ -264,8 +264,6 @@ Discovery will start immediately after adding the bucket as an asset to the raw 
 
 ![IAM](../01-images/m13-1a-09.png)   
 <br><br>
-
-
 
 
 <hr>
