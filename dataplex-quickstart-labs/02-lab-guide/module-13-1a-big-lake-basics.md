@@ -219,7 +219,22 @@ gcloud dataplex assets create nyc-taxi-trips \
 
 Discovery will start immediately after adding the bucket as an asset to the raw zone. Allow 5 minutes for discovery to complete and till the entity "nyc-taxi-trips" gets displayed in the Dataplex UI
 
-## 6. 
+## 6. Validate external table creation in BigQuery
+
+Run the below in the BigQuery UI-
+```
+SELECT
+  trip_month,
+  COUNT(*) AS trip_count
+FROM
+  `oda_curated_zone.nyc_yellow_taxi_trips`
+WHERE
+  trip_year='2020'
+GROUP BY
+  trip_month
+ORDER BY
+  CAST(trip_month AS int64)
+```
 
 
 
