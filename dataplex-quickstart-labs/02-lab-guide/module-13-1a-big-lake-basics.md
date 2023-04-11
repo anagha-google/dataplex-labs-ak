@@ -1,7 +1,6 @@
 # M13-1: BigLake basics
 
-In this lab module, we will create data for the Biglake lab series.
-
+In this lab module, we will learn how to upgrade a Dataplex external table based off of objects in Cloud Storage to BigLake, enable query acceleration and compare the performance. In the next module, we will learn how to use Dataplex for attribute based access control.
 
 <hr>
 
@@ -220,6 +219,9 @@ gcloud dataplex assets create nyc-taxi-trips \
 
 Discovery will start immediately after adding the bucket as an asset to the raw zone. Allow 5 minutes for discovery to complete and till the entity "nyc-taxi-trips" gets displayed in the Dataplex UI
 
+
+<hr>
+
 ## 6. Validate external table creation in BigQuery
 
 Run the below in the BigQuery UI, to ensure you see non-zero trip counts.
@@ -237,6 +239,9 @@ ORDER BY
   CAST(trip_month AS int64)
 ```
 
+
+<hr>
+
 ## 7. Upgrade the external table in Dataplex to BigLake
 
 ### 7.1. Enable the BigQuery connections API
@@ -253,10 +258,30 @@ gcloud services enable bigqueryconnection.googleapis.com
 
 3. Click on "Upgrade to Managed"
 
+### 7.3. Search up the table in BigQuery UI and notice how it shows as a "BigLake" table
 
-## 8. Visualize lineage
+
+### 7.4. Review the schema of the table in information schema
+
+Run in BigQuery UI-
+```
+SELECT ddl FROM oda_curated_zone.INFORMATION_SCHEMA.TABLES WHERE table_name='nyc_yellow_taxi_trips';
+```
+
+The author's output:
 
 
+
+<hr>
+
+
+## 8. Visualize lineage automatically captured by Dataplex
+
+
+
+
+
+<hr>
 
 ## 9. Query acceleration with BigLake
 
@@ -269,7 +294,6 @@ NYC_TAXI_STAGE_DS="oda_nyc_taxi_trips_staging_ds"
 bq --location=$BQ_LOCATION_MULTI mk \
     --dataset \
     $PROJECT_ID:$NYC_TAXI_STAGE_DS
-
 ```
 
 ### 9.2. Create a regular external BigQuery table on the curated NYC taxi trips
@@ -295,12 +319,25 @@ format=\"PARQUET\");"
 
 ```
 
-### 9.3. Run a query on the Biglake table
+### 9.3. Run a query on the regular external table without BigQuery results caching
 
 
 
-### 9.4. Run a query on the regular external table
+### 9.4. Run a query on the Biglake table without performance acceleration without BigQuery results caching
+
+
+### 9.5. Enable performance acceleration on the BigLake table
+
+
+### 9.6. Run the query on the BigLake table to observe the improvement without BigQuery results caching 
 
 
 
-## 10. Attribute based access control
+
+<hr>
+
+
+This concludes the module. Proceed to the next module.
+
+
+<hr>
