@@ -221,7 +221,7 @@ Discovery will start immediately after adding the bucket as an asset to the raw 
 
 ## 6. Validate external table creation in BigQuery
 
-Run the below in the BigQuery UI-
+Run the below in the BigQuery UI, to ensure you see non-zero trip counts.
 ```
 SELECT
   trip_month,
@@ -235,6 +235,8 @@ GROUP BY
 ORDER BY
   CAST(trip_month AS int64)
 ```
+
+## 7. Upgrade the external table in Dataplex to Biglake
 
 
 
