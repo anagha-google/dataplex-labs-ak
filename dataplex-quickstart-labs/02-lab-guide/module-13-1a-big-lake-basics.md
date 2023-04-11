@@ -1,4 +1,4 @@
-# M13-1: Data Creation for BigLake lab module
+# M13-1: BigLake basics
 
 In this lab module, we will create data for the Biglake lab series.
 
@@ -169,16 +169,17 @@ PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d'
 LOCATION="us-central1"
 SUBNET_URI="projects/$PROJECT_ID/regions/$LOCATION/subnetworks/lab-snet"
 UMSA_FQN="lab-sa@$PROJECT_ID.iam.gserviceaccount.com"
-TARGET_BUCKET_GCS_URI=f"gs://nyc-taxi-data-{PROJECT_NBR}/"
+TARGET_BUCKET_GCS_URI="gs://nyc-taxi-data-${PROJECT_NBR}/"
 S8S_BATCH_ID=$RANDOM
 BIGLAKE_PERSISTENCE_ZONE_NM="oda_curated_zone"
 TABLE_FQN="oda_raw_zone.nyc_yellow_taxi_trips_raw"
+PYSPARK_CODE_BUCKET="gs://raw-code-${PROJECT_NBR}/pyspark"
 
 # Delete any existing content in the bucket
 gsutil rm -r $BUCKET_NM/nyc_yellow_taxi_trips
 
 # Persist NYC Yellow Taxi trips to Cloud Storage
-gcloud dataproc batches submit pyspark gs://raw-code-${PROJECT_NBR}/pyspark/nyc-taxi-trip-analytics/taxi_trips_data_generator.py \
+gcloud dataproc batches submit pyspark $PYSPARK_CODE_BUCKET/nyc-taxi-trip-analytics/taxi_trips_data_generator.py \
 --project $PROJECT_ID \
 --region $LOCATION  \
 --batch generate-nyc-yellow-taxi-trips-$S8S_BATCH_ID \
@@ -246,5 +247,51 @@ gcloud services enable bigqueryconnection.googleapis.com
 
 ### 7.2. Upgrade the external table to managed BigLake table
 
+1. In the Dataplex UI, bavigate to -> Manage -> ODA-LAKE -> ODA-CURATED-ZONE -> Assets
 
+2. Click on the NYC Taxi Dataset
+
+3. Click on "Upgrade to Managed"
+
+
+## 8. Visualize lineage
+
+
+## 9. Query acceleration with BigLake
+
+### 9.1. Create a BigQuery dataset that is not a Dataplex asset
+
+Paste in Cloud Shell-
+```
+NYC_TAXI_STAGE_DS="oda_nyc_taxi_trips_staging_ds"
+
+bq --location=$BQ_LOCATION_MULTI mk \
+    --dataset \
+    $PROJECT_ID:$NYC_TAXI_STAGE_DS
+
+```
+
+### 9.2. Create a plain external BigQuery table on the curated NYC taxi trips
+
+```
+BQ_CONNECTION=`bq ls --connection --project_id=$PROJECT_ID --location=$BQ_LOCATION_MULTI | tail -1 | cut -d ' ' -f3`
+echo $BQ_CONNECTION
+```
+
+Paste the below in the BigQuery UI-
+```
+echo "
+CREATE EXTERNAL TABLE IF NOT EXISTS oda_nyc_taxi_trips_staging_ds.nyc_yellow_taxi_trips_regular
+WITH PARTITION COLUMNS (
+  trip_year  INTEGER,
+  trip_month INTEGER,
+  trip_day INTEGER
+)
+WITH CONNECTION \`$BQ_CONNECTION\`
+OPTIONS(
+hive_partition_uri_prefix =\"$TARGET_BUCKET_GCS_URI\",
+uris=[\"${TARGET_BUCKET_GCS_URI}nyc_yellow_taxi_trips/*.parquet\"],
+format=\"PARQUET\");"
+
+```
 
