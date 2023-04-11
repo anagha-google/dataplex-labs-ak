@@ -26,6 +26,10 @@ BIGLAKE_PERSISTENCE_ZONE_NM="oda-curated-zone"
 gsutil mb -l $BQ_LOCATION_MULTI $BUCKET_NM
 ```
 
+
+![IAM](../01-images/m13-1a-00.png)   
+<br><br>
+
 <hr>
 
 
@@ -158,10 +162,21 @@ CREATE TABLE oda_raw_zone.nyc_yellow_taxi_trips_raw (trip_year INT64,
 DELETE FROM oda_raw_zone.nyc_yellow_taxi_trips_raw where trip_year NOT IN (2020,2021,2022);
 ```
 
+![IAM](../01-images/m13-1a-01.png)   
+<br><br>
+
 <hr>
 
 ## 3. Run a Spark job that reads the data in BigQuery and persists to Cloud Storage
 
+### 3.1. (Optional) Review the code
+
+![IAM](../01-images/m13-1a-02.png)   
+<br><br>
+
+### 3.2. Run a Spark job that creates the NYC taxi trip data
+
+Paste this and run in the Cloud Shell-
 ```
 PROJECT_ID=`gcloud config list --format "value(core.project)" 2>/dev/null`
 PROJECT_NBR=`gcloud projects describe $PROJECT_ID | grep projectNumber | cut -d':' -f2 |  tr -d "'" | xargs`
@@ -191,12 +206,31 @@ gcloud dataproc batches submit pyspark $PYSPARK_CODE_BUCKET/nyc-taxi-trip-analyt
 
 It takes ~16 minutes to complete.
 
+### 3.3. Review Spark job execution in the Dataproc UI on the Cloud Console
+
+![IAM](../01-images/m13-1a-03.png)   
+<br><br>
+
+
+![IAM](../01-images/m13-1a-04.png)   
+<br><br>
+
+
+### 3.4. Review the creation of data in Cloud Storage
+
+
+![IAM](../01-images/m13-1a-05.png)   
+<br><br>
+
 Lets review the file listing-
 ```
-gsutil ls -r $BUCKET_NM
+gsutil ls -r $TARGET_BUCKET_GCS_URI
 ```
+You should see a number of parquet files listed. Understand the partition scheme.
 
-You should see a number of parquet files listed.
+
+![IAM](../01-images/m13-1a-06.png)   
+<br><br>
 
 <hr>
 
@@ -217,7 +251,21 @@ gcloud dataplex assets create nyc-taxi-trips \
 --display-name 'NYC Taxi Dataset'
 ```
 
-Discovery will start immediately after adding the bucket as an asset to the raw zone. Allow 5 minutes for discovery to complete and till the entity "nyc-taxi-trips" gets displayed in the Dataplex UI
+Discovery will start immediately after adding the bucket as an asset to the raw zone. Allow 5 minutes for discovery to complete and till the entity "nyc-taxi-trips" gets displayed in the Dataplex UI.
+
+
+![IAM](../01-images/m13-1a-07.png)   
+<br><br>
+
+
+![IAM](../01-images/m13-1a-08.png)   
+<br><br>
+
+
+![IAM](../01-images/m13-1a-09.png)   
+<br><br>
+
+
 
 
 <hr>
@@ -240,6 +288,14 @@ ORDER BY
 ```
 
 
+![IAM](../01-images/m13-1a-10.png)   
+<br><br>
+
+
+![IAM](../01-images/m13-1a-11.png)   
+<br><br>
+
+
 <hr>
 
 ## 7. Upgrade the external table in Dataplex to BigLake
@@ -258,7 +314,26 @@ gcloud services enable bigqueryconnection.googleapis.com
 
 3. Click on "Upgrade to Managed"
 
-### 7.3. Search up the table in BigQuery UI and notice how it shows as a "BigLake" table
+
+![IAM](../01-images/m13-1a-12.png)   
+<br><br>
+
+
+
+![IAM](../01-images/m13-1a-13.png)   
+<br><br>
+
+
+
+![IAM](../01-images/m13-1a-14.png)   
+<br><br>
+
+
+### 7.3. Search up the table in BigQuery UI in oda_curated_zone and notice how it shows as a "BigLake" table
+
+
+![IAM](../01-images/m13-1a-15.png)   
+<br><br>
 
 
 ### 7.4. Review the schema of the table in information schema
@@ -269,7 +344,8 @@ SELECT ddl FROM oda_curated_zone.INFORMATION_SCHEMA.TABLES WHERE table_name='nyc
 ```
 
 The author's output:
-
+![IAM](../01-images/m13-1a-17.png)   
+<br><br>
 
 
 <hr>
@@ -277,8 +353,8 @@ The author's output:
 
 ## 8. Visualize lineage automatically captured by Dataplex
 
-
-
+![IAM](../01-images/m13-1a-16.png)   
+<br><br>
 
 
 <hr>
@@ -296,12 +372,10 @@ bq --location=$BQ_LOCATION_MULTI mk \
     $PROJECT_ID:$NYC_TAXI_STAGE_DS
 ```
 
-### 9.2. Create a regular external BigQuery table on the curated NYC taxi trips
+![IAM](../01-images/m13-1a-18.png)   
+<br><br>
 
-```
-BQ_CONNECTION=`bq ls --connection --project_id=$PROJECT_ID --location=$BQ_LOCATION_MULTI | tail -1 | cut -d ' ' -f3`
-echo $BQ_CONNECTION
-```
+### 9.2. Create a regular external BigQuery table on the curated NYC taxi trips
 
 Paste the below in the BigQuery UI-
 ```
@@ -319,12 +393,60 @@ format=\"PARQUET\");"
 
 ```
 
+![IAM](../01-images/m13-1a-19.png)   
+<br><br>
+
+
+
+![IAM](../01-images/m13-1a-20.png)   
+<br><br>
+
+### 9.4. Update the schema of the Biglake table for the datatype of the partition columns
+
+Run the below DDL generator in the Cloud Shell-
+
+```
+
+```
+
+
+```
+ALTER EXTERNAL TABLE `dataplex-edu-labs.oda_curated_zone.nyc_yellow_taxi_trips`
+WITH PARTITION COLUMNS (trip_year INT64,trip_month INT64,trip_day INT64)
+WITH CONNECTION `684200045981.us.oda-curated-zone`
+OPTIONS(
+compression="NONE",  
+format="PARQUET",
+hive_partition_uri_prefix="gs://nyc-taxi-data-684200045981/nyc_yellow_taxi_trips/",
+require_hive_partition_filter=true,
+uris=["gs://nyc-taxi-data-684200045981/nyc_yellow_taxi_trips/*"]
+);
+```
+
+
 ### 9.3. Run a query on the regular external table without BigQuery results caching
 
-
+Run in the BigQuery UI-
+```
+SELECT *
+FROM `oda_curated_zone.nyc_yellow_taxi_trips`
+WHERE
+trip_year = 2021 and trip_month = 3 and
+trip_distance < 30
+AND fare_amount BETWEEN 0 AND  1000
+```
 
 ### 9.4. Run a query on the Biglake table without performance acceleration without BigQuery results caching
 
+Run in the BigQuery UI-
+```
+SELECT *
+FROM `oda_curated_zone.nyc_yellow_taxi_trips`
+WHERE
+trip_year = '2021' and trip_month = '3' and
+trip_distance < 30
+AND fare_amount BETWEEN 0 AND  1000
+```
 
 ### 9.5. Enable performance acceleration on the BigLake table
 
