@@ -114,12 +114,8 @@ Shut down/delete resources when done to avoid unnecessary billing.
 | # | Google Cloud Collaborators | Contribution  | 
 | -- | :--- | :--- |
 | 1. | Anagha Khanolkar | Creator |
-<<<<<<< HEAD
-
-
-=======
 | 2. | Mansi Maharana | Data Quality Task labs are evolved from [Banking Data Mesh labs](https://github.com/GoogleCloudPlatform/dataplex-labs/tree/main/data-mesh-banking-labs/lab6-data-quality)  |
->>>>>>> 2e4b20f5af9186f55ed3161631a360f6dfe253b8
+
 
 <hr>
 
@@ -137,13 +133,10 @@ If you have any questions or if you found any problems with this repository, ple
 | Date | Details | 
 | -- | :--- | 
 | 20230227 |  Initial release |
-<<<<<<< HEAD
-
-=======
 | 20230320 |  Added modules for Dataplex Auto Data Quality|
 | 20230321 |  Added modules for Dataplex Data Quality Tasks|
 | 20230328 |  Added additional modules for Dataplex Data Quality Tasks|
->>>>>>> 2e4b20f5af9186f55ed3161631a360f6dfe253b8
+
 
 
 
